@@ -31,7 +31,7 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2523,Witchseekers,Adeptus Custodes,6.0,3.0,3.0,,1.0,6.0,1.0,125.0,9
 2524,Anathema Psykana Rhino,Adeptus Custodes,12.0,9.0,3.0,,10.0,6.0,2.0,75.0,1
 838,Belisarius Cawl,Adeptus Mechanicus,8.0,8.0,2.0,4.0,10.0,6.0,3.0,175.0,1
-839,Tech-priest Dominus,Adeptus Mechanicus,6.0,4.0,2.0,5.0,4.0,7.0,1.0,65.0,1
+839,Adeptus Mechanicus Tech-priest Dominus,Adeptus Mechanicus,6.0,4.0,2.0,5.0,4.0,7.0,1.0,65.0,1
 840,Tech-priest Enginseer,Adeptus Mechanicus,6.0,4.0,3.0,5.0,3.0,7.0,1.0,55.0,1
 841,Kataphron Breachers,Adeptus Mechanicus,5.0,7.0,3.0,6.0,3.0,7.0,1.0,320.0,6
 842,Kataphron Destroyers,Adeptus Mechanicus,5.0,6.0,3.0,6.0,3.0,7.0,1.0,210.0,6
@@ -40,8 +40,8 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 845,Kastelan Robots,Adeptus Mechanicus,6.0,9.0,2.0,5.0,7.0,7.0,2.0,360.0,4
 846,Cybernetica Datasmith,Adeptus Mechanicus,6.0,4.0,2.0,5.0,3.0,7.0,1.0,35.0,1
 847,Servitors,Adeptus Mechanicus,6.0,3.0,4.0,6.0,1.0,8.0,0.0,50.0,4
-848,Skitarii Rangers,Adeptus Mechanicus,6.0,3.0,4.0,5.0,1.0,7.0,2.0,85.0,9
-849,Skitarii Vanguard,Adeptus Mechanicus,6.0,3.0,4.0,5.0,1.0,7.0,2.0,95.0,9
+848,Adeptus Mechanicus Skitarii Rangers,Adeptus Mechanicus,6.0,3.0,4.0,5.0,1.0,7.0,2.0,85.0,9
+849,Adeptus Mechanicus Skitarii Vanguard,Adeptus Mechanicus,6.0,3.0,4.0,5.0,1.0,7.0,2.0,95.0,9
 850,Sicarian Infiltrators,Adeptus Mechanicus,8.0,4.0,4.0,5.0,2.0,7.0,1.0,140.0,9
 851,Sicarian Ruststalkers,Adeptus Mechanicus,8.0,4.0,4.0,5.0,2.0,7.0,1.0,150.0,9
 852,Ironstrider Ballistarii,Adeptus Mechanicus,10.0,7.0,3.0,5.0,7.0,7.0,2.0,225.0,3
@@ -49,8 +49,8 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 854,Onager Dunecrawler,Adeptus Mechanicus,8.0,10.0,2.0,4.0,11.0,7.0,3.0,155.0,1
 1525,Secutarii Hoplites,Adeptus Mechanicus,6.0,3.0,5.0,4.0,1.0,7.0,1.0,130.0,9
 1526,Secutarii Peltasts,Adeptus Mechanicus,6.0,3.0,5.0,6.0,1.0,7.0,1.0,100.0,9
-1533,Terrax-pattern Termite,Adeptus Mechanicus,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
-1580,Tech-priest Manipulus,Adeptus Mechanicus,6.0,4.0,2.0,5.0,4.0,7.0,1.0,60.0,1
+1533,Adeptus Mechanicus Terrax-pattern Termite,Adeptus Mechanicus,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
+1580,Adeptus Mechanicus Tech-priest Manipulus,Adeptus Mechanicus,6.0,4.0,2.0,5.0,4.0,7.0,1.0,60.0,1
 1650,Skorpius Dunerider,Adeptus Mechanicus,12.0,9.0,3.0,,11.0,7.0,2.0,85.0,1
 1651,Skorpius Disintegrator,Adeptus Mechanicus,10.0,10.0,2.0,,12.0,7.0,3.0,165.0,1
 1822,X-101,Adeptus Mechanicus,6.0,3.0,4.0,,3.0,8.0,0.0,40.0,101
@@ -62,7 +62,7 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2086,Archaeopter Stratoraptor,Adeptus Mechanicus,20.0,9.0,3.0,,10.0,7.0,0.0,185.0,1
 2087,Archaeopter Fusilave,Adeptus Mechanicus,20.0,9.0,3.0,,10.0,7.0,0.0,160.0,1
 2477,Technoarcheologist,Adeptus Mechanicus,6.0,4.0,3.0,5.0,3.0,7.0,1.0,45.0,1
-2478,Skitarii Marshal,Adeptus Mechanicus,6.0,3.0,4.0,5.0,3.0,6.0,1.0,35.0,1
+2478,Adeptus Mechanicus Skitarii Marshal,Adeptus Mechanicus,6.0,3.0,4.0,5.0,3.0,6.0,1.0,35.0,1
 3694,Sydonian Dragoons With Radium Jezzails,Adeptus Mechanicus,10.0,7.0,3.0,5.0,7.0,7.0,2.0,150.0,3
 3695,Sydonian Skatros,Adeptus Mechanicus,8.0,4.0,4.0,5.0,4.0,7.0,1.0,50.0,1
 4119,Servitor Battleclade,Adeptus Mechanicus,6.0,4.0,4.0,6.0,2.0,7.0,1.0,60.0,6
@@ -122,17 +122,17 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 626,Vampire Hunter,Aeldari,20.0,12.0,3.0,4.0,30.0,6.0,0.0,460.0,1
 627,Skathach Wraithknight,Aeldari,10.0,12.0,2.0,,18.0,6.0,10.0,490.0,1
 628,Revenant Titan,Aeldari,16.0,13.0,2.0,4.0,30.0,6.0,16.0,1100.0,1
-629,Corsair Cloud Dancer Band,Aeldari,14.0,4.0,3.0,,2.0,6.0,2.0,245.0,6
+629,Aeldari Corsair Cloud Dancer Band,Aeldari,14.0,4.0,3.0,,2.0,6.0,2.0,245.0,6
 630,Irillyth,Aeldari,12.0,3.0,2.0,4.0,5.0,6.0,1.0,105.0,1
 631,Phantom Titan,Aeldari,14.0,14.0,2.0,4.0,55.0,6.0,20.0,2100.0,1
-632,Corsair Reaver Band,Aeldari,7.0,3.0,5.0,,3.0,6.0,2.0,275.0,10
-633,Corsair Skyreaver Band,Aeldari,14.0,3.0,5.0,,3.0,6.0,1.0,275.0,10
+632,Aeldari Corsair Reaver Band,Aeldari,7.0,3.0,5.0,,3.0,6.0,2.0,275.0,10
+633,Aeldari Corsair Skyreaver Band,Aeldari,14.0,3.0,5.0,,3.0,6.0,1.0,275.0,10
 1393,Firestorm,Aeldari,14.0,9.0,3.0,,12.0,6.0,3.0,115.0,1
 1400,Bonesinger,Aeldari,7.0,3.0,6.0,4.0,3.0,6.0,1.0,45.0,1
 1598,Amallyn Shadowguide,Aeldari,7.0,3.0,5.0,4.0,3.0,6.0,1.0,75.0,1
 2459,Webway Gate,Aeldari,,12.0,3.0,,14.0,6.0,0.0,105.0,2
-2531,Corsair Voidreavers,Aeldari,7.0,3.0,4.0,,1.0,7.0,2.0,110.0,9
-2532,Corsair Voidscarred,Aeldari,7.0,3.0,4.0,,1.0,7.0,1.0,160.0,10
+2531,Aeldari Corsair Voidreavers,Aeldari,7.0,3.0,4.0,,1.0,7.0,2.0,110.0,9
+2532,Aeldari Corsair Voidscarred,Aeldari,7.0,3.0,4.0,,1.0,7.0,1.0,160.0,10
 2533,Shroud Runners,Aeldari,14.0,4.0,5.0,5.0,3.0,7.0,2.0,160.0,6
 2534,Aeldari Troupe Master,Aeldari,8.0,3.0,6.0,4.0,4.0,6.0,1.0,75.0,1
 2535,Shadowseer,Aeldari,8.0,3.0,6.0,4.0,4.0,6.0,1.0,60.0,1
@@ -159,133 +159,133 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 3919,Ynnari Reavers,Aeldari,16.0,4.0,4.0,6.0,2.0,6.0,2.0,120.0,5
 3920,Ynnari Raider,Aeldari,14.0,8.0,4.0,6.0,10.0,6.0,2.0,80.0,1
 3921,Ynnari Venom,Aeldari,14.0,6.0,4.0,6.0,6.0,6.0,1.0,70.0,1
-680,Leman Russ Commander,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,235.0,1
-686,Cadian Heavy Weapons Squad,Astra Militarum,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
-690,Scout Sentinels,Astra Militarum,10.0,7.0,3.0,,7.0,7.0,2.0,110.0,2
-691,Armoured Sentinels,Astra Militarum,8.0,8.0,2.0,,7.0,7.0,2.0,130.0,2
-692,Chimera,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,2.0,85.0,1
-693,Taurox,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,2.0,75.0,1
-694,Hellhound,Astra Militarum,10.0,10.0,2.0,,11.0,7.0,3.0,125.0,1
-695,Basilisk,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,140.0,1
-696,Hydra,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,95.0,1
-697,Wyvern,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,110.0,1
-698,Manticore,Astra Militarum,10.0,10.0,3.0,,11.0,7.0,3.0,165.0,1
-699,Deathstrike,Astra Militarum,10.0,10.0,3.0,,11.0,7.0,3.0,145.0,1
-700,Leman Russ Battle Tank,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,185.0,1
-701,Leman Russ Demolisher,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,190.0,1
-702,Baneblade,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
-703,Banehammer,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
-704,Banesword,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
-705,Doomhammer,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
-706,Hellhammer,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
-707,Shadowsword,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,410.0,1
-708,Stormlord,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,430.0,1
-709,Stormsword,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,465.0,1
+680,Astra Militarum Leman Russ Commander,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,235.0,1
+686,Astra Militarum Cadian Heavy Weapons Squad,Astra Militarum,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
+690,Astra Militarum Scout Sentinels,Astra Militarum,10.0,7.0,3.0,,7.0,7.0,2.0,110.0,2
+691,Astra Militarum Armoured Sentinels,Astra Militarum,8.0,8.0,2.0,,7.0,7.0,2.0,130.0,2
+692,Astra Militarum Chimera,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,2.0,85.0,1
+693,Astra Militarum Taurox,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,2.0,75.0,1
+694,Astra Militarum Hellhound,Astra Militarum,10.0,10.0,2.0,,11.0,7.0,3.0,125.0,1
+695,Astra Militarum Basilisk,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,140.0,1
+696,Astra Militarum Hydra,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,95.0,1
+697,Astra Militarum Wyvern,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,110.0,1
+698,Astra Militarum Manticore,Astra Militarum,10.0,10.0,3.0,,11.0,7.0,3.0,165.0,1
+699,Astra Militarum Deathstrike,Astra Militarum,10.0,10.0,3.0,,11.0,7.0,3.0,145.0,1
+700,Astra Militarum Leman Russ Battle Tank,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,185.0,1
+701,Astra Militarum Leman Russ Demolisher,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,190.0,1
+702,Astra Militarum Baneblade,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
+703,Astra Militarum Banehammer,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
+704,Astra Militarum Banesword,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
+705,Astra Militarum Doomhammer,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
+706,Astra Militarum Hellhammer,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
+707,Astra Militarum Shadowsword,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,410.0,1
+708,Astra Militarum Stormlord,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,430.0,1
+709,Astra Militarum Stormsword,Astra Militarum,12.0,13.0,2.0,,24.0,7.0,8.0,465.0,1
 713,‘Iron Hand’ Straken,Astra Militarum,6.0,3.0,3.0,4.0,4.0,7.0,1.0,55.0,1
 714,Sergeant Harker,Astra Militarum,6.0,4.0,5.0,,3.0,7.0,1.0,40.0,1
 716,Commissar,Astra Militarum,6.0,3.0,5.0,5.0,3.0,6.0,1.0,30.0,1
 719,Militarum Tempestus Command Squad,Astra Militarum,6.0,3.0,4.0,,3.0,7.0,1.0,85.0,4
-721,Taurox Prime,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,2.0,90.0,1
+721,Astra Militarum Taurox Prime,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,2.0,90.0,1
 722,Ogryn Squad,Astra Militarum,6.0,6.0,5.0,,3.0,7.0,1.0,130.0,5
 723,Bullgryn Squad,Astra Militarum,6.0,6.0,3.0,,3.0,7.0,1.0,200.0,5
 724,Ratlings,Astra Militarum,6.0,2.0,6.0,,1.0,8.0,1.0,100.0,10
 725,Nork Deddog,Astra Militarum,6.0,6.0,4.0,,6.0,7.0,1.0,60.0,1
 727,Valkyrie,Astra Militarum,20.0,10.0,2.0,,14.0,7.0,0.0,190.0,1
-728,Atlas Recovery Vehicle,Astra Militarum,10.0,9.0,3.0,,10.0,7.0,3.0,80.0,1
-729,Salamander Command Vehicle,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,3.0,80.0,1
-730,Hades Breaching Drill,Astra Militarum,6.0,9.0,3.0,,8.0,7.0,2.0,110.0,1
-731,Centaur Light Carrier,Astra Militarum,10.0,7.0,3.0,,7.0,7.0,1.0,40.0,1
-733,Trojan Support Vehicle,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,2.0,80.0,1
-735,Salamander Scout Vehicle,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,3.0,95.0,1
-736,Tauros Assault Vehicle,Astra Militarum,12.0,6.0,4.0,,6.0,7.0,2.0,50.0,1
-737,Tauros Venator,Astra Militarum,12.0,6.0,4.0,,6.0,7.0,2.0,55.0,1
-739,Armageddon-pattern Medusa,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,105.0,1
-740,Colossus,Astra Militarum,10.0,10.0,2.0,,11.0,7.0,3.0,160.0,1
-741,Cyclops Demolition Vehicle,Astra Militarum,8.0,4.0,3.0,,4.0,8.0,0.0,25.0,1
-743,Earthshaker Carriage Battery,Astra Militarum,4.0,7.0,4.0,,6.0,7.0,2.0,120.0,1
-744,Griffon Mortar Carrier,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,115.0,1
-745,Heavy Mortar Team,Astra Militarum,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
-746,Heavy Quad Launcher Team,Astra Militarum,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
-747,Hydra Platform,Astra Militarum,,8.0,3.0,,8.0,7.0,2.0,95.0,1
-751,Malcador Annihilator,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,270.0,1
-752,Malcador Defender,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,310.0,1
-753,Malcador,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,250.0,1
-754,Malcador Infernus,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,235.0,1
-755,Manticore Platform,Astra Militarum,,8.0,3.0,,8.0,7.0,2.0,95.0,1
-756,Medusa Carriage Battery,Astra Militarum,4.0,7.0,4.0,,6.0,7.0,2.0,125.0,1
-757,Rapier Laser Destroyer Battery,Astra Militarum,6.0,4.0,4.0,,3.0,7.0,1.0,105.0,3
-758,Sabre Weapons Battery,Astra Militarum,,4.0,4.0,,4.0,7.0,1.0,90.0,2
-759,Sentinel Powerlifter,Astra Militarum,8.0,7.0,3.0,,6.0,7.0,2.0,55.0,1
-760,Stygies Destroyer Tank Hunter,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
-762,Tarantula Battery,Astra Militarum,,5.0,3.0,,4.0,7.0,0.0,120.0,3
-763,Stormblade,Astra Militarum,9.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
-764,Arkurian Stormhammer,Astra Militarum,9.0,13.0,2.0,,24.0,7.0,8.0,480.0,1
-766,Crassus,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,180.0,1
-767,Dominus Armoured Siege Bombard,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,325.0,1
-768,Gorgon Heavy Transport,Astra Militarum,9.0,13.0,2.0,5.0,20.0,7.0,8.0,275.0,1
-769,Macharius,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
-770,Macharius Omega,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
-771,Macharius Vanquisher,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
-772,Macharius Vulcan,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
+728,Astra Militarum Atlas Recovery Vehicle,Astra Militarum,10.0,9.0,3.0,,10.0,7.0,3.0,80.0,1
+729,Astra Militarum Salamander Command Vehicle,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,3.0,80.0,1
+730,Astra Militarum Hades Breaching Drill,Astra Militarum,6.0,9.0,3.0,,8.0,7.0,2.0,110.0,1
+731,Astra Militarum Centaur Light Carrier,Astra Militarum,10.0,7.0,3.0,,7.0,7.0,1.0,40.0,1
+733,Astra Militarum Trojan Support Vehicle,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,2.0,80.0,1
+735,Astra Militarum Salamander Scout Vehicle,Astra Militarum,12.0,8.0,3.0,,10.0,7.0,3.0,95.0,1
+736,Astra Militarum Tauros Assault Vehicle,Astra Militarum,12.0,6.0,4.0,,6.0,7.0,2.0,50.0,1
+737,Astra Militarum Tauros Venator,Astra Militarum,12.0,6.0,4.0,,6.0,7.0,2.0,55.0,1
+739,Astra Militarum Armageddon-pattern Medusa,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,105.0,1
+740,Astra Militarum Colossus,Astra Militarum,10.0,10.0,2.0,,11.0,7.0,3.0,160.0,1
+741,Astra Militarum Cyclops Demolition Vehicle,Astra Militarum,8.0,4.0,3.0,,4.0,8.0,0.0,25.0,1
+743,Astra Militarum Earthshaker Carriage Battery,Astra Militarum,4.0,7.0,4.0,,6.0,7.0,2.0,120.0,1
+744,Astra Militarum Griffon Mortar Carrier,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,3.0,115.0,1
+745,Astra Militarum Heavy Mortar Team,Astra Militarum,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
+746,Astra Militarum Heavy Quad Launcher Team,Astra Militarum,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
+747,Astra Militarum Hydra Platform,Astra Militarum,,8.0,3.0,,8.0,7.0,2.0,95.0,1
+751,Astra Militarum Malcador Annihilator,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,270.0,1
+752,Astra Militarum Malcador Defender,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,310.0,1
+753,Astra Militarum Malcador,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,250.0,1
+754,Astra Militarum Malcador Infernus,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,235.0,1
+755,Astra Militarum Manticore Platform,Astra Militarum,,8.0,3.0,,8.0,7.0,2.0,95.0,1
+756,Astra Militarum Medusa Carriage Battery,Astra Militarum,4.0,7.0,4.0,,6.0,7.0,2.0,125.0,1
+757,Astra Militarum Rapier Laser Destroyer Battery,Astra Militarum,6.0,4.0,4.0,,3.0,7.0,1.0,105.0,3
+758,Astra Militarum Sabre Weapons Battery,Astra Militarum,,4.0,4.0,,4.0,7.0,1.0,90.0,2
+759,Astra Militarum Sentinel Powerlifter,Astra Militarum,8.0,7.0,3.0,,6.0,7.0,2.0,55.0,1
+760,Astra Militarum Stygies Destroyer Tank Hunter,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
+762,Astra Militarum Tarantula Battery,Astra Militarum,,5.0,3.0,,4.0,7.0,0.0,120.0,3
+763,Astra Militarum Stormblade,Astra Militarum,9.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
+764,Astra Militarum Arkurian Stormhammer,Astra Militarum,9.0,13.0,2.0,,24.0,7.0,8.0,480.0,1
+766,Astra Militarum Crassus,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,180.0,1
+767,Astra Militarum Dominus Armoured Siege Bombard,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,325.0,1
+768,Astra Militarum Gorgon Heavy Transport,Astra Militarum,9.0,13.0,2.0,5.0,20.0,7.0,8.0,275.0,1
+769,Astra Militarum Macharius,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
+770,Astra Militarum Macharius Omega,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
+771,Astra Militarum Macharius Vanquisher,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
+772,Astra Militarum Macharius Vulcan,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
 773,Marauder Bomber,Astra Militarum,20.0,10.0,2.0,,20.0,7.0,0.0,345.0,1
 774,Marauder Destroyer,Astra Militarum,20.0,10.0,2.0,,20.0,7.0,0.0,375.0,1
-775,Minotaur,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,225.0,1
-776,Praetor,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,275.0,1
-777,Valdor,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
+775,Astra Militarum Minotaur,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,225.0,1
+776,Astra Militarum Praetor,Astra Militarum,10.0,11.0,2.0,,18.0,7.0,5.0,275.0,1
+777,Astra Militarum Valdor,Astra Militarum,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
 778,Aquila Lander,Astra Militarum,20.0,9.0,3.0,,12.0,7.0,0.0,120.0,1
 779,Arvus Lighter,Astra Militarum,20.0,8.0,3.0,,8.0,7.0,0.0,95.0,1
 780,Avenger Strike Fighter,Astra Militarum,20.0,9.0,3.0,,14.0,7.0,0.0,130.0,1
 781,Voss-pattern Lightning,Astra Militarum,20.0,9.0,3.0,,14.0,7.0,0.0,130.0,1
 783,Vendetta Gunship,Astra Militarum,20.0,10.0,2.0,,14.0,7.0,0.0,255.0,1
 784,Vulture Gunship,Astra Militarum,20.0,10.0,2.0,,14.0,7.0,0.0,225.0,1
-889,Primaris Psyker,Astra Militarum,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
+889,Astra Militarum Primaris Psyker,Astra Militarum,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
 1237,Valkyrie Sky Talon,Astra Militarum,20.0,10.0,2.0,,14.0,7.0,0.0,185.0,1
-1383,Mukaali Riders,Astra Militarum,8.0,6.0,4.0,,5.0,7.0,2.0,110.0,2
-1394,Ministorum Priest,Astra Militarum,6.0,3.0,6.0,4.0,3.0,7.0,1.0,35.0,1
+1383,Astra Militarum Mukaali Riders,Astra Militarum,8.0,6.0,4.0,,5.0,7.0,2.0,110.0,2
+1394,Astra Militarum Ministorum Priest,Astra Militarum,6.0,3.0,6.0,4.0,3.0,7.0,1.0,35.0,1
 1396,Tech-Priest Enginseer,Astra Militarum,6.0,4.0,3.0,5.0,3.0,7.0,1.0,45.0,1
-1397,Munitorum Servitors,Astra Militarum,6.0,3.0,4.0,6.0,1.0,8.0,0.0,35.0,4
+1397,Astra Militarum Munitorum Servitors,Astra Militarum,6.0,3.0,4.0,6.0,1.0,8.0,0.0,35.0,4
 1398,Ogryn Bodyguard,Astra Militarum,6.0,6.0,5.0,,6.0,7.0,1.0,40.0,1
 1406,Sly Marbo,Astra Militarum,6.0,3.0,5.0,,4.0,7.0,1.0,55.0,1
 1596,Rein And Raus,Astra Militarum,6.0,2.0,6.0,,1.0,8.0,1.0,50.0,1
-1994,Carnodon,Astra Militarum,12.0,10.0,2.0,,12.0,7.0,3.0,160.0,1
-2374,Death Korps Grenadier Squad,Astra Militarum,6.0,3.0,4.0,,2.0,7.0,1.0,110.0,9
-2375,Quartermaster Cadre Squad,Astra Militarum,6.0,3.0,4.0,,3.0,7.0,1.0,45.0,4
-2377,Elysian Sniper Squad,Astra Militarum,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
-2378,Death Rider Commissar,Astra Militarum,12.0,4.0,4.0,5.0,4.0,6.0,1.0,35.0,1
-2379,Storm Chimera,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,2.0,90.0,1
+1994,Astra Militarum Carnodon,Astra Militarum,12.0,10.0,2.0,,12.0,7.0,3.0,160.0,1
+2374,Astra Militarum Death Korps Grenadier Squad,Astra Militarum,6.0,3.0,4.0,,2.0,7.0,1.0,110.0,9
+2375,Astra Militarum Quartermaster Cadre Squad,Astra Militarum,6.0,3.0,4.0,,3.0,7.0,1.0,45.0,4
+2377,Astra Militarum Elysian Sniper Squad,Astra Militarum,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
+2378,Astra Militarum Death Rider Commissar,Astra Militarum,12.0,4.0,4.0,5.0,4.0,6.0,1.0,35.0,1
+2379,Astra Militarum Storm Chimera,Astra Militarum,10.0,9.0,3.0,,11.0,7.0,2.0,90.0,1
 2485,Gaunt’s Ghosts,Astra Militarum,6.0,3.0,4.0,5.0,3.0,6.0,1.0,100.0,5
 2605,Lord Solar Leontus,Astra Militarum,12.0,4.0,3.0,4.0,8.0,6.0,2.0,130.0,1
 2606,Ursula Creed,Astra Militarum,6.0,3.0,4.0,5.0,4.0,7.0,1.0,85.0,1
-2607,Cadian Castellan,Astra Militarum,6.0,3.0,5.0,5.0,4.0,7.0,1.0,55.0,1
-2609,Cadian Command Squad,Astra Militarum,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
-2610,Regimental Attachés,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,1.0,40.0,1
-2612,Cadian Shock Troops,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
-2613,Death Korps Of Krieg,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,2.0,145.0,18
-2614,Catachan Jungle Fighters,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
-2615,Kasrkin,Astra Militarum,6.0,3.0,4.0,,1.0,7.0,1.0,110.0,9
-2616,Attilan Rough Riders,Astra Militarum,12.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
-2617,Rogal Dorn Battle Tank,Astra Militarum,10.0,12.0,2.0,,18.0,7.0,5.0,250.0,1
-2619,Aegis Defence Line,Astra Militarum,,12.0,2.0,,10.0,7.0,0.0,145.0,1
-2739,Earthshaker Platform,Astra Militarum,,8.0,3.0,,8.0,7.0,2.0,110.0,1
-2740,Elysian Drop Sentinel,Astra Militarum,10.0,6.0,3.0,,6.0,7.0,2.0,85.0,1
-2741,Leman Russ Eradicator,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
-2742,Leman Russ Executioner,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
-2743,Leman Russ Exterminator,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
-2744,Leman Russ Punisher,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,150.0,1
-2745,Leman Russ Vanquisher,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,145.0,1
+2607,Astra Militarum Cadian Castellan,Astra Militarum,6.0,3.0,5.0,5.0,4.0,7.0,1.0,55.0,1
+2609,Astra Militarum Cadian Command Squad,Astra Militarum,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
+2610,Astra Militarum Regimental Attachés,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,1.0,40.0,1
+2612,Astra Militarum Cadian Shock Troops,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
+2613,Astra Militarum Death Korps Of Krieg,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,2.0,145.0,18
+2614,Astra Militarum Catachan Jungle Fighters,Astra Militarum,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
+2615,Astra Militarum Kasrkin,Astra Militarum,6.0,3.0,4.0,,1.0,7.0,1.0,110.0,9
+2616,Astra Militarum Attilan Rough Riders,Astra Militarum,12.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
+2617,Astra Militarum Rogal Dorn Battle Tank,Astra Militarum,10.0,12.0,2.0,,18.0,7.0,5.0,250.0,1
+2619,Astra Militarum Aegis Defence Line,Astra Militarum,,12.0,2.0,,10.0,7.0,0.0,145.0,1
+2739,Astra Militarum Earthshaker Platform,Astra Militarum,,8.0,3.0,,8.0,7.0,2.0,110.0,1
+2740,Astra Militarum Elysian Drop Sentinel,Astra Militarum,10.0,6.0,3.0,,6.0,7.0,2.0,85.0,1
+2741,Astra Militarum Leman Russ Eradicator,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
+2742,Astra Militarum Leman Russ Executioner,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
+2743,Astra Militarum Leman Russ Exterminator,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
+2744,Astra Militarum Leman Russ Punisher,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,150.0,1
+2745,Astra Militarum Leman Russ Vanquisher,Astra Militarum,10.0,11.0,2.0,,13.0,7.0,3.0,145.0,1
 2746,Tempestus Scions,Astra Militarum,6.0,3.0,4.0,,1.0,7.0,1.0,140.0,9
 3834,Tempestus Aquilons,Astra Militarum,6.0,3.0,4.0,,1.0,7.0,1.0,100.0,9
-3889,Krieg Command Squad,Astra Militarum,6.0,3.0,5.0,,3.0,6.0,1.0,65.0,5
+3889,Astra Militarum Krieg Command Squad,Astra Militarum,6.0,3.0,5.0,,3.0,6.0,1.0,65.0,5
 3890,Lord Marshal Dreir,Astra Militarum,10.0,4.0,4.0,4.0,6.0,7.0,2.0,100.0,1
-3891,Catachan Command Squad,Astra Militarum,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
-3892,Rogal Dorn Commander,Astra Militarum,10.0,12.0,2.0,,18.0,7.0,5.0,275.0,1
-3893,Krieg Combat Engineers,Astra Militarum,6.0,3.0,4.0,,1.0,7.0,1.0,95.0,9
-3894,Catachan Heavy Weapons Squad,Astra Militarum,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
-3895,Krieg Heavy Weapons Squad,Astra Militarum,4.0,3.0,4.0,,2.0,7.0,1.0,75.0,3
-3896,Artillery Team,Astra Militarum,3.0,7.0,3.0,,10.0,7.0,3.0,95.0,1
-3897,Field Ordnance Battery,Astra Militarum,3.0,5.0,4.0,,6.0,7.0,2.0,110.0,2
-3898,Death Riders,Astra Militarum,10.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
-3922,Hell’s Last,Astra Militarum,6.0,3.0,5.0,5.0,3.0,7.0,1.0,80.0,4
+3891,Astra Militarum Catachan Command Squad,Astra Militarum,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
+3892,Astra Militarum Rogal Dorn Commander,Astra Militarum,10.0,12.0,2.0,,18.0,7.0,5.0,275.0,1
+3893,Astra Militarum Krieg Combat Engineers,Astra Militarum,6.0,3.0,4.0,,1.0,7.0,1.0,95.0,9
+3894,Astra Militarum Catachan Heavy Weapons Squad,Astra Militarum,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
+3895,Astra Militarum Krieg Heavy Weapons Squad,Astra Militarum,4.0,3.0,4.0,,2.0,7.0,1.0,75.0,3
+3896,Astra Militarum Artillery Team,Astra Militarum,3.0,7.0,3.0,,10.0,7.0,3.0,95.0,1
+3897,Astra Militarum Field Ordnance Battery,Astra Militarum,3.0,5.0,4.0,,6.0,7.0,2.0,110.0,2
+3898,Astra Militarum Death Riders,Astra Militarum,10.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
+3922,Astra Militarum Hell’s Last,Astra Militarum,6.0,3.0,5.0,5.0,3.0,7.0,1.0,80.0,4
 3937,Provisionally Prepared,Astra Militarum,6.0,2.0,6.0,,2.0,8.0,2.0,40.0,1
 870,Vindicare Assassin,Agents,7.0,4.0,6.0,4.0,4.0,6.0,1.0,125.0,1
 871,Callidus Assassin,Agents,7.0,4.0,6.0,4.0,4.0,6.0,1.0,100.0,1
@@ -310,26 +310,26 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2765,Navigator,Agents,6.0,3.0,5.0,4.0,3.0,7.0,1.0,75.0,1
 2766,UR-025,Agents,5.0,5.0,3.0,,4.0,7.0,1.0,55.0,25
 2767,Inquisitorial Agents,Agents,6.0,3.0,5.0,,1.0,7.0,1.0,120.0,10
-3812,Ministorum Priest,Agents,6.0,3.0,6.0,4.0,3.0,7.0,1.0,40.0,1
+3812,Agents Ministorum Priest,Agents,6.0,3.0,6.0,4.0,3.0,7.0,1.0,40.0,1
 3813,Grey Knights Terminator Squad,Agents,5.0,5.0,2.0,4.0,3.0,6.0,2.0,210.0,4
-3814,Watch Captain Artemis,Agents,6.0,4.0,3.0,4.0,4.0,6.0,1.0,65.0,1
-3815,Watch Master,Agents,6.0,4.0,2.0,4.0,5.0,6.0,1.0,95.0,1
+3814,Agents Watch Captain Artemis,Agents,6.0,4.0,3.0,4.0,4.0,6.0,1.0,65.0,1
+3815,Agents Watch Master,Agents,6.0,4.0,2.0,4.0,5.0,6.0,1.0,95.0,1
 3816,Deathwatch Kill Team,Agents,6.0,4.0,3.0,,2.0,6.0,2.0,190.0,9
-3817,Corvus Blackstar,Agents,20.0,10.0,3.0,,14.0,6.0,0.0,180.0,1
+3817,Agents Corvus Blackstar,Agents,20.0,10.0,3.0,,14.0,6.0,0.0,180.0,1
 3818,Sisters of Battle Squad,Agents,6.0,3.0,3.0,6.0,1.0,7.0,2.0,115.0,9
 3819,Sisters of Battle Immolator,Agents,12.0,10.0,3.0,6.0,11.0,7.0,2.0,115.0,1
 3820,Inquisitorial Chimera,Agents,10.0,9.0,3.0,,11.0,7.0,2.0,70.0,1
-3821,Kill Team Cassius,Agents,6.0,4.0,3.0,4.0,4.0,5.0,2.0,220.0,8
-3822,Deathwatch Terminator Squad,Agents,5.0,5.0,2.0,4.0,3.0,6.0,1.0,420.0,9
+3821,Agents Kill Team Cassius,Agents,6.0,4.0,3.0,4.0,4.0,5.0,2.0,220.0,8
+3822,Agents Deathwatch Terminator Squad,Agents,5.0,5.0,2.0,4.0,3.0,6.0,1.0,420.0,9
 3823,Veteran Bike Squad,Agents,12.0,5.0,3.0,,3.0,6.0,2.0,140.0,5
 3824,Proteus Kill Team,Agents,12.0,5.0,3.0,,3.0,6.0,2.0,320.0,10
-3825,Fortis Kill Team,Agents,12.0,5.0,3.0,,4.0,6.0,2.0,200.0,10
-3826,Indomitor Kill Team,Agents,5.0,6.0,3.0,,3.0,6.0,1.0,240.0,10
-3827,Spectrus Kill Team,Agents,6.0,4.0,3.0,,2.0,6.0,1.0,180.0,10
+3825,Agents Fortis Kill Team,Agents,12.0,5.0,3.0,,4.0,6.0,2.0,200.0,10
+3826,Agents Indomitor Kill Team,Agents,5.0,6.0,3.0,,3.0,6.0,1.0,240.0,10
+3827,Agents Spectrus Kill Team,Agents,6.0,4.0,3.0,,2.0,6.0,1.0,180.0,10
 3828,Daemonhost,Agents,6.0,3.0,5.0,5.0,3.0,7.0,0.0,80.0,2
 3829,Jokaero Weaponsmith,Agents,6.0,3.0,5.0,4.0,2.0,7.0,0.0,30.0,1
 3830,Imperial Rhino,Agents,12.0,9.0,3.0,,10.0,6.0,2.0,75.0,1
-4074,Sanctifiers,Agents,6.0,3.0,6.0,5.0,1.0,7.0,1.0,100.0,4
+4074,Agents Sanctifiers,Agents,6.0,3.0,6.0,5.0,1.0,7.0,1.0,100.0,4
 894,Crusaders,Adepta Sororitas,6.0,3.0,3.0,4.0,2.0,7.0,1.0,80.0,4
 895,Death Cult Assassins,Adepta Sororitas,7.0,3.0,5.0,5.0,2.0,7.0,1.0,110.0,4
 896,Arco-flagellants,Adepta Sororitas,7.0,3.0,7.0,6.0,2.0,8.0,1.0,140.0,10
@@ -348,7 +348,7 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 911,Immolator,Adepta Sororitas,12.0,10.0,3.0,6.0,11.0,7.0,2.0,115.0,1
 912,Exorcist,Adepta Sororitas,10.0,10.0,3.0,6.0,11.0,7.0,3.0,210.0,1
 1199,Repressor,Adepta Sororitas,12.0,10.0,3.0,6.0,12.0,7.0,2.0,130.0,1
-1553,Ministorum Priest,Adepta Sororitas,6.0,3.0,6.0,4.0,3.0,7.0,1.0,50.0,1
+1553,Adepta Sororitas Ministorum Priest,Adepta Sororitas,6.0,3.0,6.0,4.0,3.0,7.0,1.0,50.0,1
 2063,Triumph Of Saint Katherine,Adepta Sororitas,6.0,3.0,3.0,4.0,18.0,6.0,6.0,235.0,1
 2064,Junith Eruita,Adepta Sororitas,8.0,5.0,2.0,4.0,8.0,6.0,2.0,80.0,1
 2066,Zephyrim Squad,Adepta Sororitas,12.0,3.0,3.0,5.0,1.0,7.0,1.0,160.0,9
@@ -365,38 +365,38 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2771,Daemonifuge,Adepta Sororitas,8.0,3.0,3.0,4.0,5.0,7.0,1.0,85.0,1
 3714,Canoness with Jump Pack,Adepta Sororitas,12.0,3.0,3.0,4.0,3.0,7.0,1.0,75.0,1
 3811,Celestian Sacresant Aveline,Adepta Sororitas,6.0,3.0,3.0,4.0,4.0,7.0,1.0,45.0,1
-4075,Sanctifiers,Adepta Sororitas,6.0,3.0,6.0,5.0,1.0,7.0,1.0,100.0,4
+4075,Adepta Sororitas Sanctifiers,Adepta Sororitas,6.0,3.0,6.0,5.0,1.0,7.0,1.0,100.0,4
 1104,Karanak,Chaos Daemons,12.0,4.0,7.0,4.0,5.0,7.0,3.0,75.0,1
-1105,Skarbrand,Chaos Daemons,10.0,11.0,3.0,4.0,20.0,6.0,5.0,305.0,1
+1105,Chaos Daemons Skarbrand,Chaos Daemons,10.0,11.0,3.0,4.0,20.0,6.0,5.0,305.0,1
 1106,Skulltaker,Chaos Daemons,8.0,4.0,4.0,4.0,5.0,7.0,1.0,85.0,1
 1111,Rendmaster On Blood Throne,Chaos Daemons,8.0,9.0,4.0,4.0,9.0,7.0,3.0,165.0,1
-1112,Flesh Hounds,Chaos Daemons,12.0,4.0,7.0,5.0,2.0,7.0,1.0,150.0,9
-1114,Bloodletters,Chaos Daemons,8.0,4.0,7.0,5.0,1.0,7.0,2.0,110.0,9
-1115,Bloodcrushers,Chaos Daemons,10.0,7.0,3.0,5.0,4.0,7.0,2.0,220.0,5
+1112,Chaos Daemons Flesh Hounds,Chaos Daemons,12.0,4.0,7.0,5.0,2.0,7.0,1.0,150.0,9
+1114,Chaos Daemons Bloodletters,Chaos Daemons,8.0,4.0,7.0,5.0,1.0,7.0,2.0,110.0,9
+1115,Chaos Daemons Bloodcrushers,Chaos Daemons,10.0,7.0,3.0,5.0,4.0,7.0,2.0,220.0,5
 1116,Skull Cannon,Chaos Daemons,8.0,9.0,4.0,4.0,9.0,7.0,3.0,95.0,1
-1117,Kairos Fateweaver,Chaos Daemons,12.0,10.0,6.0,4.0,20.0,6.0,5.0,270.0,1
+1117,Chaos Daemons Kairos Fateweaver,Chaos Daemons,12.0,10.0,6.0,4.0,20.0,6.0,5.0,270.0,1
 1118,The Changeling,Chaos Daemons,6.0,3.0,7.0,4.0,5.0,7.0,1.0,90.0,1
 1119,The Blue Scribes,Chaos Daemons,12.0,4.0,6.0,4.0,6.0,8.0,2.0,75.0,1
-1120,Lord of Change,Chaos Daemons,12.0,10.0,6.0,4.0,18.0,6.0,5.0,260.0,1
-1125,Flamers,Chaos Daemons,9.0,4.0,7.0,4.0,3.0,7.0,1.0,130.0,5
+1120,Chaos Daemons Lord of Change,Chaos Daemons,12.0,10.0,6.0,4.0,18.0,6.0,5.0,260.0,1
+1125,Chaos Daemons Flamers,Chaos Daemons,9.0,4.0,7.0,4.0,3.0,7.0,1.0,130.0,5
 1126,Exalted Flamer,Chaos Daemons,9.0,4.0,7.0,4.0,6.0,7.0,1.0,65.0,1
-1127,Screamers,Chaos Daemons,14.0,4.0,6.0,4.0,3.0,7.0,1.0,160.0,6
+1127,Chaos Daemons Screamers,Chaos Daemons,14.0,4.0,6.0,4.0,3.0,7.0,1.0,160.0,6
 1128,Burning Chariot,Chaos Daemons,12.0,8.0,7.0,4.0,9.0,7.0,3.0,115.0,1
 1129,Epidemius,Chaos Daemons,5.0,5.0,6.0,5.0,8.0,7.0,2.0,80.0,1
-1130,Great Unclean One,Chaos Daemons,7.0,12.0,5.0,4.0,20.0,6.0,5.0,250.0,1
-1132,Plaguebearers,Chaos Daemons,5.0,5.0,7.0,5.0,2.0,7.0,2.0,110.0,9
-1133,Nurglings,Chaos Daemons,5.0,3.0,7.0,5.0,4.0,8.0,0.0,70.0,6
+1130,Chaos Daemons Great Unclean One,Chaos Daemons,7.0,12.0,5.0,4.0,20.0,6.0,5.0,250.0,1
+1132,Chaos Daemons Plaguebearers,Chaos Daemons,5.0,5.0,7.0,5.0,2.0,7.0,2.0,110.0,9
+1133,Chaos Daemons Nurglings,Chaos Daemons,5.0,3.0,7.0,5.0,4.0,8.0,0.0,70.0,6
 1134,Beasts Of Nurgle,Chaos Daemons,6.0,9.0,6.0,5.0,7.0,7.0,3.0,130.0,2
-1135,Plague Drones,Chaos Daemons,10.0,8.0,6.0,5.0,5.0,7.0,2.0,220.0,5
+1135,Chaos Daemons Plague Drones,Chaos Daemons,10.0,8.0,6.0,5.0,5.0,7.0,2.0,220.0,5
 1136,The Masque Of Slaanesh,Chaos Daemons,9.0,3.0,7.0,4.0,4.0,7.0,1.0,95.0,1
 1137,Keeper Of Secrets,Chaos Daemons,14.0,10.0,5.0,4.0,18.0,6.0,5.0,270.0,1
 1138,Tranceweaver,Chaos Daemons,9.0,3.0,7.0,5.0,3.0,7.0,1.0,60.0,1
 1139,Herald Of Slaanesh On Steed Of Slaanesh,Chaos Daemons,14.0,4.0,7.0,5.0,4.0,7.0,2.0,70.0,1
 1141,Tormentbringer On Exalted Seeker Chariot,Chaos Daemons,14.0,6.0,5.0,4.0,12.0,7.0,3.0,140.0,1
-1142,Daemonettes,Chaos Daemons,9.0,3.0,7.0,5.0,1.0,7.0,2.0,100.0,9
-1143,Fiends,Chaos Daemons,12.0,5.0,7.0,5.0,4.0,7.0,2.0,190.0,5
+1142,Chaos Daemons Daemonettes,Chaos Daemons,9.0,3.0,7.0,5.0,1.0,7.0,2.0,100.0,9
+1143,Chaos Daemons Fiends,Chaos Daemons,12.0,5.0,7.0,5.0,4.0,7.0,2.0,190.0,5
 1144,Hellflayers,Chaos Daemons,14.0,6.0,5.0,4.0,7.0,7.0,3.0,160.0,2
-1145,Seekers,Chaos Daemons,14.0,4.0,7.0,5.0,2.0,7.0,1.0,160.0,9
+1145,Chaos Daemons Seekers,Chaos Daemons,14.0,4.0,7.0,5.0,2.0,7.0,1.0,160.0,9
 1146,Seeker Chariot,Chaos Daemons,14.0,6.0,5.0,4.0,7.0,7.0,3.0,130.0,2
 1147,Exalted Seeker Chariot,Chaos Daemons,14.0,6.0,5.0,4.0,12.0,7.0,5.0,115.0,1
 1148,Be’lakor,Chaos Daemons,12.0,11.0,3.0,4.0,20.0,6.0,5.0,375.0,1
@@ -416,7 +416,7 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1462,Changecaster,Chaos Daemons,6.0,3.0,6.0,4.0,3.0,7.0,1.0,60.0,1
 1463,Fateskimmer,Chaos Daemons,12.0,7.0,6.0,4.0,9.0,7.0,3.0,95.0,1
 1464,Fluxmaster,Chaos Daemons,12.0,4.0,6.0,4.0,4.0,7.0,1.0,60.0,1
-1465,Rotigus,Chaos Daemons,7.0,12.0,5.0,4.0,22.0,6.0,5.0,250.0,1
+1465,Chaos Daemons Rotigus,Chaos Daemons,7.0,12.0,5.0,4.0,22.0,6.0,5.0,250.0,1
 1466,Horticulous Slimux,Chaos Daemons,6.0,10.0,3.0,4.0,10.0,7.0,2.0,120.0,1
 1467,Poxbringer,Chaos Daemons,5.0,5.0,7.0,5.0,5.0,7.0,1.0,55.0,1
 1468,Sloppity Bilepiper,Chaos Daemons,5.0,5.0,7.0,5.0,5.0,7.0,1.0,55.0,1
@@ -425,50 +425,50 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1588,Skull Altar,Chaos Daemons,,12.0,3.0,,10.0,7.0,0.0,105.0,1
 1589,Infernal Enrapturess,Chaos Daemons,9.0,3.0,7.0,5.0,3.0,7.0,1.0,60.0,1
 1647,Contorted Epitome,Chaos Daemons,9.0,6.0,5.0,4.0,8.0,7.0,2.0,100.0,1
-1648,Shalaxi Helbane,Chaos Daemons,14.0,10.0,3.0,4.0,20.0,6.0,5.0,380.0,1
+1648,Chaos Daemons Shalaxi Helbane,Chaos Daemons,14.0,10.0,3.0,4.0,20.0,6.0,5.0,380.0,1
 1649,Syll’esske,Chaos Daemons,9.0,6.0,6.0,4.0,9.0,6.0,2.0,120.0,1
-2582,Bloodthirster,Chaos Daemons,12.0,11.0,3.0,4.0,18.0,6.0,5.0,305.0,1
-2583,Blue Horrors,Chaos Daemons,6.0,3.0,7.0,4.0,1.0,8.0,1.0,125.0,10
-2584,Pink Horrors,Chaos Daemons,6.0,3.0,7.0,4.0,1.0,7.0,2.0,140.0,10
+2582,Chaos Daemons Bloodthirster,Chaos Daemons,12.0,11.0,3.0,4.0,18.0,6.0,5.0,305.0,1
+2583,Chaos Daemons Blue Horrors,Chaos Daemons,6.0,3.0,7.0,4.0,1.0,8.0,1.0,125.0,10
+2584,Chaos Daemons Pink Horrors,Chaos Daemons,6.0,3.0,7.0,4.0,1.0,7.0,2.0,140.0,10
 2758,Daemon Prince Of Chaos With Wings,Chaos Daemons,12.0,9.0,2.0,4.0,10.0,6.0,3.0,180.0,1
-4036,Chaos Lord,Chaos Daemons,6.0,4.0,3.0,4.0,5.0,6.0,1.0,90.0,1
-4037,Chaos Lord In Terminator Armour,Chaos Daemons,5.0,5.0,2.0,4.0,6.0,6.0,1.0,95.0,1
-4038,Chaos Lord with Jump Pack,Chaos Daemons,12.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
-4039,Chaos Lord On Disc Of Tzeentch,Chaos Daemons,12.0,4.0,3.0,4.0,6.0,6.0,1.0,100.0,1
-4040,Chaos Lord On Juggernaut,Chaos Daemons,10.0,6.0,2.0,4.0,7.0,6.0,2.0,115.0,1
-4041,Chaos Lord On Palanquin Of Nurgle,Chaos Daemons,5.0,5.0,3.0,4.0,8.0,6.0,2.0,90.0,1
-4042,Chaos Lord On Steed Of Slaanesh,Chaos Daemons,14.0,5.0,3.0,4.0,6.0,6.0,2.0,100.0,1
-4043,Chaos Terminator Squad,Chaos Daemons,5.0,5.0,2.0,4.0,3.0,6.0,1.0,360.0,9
-4044,Chosen,Chaos Daemons,6.0,4.0,3.0,,3.0,6.0,1.0,250.0,9
-4045,Cultist Firebrand,Chaos Daemons,6.0,4.0,4.0,,4.0,6.0,1.0,45.0,1
-4046,Dark Commune,Chaos Daemons,6.0,3.0,6.0,,4.0,6.0,1.0,90.0,2
-4047,Traitor Enforcer,Chaos Daemons,6.0,6.0,5.0,,4.0,7.0,1.0,55.0,1
-4048,Renegade Enforcer,Chaos Daemons,6.0,3.0,5.0,5.0,3.0,6.0,1.0,65.0,1
-4049,Rogue Psyker,Chaos Daemons,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
-4050,Cultist Mob,Chaos Daemons,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
-4051,Cultist Mob with Firearms,Chaos Daemons,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
-4052,Accursed Cultists,Chaos Daemons,6.0,4.0,6.0,,3.0,7.0,1.0,195.0,10
-4053,Fellgor Beastmen,Chaos Daemons,6.0,4.0,5.0,,1.0,7.0,1.0,70.0,9
-4054,Traitor Guardsmen Squad,Chaos Daemons,6.0,3.0,5.0,,1.0,7.0,2.0,70.0,9
-4055,Gellerpox Infected,Chaos Daemons,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
-4056,Mutoid Vermin,Chaos Daemons,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
-4057,Negavolt Cultists,Chaos Daemons,6.0,3.0,7.0,5.0,1.0,7.0,1.0,55.0,4
-4058,Renegade Heavy Weapons Squad,Chaos Daemons,6.0,3.0,5.0,,2.0,7.0,2.0,75.0,3
-4059,Renegade Ogryn Beast Handler,Chaos Daemons,6.0,6.0,5.0,,4.0,7.0,1.0,70.0,3
-4060,Renegade Ogryn Brutes,Chaos Daemons,6.0,6.0,5.0,,3.0,7.0,1.0,95.0,3
-4061,Renegade Plague Ogryns,Chaos Daemons,5.0,7.0,5.0,,3.0,7.0,1.0,95.0,3
-4062,Dark Apostle,Chaos Daemons,6.0,4.0,3.0,4.0,4.0,5.0,1.0,65.0,2
-4063,Havocs,Chaos Daemons,5.0,5.0,3.0,,2.0,6.0,1.0,125.0,4
-4064,Legionaries,Chaos Daemons,6.0,4.0,3.0,,2.0,6.0,2.0,170.0,9
-4065,Master Of Possession,Chaos Daemons,8.0,4.0,3.0,5.0,4.0,6.0,1.0,60.0,1
-4066,Possessed,Chaos Daemons,9.0,6.0,3.0,5.0,3.0,6.0,1.0,240.0,9
-4067,Raptors,Chaos Daemons,12.0,4.0,3.0,,2.0,6.0,1.0,170.0,9
-4068,Sorcerer,Chaos Daemons,6.0,4.0,3.0,,4.0,6.0,1.0,60.0,1
-4069,Sorcerer On Disc Of Tzeentch,Chaos Daemons,12.0,4.0,3.0,,5.0,6.0,1.0,80.0,1
-4070,Sorcerer On Palanquin Of Nurgle,Chaos Daemons,5.0,5.0,3.0,,7.0,6.0,2.0,80.0,1
-4071,Sorcerer On Steed Of Slaanesh,Chaos Daemons,14.0,5.0,3.0,,5.0,6.0,2.0,85.0,1
-4072,Sorcerer In Terminator Armour,Chaos Daemons,5.0,5.0,2.0,4.0,5.0,6.0,1.0,80.0,1
-4073,Warp Talons,Chaos Daemons,12.0,4.0,3.0,5.0,2.0,6.0,1.0,270.0,9
+4036,Chaos Daemons Chaos Lord,Chaos Daemons,6.0,4.0,3.0,4.0,5.0,6.0,1.0,90.0,1
+4037,Chaos Daemons Chaos Lord In Terminator Armour,Chaos Daemons,5.0,5.0,2.0,4.0,6.0,6.0,1.0,95.0,1
+4038,Chaos Daemons Chaos Lord with Jump Pack,Chaos Daemons,12.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
+4039,Chaos Daemons Chaos Lord On Disc Of Tzeentch,Chaos Daemons,12.0,4.0,3.0,4.0,6.0,6.0,1.0,100.0,1
+4040,Chaos Daemons Chaos Lord On Juggernaut,Chaos Daemons,10.0,6.0,2.0,4.0,7.0,6.0,2.0,115.0,1
+4041,Chaos Daemons Chaos Lord On Palanquin Of Nurgle,Chaos Daemons,5.0,5.0,3.0,4.0,8.0,6.0,2.0,90.0,1
+4042,Chaos Daemons Chaos Lord On Steed Of Slaanesh,Chaos Daemons,14.0,5.0,3.0,4.0,6.0,6.0,2.0,100.0,1
+4043,Chaos Daemons Chaos Terminator Squad,Chaos Daemons,5.0,5.0,2.0,4.0,3.0,6.0,1.0,360.0,9
+4044,Chaos Daemons Chosen,Chaos Daemons,6.0,4.0,3.0,,3.0,6.0,1.0,250.0,9
+4045,Chaos Daemons Cultist Firebrand,Chaos Daemons,6.0,4.0,4.0,,4.0,6.0,1.0,45.0,1
+4046,Chaos Daemons Dark Commune,Chaos Daemons,6.0,3.0,6.0,,4.0,6.0,1.0,90.0,2
+4047,Chaos Daemons Traitor Enforcer,Chaos Daemons,6.0,6.0,5.0,,4.0,7.0,1.0,55.0,1
+4048,Chaos Daemons Renegade Enforcer,Chaos Daemons,6.0,3.0,5.0,5.0,3.0,6.0,1.0,65.0,1
+4049,Chaos Daemons Rogue Psyker,Chaos Daemons,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
+4050,Chaos Daemons Cultist Mob,Chaos Daemons,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
+4051,Chaos Daemons Cultist Mob with Firearms,Chaos Daemons,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
+4052,Chaos Daemons Accursed Cultists,Chaos Daemons,6.0,4.0,6.0,,3.0,7.0,1.0,195.0,10
+4053,Chaos Daemons Fellgor Beastmen,Chaos Daemons,6.0,4.0,5.0,,1.0,7.0,1.0,70.0,9
+4054,Chaos Daemons Traitor Guardsmen Squad,Chaos Daemons,6.0,3.0,5.0,,1.0,7.0,2.0,70.0,9
+4055,Chaos Daemons Gellerpox Infected,Chaos Daemons,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
+4056,Chaos Daemons Mutoid Vermin,Chaos Daemons,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
+4057,Chaos Daemons Negavolt Cultists,Chaos Daemons,6.0,3.0,7.0,5.0,1.0,7.0,1.0,55.0,4
+4058,Chaos Daemons Renegade Heavy Weapons Squad,Chaos Daemons,6.0,3.0,5.0,,2.0,7.0,2.0,75.0,3
+4059,Chaos Daemons Renegade Ogryn Beast Handler,Chaos Daemons,6.0,6.0,5.0,,4.0,7.0,1.0,70.0,3
+4060,Chaos Daemons Renegade Ogryn Brutes,Chaos Daemons,6.0,6.0,5.0,,3.0,7.0,1.0,95.0,3
+4061,Chaos Daemons Renegade Plague Ogryns,Chaos Daemons,5.0,7.0,5.0,,3.0,7.0,1.0,95.0,3
+4062,Chaos Daemons Dark Apostle,Chaos Daemons,6.0,4.0,3.0,4.0,4.0,5.0,1.0,65.0,2
+4063,Chaos Daemons Havocs,Chaos Daemons,5.0,5.0,3.0,,2.0,6.0,1.0,125.0,4
+4064,Chaos Daemons Legionaries,Chaos Daemons,6.0,4.0,3.0,,2.0,6.0,2.0,170.0,9
+4065,Chaos Daemons Master Of Possession,Chaos Daemons,8.0,4.0,3.0,5.0,4.0,6.0,1.0,60.0,1
+4066,Chaos Daemons Possessed,Chaos Daemons,9.0,6.0,3.0,5.0,3.0,6.0,1.0,240.0,9
+4067,Chaos Daemons Raptors,Chaos Daemons,12.0,4.0,3.0,,2.0,6.0,1.0,170.0,9
+4068,Chaos Daemons Sorcerer,Chaos Daemons,6.0,4.0,3.0,,4.0,6.0,1.0,60.0,1
+4069,Chaos Daemons Sorcerer On Disc Of Tzeentch,Chaos Daemons,12.0,4.0,3.0,,5.0,6.0,1.0,80.0,1
+4070,Chaos Daemons Sorcerer On Palanquin Of Nurgle,Chaos Daemons,5.0,5.0,3.0,,7.0,6.0,2.0,80.0,1
+4071,Chaos Daemons Sorcerer On Steed Of Slaanesh,Chaos Daemons,14.0,5.0,3.0,,5.0,6.0,2.0,85.0,1
+4072,Chaos Daemons Sorcerer In Terminator Armour,Chaos Daemons,5.0,5.0,2.0,4.0,5.0,6.0,1.0,80.0,1
+4073,Chaos Daemons Warp Talons,Chaos Daemons,12.0,4.0,3.0,5.0,2.0,6.0,1.0,270.0,9
 4100,Tormentbringer,Chaos Daemons,14.0,6.0,5.0,4.0,12.0,7.0,3.0,140.0,1
 4101,Hellflayer,Chaos Daemons,14.0,6.0,5.0,4.0,7.0,7.0,3.0,210.0,2
 4102,Karanak,Chaos Daemons,12.0,4.0,7.0,4.0,5.0,7.0,1.0,65.0,1
@@ -476,117 +476,117 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 925,Huron Blackheart,Chaos Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
 926,Cypher,Chaos Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,90.0,1
 928,Fabius Bile,Chaos Space Marines,6.0,4.0,3.0,,5.0,6.0,1.0,85.0,1
-929,Chaos Lord,Chaos Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,90.0,1
-930,Chaos Lord In Terminator Armour,Chaos Space Marines,5.0,5.0,2.0,4.0,6.0,6.0,1.0,95.0,1
+929,Chaos Space Marines Chaos Lord,Chaos Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,90.0,1
+930,Chaos Space Marines Chaos Lord In Terminator Armour,Chaos Space Marines,5.0,5.0,2.0,4.0,6.0,6.0,1.0,95.0,1
 931,Chaos Lord On Bike,Chaos Space Marines,12.0,5.0,3.0,4.0,6.0,6.0,2.0,95.0,1
-932,Chaos Lord On Juggernaut,Chaos Space Marines,10.0,6.0,2.0,4.0,7.0,6.0,2.0,115.0,1
-933,Chaos Lord On Disc Of Tzeentch,Chaos Space Marines,12.0,4.0,3.0,4.0,6.0,6.0,1.0,100.0,1
-934,Chaos Lord On Palanquin Of Nurgle,Chaos Space Marines,5.0,5.0,3.0,4.0,8.0,6.0,2.0,90.0,1
-935,Chaos Lord On Steed Of Slaanesh,Chaos Space Marines,14.0,5.0,3.0,4.0,6.0,6.0,2.0,100.0,1
-936,Dark Apostle,Chaos Space Marines,6.0,4.0,3.0,4.0,4.0,5.0,1.0,65.0,2
+932,Chaos Space Marines Chaos Lord On Juggernaut,Chaos Space Marines,10.0,6.0,2.0,4.0,7.0,6.0,2.0,115.0,1
+933,Chaos Space Marines Chaos Lord On Disc Of Tzeentch,Chaos Space Marines,12.0,4.0,3.0,4.0,6.0,6.0,1.0,100.0,1
+934,Chaos Space Marines Chaos Lord On Palanquin Of Nurgle,Chaos Space Marines,5.0,5.0,3.0,4.0,8.0,6.0,2.0,90.0,1
+935,Chaos Space Marines Chaos Lord On Steed Of Slaanesh,Chaos Space Marines,14.0,5.0,3.0,4.0,6.0,6.0,2.0,100.0,1
+936,Chaos Space Marines Dark Apostle,Chaos Space Marines,6.0,4.0,3.0,4.0,4.0,5.0,1.0,65.0,2
 937,Heretic Astartes Daemon Prince,Chaos Space Marines,8.0,10.0,2.0,4.0,10.0,6.0,3.0,165.0,1
-938,Sorcerer,Chaos Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,60.0,1
-939,Sorcerer In Terminator Armour,Chaos Space Marines,5.0,5.0,2.0,4.0,5.0,6.0,1.0,80.0,1
+938,Chaos Space Marines Sorcerer,Chaos Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,60.0,1
+939,Chaos Space Marines Sorcerer In Terminator Armour,Chaos Space Marines,5.0,5.0,2.0,4.0,5.0,6.0,1.0,80.0,1
 940,Sorcerer On Bike,Chaos Space Marines,12.0,5.0,3.0,,5.0,6.0,2.0,75.0,1
-941,Sorcerer On Disc Of Tzeentch,Chaos Space Marines,12.0,4.0,3.0,,5.0,6.0,1.0,80.0,1
-942,Sorcerer On Palanquin Of Nurgle,Chaos Space Marines,5.0,5.0,3.0,,7.0,6.0,2.0,80.0,1
-943,Sorcerer On Steed Of Slaanesh,Chaos Space Marines,14.0,5.0,3.0,,5.0,6.0,2.0,85.0,1
+941,Chaos Space Marines Sorcerer On Disc Of Tzeentch,Chaos Space Marines,12.0,4.0,3.0,,5.0,6.0,1.0,80.0,1
+942,Chaos Space Marines Sorcerer On Palanquin Of Nurgle,Chaos Space Marines,5.0,5.0,3.0,,7.0,6.0,2.0,80.0,1
+943,Chaos Space Marines Sorcerer On Steed Of Slaanesh,Chaos Space Marines,14.0,5.0,3.0,,5.0,6.0,2.0,85.0,1
 944,Warpsmith,Chaos Space Marines,6.0,4.0,2.0,,4.0,6.0,1.0,70.0,1
-946,Cultist Mob,Chaos Space Marines,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
-947,Chaos Terminator Squad,Chaos Space Marines,5.0,5.0,2.0,4.0,3.0,6.0,1.0,360.0,9
-952,Chosen,Chaos Space Marines,6.0,4.0,3.0,,3.0,6.0,1.0,250.0,9
-953,Possessed,Chaos Space Marines,9.0,6.0,3.0,5.0,3.0,6.0,1.0,240.0,9
-954,Helbrute,Chaos Space Marines,6.0,9.0,2.0,,8.0,6.0,3.0,130.0,1
+946,Chaos Space Marines Cultist Mob,Chaos Space Marines,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
+947,Chaos Space Marines Chaos Terminator Squad,Chaos Space Marines,5.0,5.0,2.0,4.0,3.0,6.0,1.0,360.0,9
+952,Chaos Space Marines Chosen,Chaos Space Marines,6.0,4.0,3.0,,3.0,6.0,1.0,250.0,9
+953,Chaos Space Marines Possessed,Chaos Space Marines,9.0,6.0,3.0,5.0,3.0,6.0,1.0,240.0,9
+954,Chaos Space Marines Helbrute,Chaos Space Marines,6.0,9.0,2.0,,8.0,6.0,3.0,130.0,1
 955,Mutilators,Chaos Space Marines,4.0,7.0,2.0,5.0,4.0,6.0,2.0,185.0,3
-956,Chaos Rhino,Chaos Space Marines,12.0,9.0,3.0,,10.0,6.0,2.0,75.0,1
+956,Chaos Space Marines Chaos Rhino,Chaos Space Marines,12.0,9.0,3.0,,10.0,6.0,2.0,75.0,1
 957,Chaos Bikers,Chaos Space Marines,12.0,5.0,3.0,,3.0,6.0,2.0,130.0,5
-958,Raptors,Chaos Space Marines,12.0,4.0,3.0,,2.0,6.0,1.0,170.0,9
-959,Warp Talons,Chaos Space Marines,12.0,4.0,3.0,5.0,2.0,6.0,1.0,270.0,9
-960,Chaos Spawn,Chaos Space Marines,8.0,5.0,4.0,,4.0,7.0,0.0,70.0,2
-961,Heldrake,Chaos Space Marines,20.0,9.0,3.0,5.0,12.0,6.0,0.0,205.0,1
-962,Chaos Land Raider,Chaos Space Marines,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
-963,Chaos Predator Destructor,Chaos Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,140.0,1
-964,Chaos Vindicator,Chaos Space Marines,9.0,11.0,2.0,,11.0,6.0,3.0,185.0,1
+958,Chaos Space Marines Raptors,Chaos Space Marines,12.0,4.0,3.0,,2.0,6.0,1.0,170.0,9
+959,Chaos Space Marines Warp Talons,Chaos Space Marines,12.0,4.0,3.0,5.0,2.0,6.0,1.0,270.0,9
+960,Chaos Space Marines Chaos Spawn,Chaos Space Marines,8.0,5.0,4.0,,4.0,7.0,0.0,70.0,2
+961,Chaos Space Marines Heldrake,Chaos Space Marines,20.0,9.0,3.0,5.0,12.0,6.0,0.0,205.0,1
+962,Chaos Space Marines Chaos Land Raider,Chaos Space Marines,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+963,Chaos Space Marines Chaos Predator Destructor,Chaos Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,140.0,1
+964,Chaos Space Marines Chaos Vindicator,Chaos Space Marines,9.0,11.0,2.0,,11.0,6.0,3.0,185.0,1
 965,Obliterators,Chaos Space Marines,4.0,7.0,2.0,5.0,5.0,6.0,2.0,160.0,2
-966,Havocs,Chaos Space Marines,5.0,5.0,3.0,,2.0,6.0,1.0,125.0,4
-967,Forgefiend,Chaos Space Marines,8.0,10.0,3.0,5.0,12.0,6.0,3.0,180.0,1
-968,Maulerfiend,Chaos Space Marines,10.0,10.0,3.0,5.0,12.0,6.0,3.0,130.0,1
-969,Defiler,Chaos Space Marines,8.0,10.0,3.0,5.0,14.0,6.0,5.0,190.0,1
+966,Chaos Space Marines Havocs,Chaos Space Marines,5.0,5.0,3.0,,2.0,6.0,1.0,125.0,4
+967,Chaos Space Marines Forgefiend,Chaos Space Marines,8.0,10.0,3.0,5.0,12.0,6.0,3.0,180.0,1
+968,Chaos Space Marines Maulerfiend,Chaos Space Marines,10.0,10.0,3.0,5.0,12.0,6.0,3.0,130.0,1
+969,Chaos Space Marines Defiler,Chaos Space Marines,8.0,10.0,3.0,5.0,14.0,6.0,5.0,190.0,1
 970,Khorne Lord Of Skulls,Chaos Space Marines,8.0,13.0,3.0,5.0,24.0,6.0,8.0,450.0,1
-1293,Blood Slaughterer,Chaos Space Marines,12.0,9.0,3.0,5.0,10.0,6.0,3.0,160.0,1
-1294,Greater Blight Drone,Chaos Space Marines,10.0,9.0,3.0,5.0,10.0,6.0,3.0,150.0,1
+1293,Chaos Space Marines Blood Slaughterer,Chaos Space Marines,12.0,9.0,3.0,5.0,10.0,6.0,3.0,160.0,1
+1294,Chaos Space Marines Greater Blight Drone,Chaos Space Marines,10.0,9.0,3.0,5.0,10.0,6.0,3.0,150.0,1
 1295,Decimator,Chaos Space Marines,10.0,10.0,3.0,5.0,12.0,6.0,4.0,170.0,1
-1297,Kytan Ravager,Chaos Space Marines,10.0,12.0,3.0,5.0,24.0,6.0,10.0,425.0,1
-1298,Greater Brass Scorpion,Chaos Space Marines,12.0,12.0,3.0,5.0,26.0,6.0,10.0,560.0,1
+1297,Chaos Space Marines Kytan Ravager,Chaos Space Marines,10.0,12.0,3.0,5.0,24.0,6.0,10.0,425.0,1
+1298,Chaos Space Marines Greater Brass Scorpion,Chaos Space Marines,12.0,12.0,3.0,5.0,26.0,6.0,10.0,560.0,1
 1302,Chaos Deimos Predator,Chaos Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
 1310,Dreadclaw Drop Pod,Chaos Space Marines,12.0,7.0,3.0,,9.0,6.0,2.0,115.0,1
 1311,Kharybdis Assault Claw,Chaos Space Marines,12.0,11.0,3.0,,20.0,6.0,4.0,325.0,1
-1317,Hell Blade,Chaos Space Marines,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
-1318,Hell Talon,Chaos Space Marines,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
-1321,Chaos Thunderhawk,Chaos Space Marines,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
+1317,Chaos Space Marines Hell Blade,Chaos Space Marines,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
+1318,Chaos Space Marines Hell Talon,Chaos Space Marines,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
+1321,Chaos Space Marines Chaos Thunderhawk,Chaos Space Marines,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
 1355,Exalted Champion,Chaos Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,70.0,1
 1556,Haarken Worldclaimer,Chaos Space Marines,12.0,4.0,3.0,4.0,5.0,6.0,1.0,90.0,1
-1581,Master Of Possession,Chaos Space Marines,8.0,4.0,3.0,5.0,4.0,6.0,1.0,60.0,1
+1581,Chaos Space Marines Master Of Possession,Chaos Space Marines,8.0,4.0,3.0,5.0,4.0,6.0,1.0,60.0,1
 1583,Lord Discordant On Helstalker,Chaos Space Marines,14.0,9.0,2.0,4.0,10.0,6.0,4.0,160.0,1
 1584,Master Of Executions,Chaos Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,80.0,1
 1586,Venomcrawler,Chaos Space Marines,12.0,9.0,3.0,5.0,9.0,6.0,3.0,110.0,1
 1587,Noctilith Crown,Chaos Space Marines,,11.0,3.0,,14.0,6.0,0.0,125.0,1
-1600,Rogue Psyker,Chaos Space Marines,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
-1601,Negavolt Cultists,Chaos Space Marines,6.0,3.0,7.0,5.0,1.0,7.0,1.0,55.0,4
-1604,Fellgor Beastmen,Chaos Space Marines,6.0,4.0,5.0,,1.0,7.0,1.0,70.0,9
-2569,Dark Commune,Chaos Space Marines,6.0,3.0,6.0,,4.0,6.0,1.0,90.0,2
-2570,Legionaries,Chaos Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,170.0,9
-2571,Accursed Cultists,Chaos Space Marines,6.0,4.0,6.0,,3.0,7.0,1.0,195.0,10
-2572,Chaos Predator Annihilator,Chaos Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,135.0,1
-2589,Traitor Enforcer,Chaos Space Marines,6.0,6.0,5.0,,4.0,7.0,1.0,55.0,1
-2590,Traitor Guardsmen Squad,Chaos Space Marines,6.0,3.0,5.0,,1.0,7.0,2.0,70.0,9
-2591,Mutoid Vermin,Chaos Space Marines,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
-2592,Gellerpox Infected,Chaos Space Marines,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
+1600,Chaos Space Marines Rogue Psyker,Chaos Space Marines,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
+1601,Chaos Space Marines Negavolt Cultists,Chaos Space Marines,6.0,3.0,7.0,5.0,1.0,7.0,1.0,55.0,4
+1604,Chaos Space Marines Fellgor Beastmen,Chaos Space Marines,6.0,4.0,5.0,,1.0,7.0,1.0,70.0,9
+2569,Chaos Space Marines Dark Commune,Chaos Space Marines,6.0,3.0,6.0,,4.0,6.0,1.0,90.0,2
+2570,Chaos Space Marines Legionaries,Chaos Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,170.0,9
+2571,Chaos Space Marines Accursed Cultists,Chaos Space Marines,6.0,4.0,6.0,,3.0,7.0,1.0,195.0,10
+2572,Chaos Space Marines Chaos Predator Annihilator,Chaos Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,135.0,1
+2589,Chaos Space Marines Traitor Enforcer,Chaos Space Marines,6.0,6.0,5.0,,4.0,7.0,1.0,55.0,1
+2590,Chaos Space Marines Traitor Guardsmen Squad,Chaos Space Marines,6.0,3.0,5.0,,1.0,7.0,2.0,70.0,9
+2591,Chaos Space Marines Mutoid Vermin,Chaos Space Marines,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
+2592,Chaos Space Marines Gellerpox Infected,Chaos Space Marines,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
 2679,Vashtorr The Arkifane,Chaos Space Marines,12.0,10.0,2.0,4.0,14.0,6.0,3.0,175.0,1
 2730,Heretic Astartes Daemon Prince With Wings,Chaos Space Marines,12.0,9.0,2.0,4.0,10.0,6.0,3.0,180.0,1
-2731,Renegade Enforcer,Chaos Space Marines,6.0,3.0,5.0,5.0,3.0,6.0,1.0,65.0,1
-2732,Renegade Heavy Weapons Squad,Chaos Space Marines,6.0,3.0,5.0,,2.0,7.0,2.0,75.0,3
-2733,Renegade Ogryn Beast Handler,Chaos Space Marines,6.0,6.0,5.0,,4.0,7.0,1.0,70.0,3
-2734,Renegade Ogryn Brutes,Chaos Space Marines,6.0,6.0,5.0,,3.0,7.0,1.0,95.0,3
-2735,Renegade Plague Ogryns,Chaos Space Marines,5.0,7.0,5.0,,3.0,7.0,1.0,95.0,3
-3582,Khorne Berzerkers,Chaos Space Marines,8.0,4.0,3.0,,2.0,6.0,2.0,360.0,19
-3583,Rubric Marines,Chaos Space Marines,6.0,4.0,3.0,5.0,3.0,6.0,2.0,190.0,9
-3584,Plague Marines,Chaos Space Marines,5.0,6.0,3.0,,2.0,6.0,2.0,190.0,9
-3606,Terrax-pattern Termite,Chaos Space Marines,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
-3610,Land Raider Achilles,Chaos Space Marines,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
-3614,Land Raider Proteus,Chaos Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
-3618,Fire Raptor Gunship,Chaos Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
-3622,Spartan,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
-3626,Deredeo Dreadnought,Chaos Space Marines,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
-3630,Cerberus,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
-3634,Kratos,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
-3638,Sokar-pattern Stormbird,Chaos Space Marines,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
-3642,Sicaran Battle Tank,Chaos Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3646,Mastodon,Chaos Space Marines,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
-3650,Leviathan Dreadnought,Chaos Space Marines,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
-3654,Fellblade,Chaos Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
-3658,Relic Contemptor Dreadnought,Chaos Space Marines,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
-3662,Whirlwind Scorpius,Chaos Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
-3666,Xiphon Interceptor,Chaos Space Marines,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
-3670,Rapier Carrier,Chaos Space Marines,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
-3674,Storm Eagle Gunship,Chaos Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
-3678,Sicaran Venator,Chaos Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3682,Typhon,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
-3686,Sicaran Punisher,Chaos Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3690,Falchion,Chaos Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
-3711,Chaos Lord with Jump Pack,Chaos Space Marines,12.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
-3712,Cultist Firebrand,Chaos Space Marines,6.0,4.0,4.0,,4.0,6.0,1.0,45.0,1
-3713,Cultist Mob with Firearms,Chaos Space Marines,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
+2731,Chaos Space Marines Renegade Enforcer,Chaos Space Marines,6.0,3.0,5.0,5.0,3.0,6.0,1.0,65.0,1
+2732,Chaos Space Marines Renegade Heavy Weapons Squad,Chaos Space Marines,6.0,3.0,5.0,,2.0,7.0,2.0,75.0,3
+2733,Chaos Space Marines Renegade Ogryn Beast Handler,Chaos Space Marines,6.0,6.0,5.0,,4.0,7.0,1.0,70.0,3
+2734,Chaos Space Marines Renegade Ogryn Brutes,Chaos Space Marines,6.0,6.0,5.0,,3.0,7.0,1.0,95.0,3
+2735,Chaos Space Marines Renegade Plague Ogryns,Chaos Space Marines,5.0,7.0,5.0,,3.0,7.0,1.0,95.0,3
+3582,Chaos Space Marines Khorne Berzerkers,Chaos Space Marines,8.0,4.0,3.0,,2.0,6.0,2.0,360.0,19
+3583,Chaos Space Marines Rubric Marines,Chaos Space Marines,6.0,4.0,3.0,5.0,3.0,6.0,2.0,190.0,9
+3584,Chaos Space Marines Plague Marines,Chaos Space Marines,5.0,6.0,3.0,,2.0,6.0,2.0,190.0,9
+3606,Chaos Space Marines Terrax-pattern Termite,Chaos Space Marines,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
+3610,Chaos Space Marines Land Raider Achilles,Chaos Space Marines,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
+3614,Chaos Space Marines Land Raider Proteus,Chaos Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
+3618,Chaos Space Marines Fire Raptor Gunship,Chaos Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
+3622,Chaos Space Marines Spartan,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
+3626,Chaos Space Marines Deredeo Dreadnought,Chaos Space Marines,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
+3630,Chaos Space Marines Cerberus,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
+3634,Chaos Space Marines Kratos,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
+3638,Chaos Space Marines Sokar-pattern Stormbird,Chaos Space Marines,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
+3642,Chaos Space Marines Sicaran Battle Tank,Chaos Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3646,Chaos Space Marines Mastodon,Chaos Space Marines,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
+3650,Chaos Space Marines Leviathan Dreadnought,Chaos Space Marines,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
+3654,Chaos Space Marines Fellblade,Chaos Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
+3658,Chaos Space Marines Relic Contemptor Dreadnought,Chaos Space Marines,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
+3662,Chaos Space Marines Whirlwind Scorpius,Chaos Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
+3666,Chaos Space Marines Xiphon Interceptor,Chaos Space Marines,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
+3670,Chaos Space Marines Rapier Carrier,Chaos Space Marines,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
+3674,Chaos Space Marines Storm Eagle Gunship,Chaos Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
+3678,Chaos Space Marines Sicaran Venator,Chaos Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3682,Chaos Space Marines Typhon,Chaos Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
+3686,Chaos Space Marines Sicaran Punisher,Chaos Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3690,Chaos Space Marines Falchion,Chaos Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
+3711,Chaos Space Marines Chaos Lord with Jump Pack,Chaos Space Marines,12.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
+3712,Chaos Space Marines Cultist Firebrand,Chaos Space Marines,6.0,4.0,4.0,,4.0,6.0,1.0,45.0,1
+3713,Chaos Space Marines Cultist Mob with Firearms,Chaos Space Marines,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
 3876,Nemesis Claw,Chaos Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,190.0,9
-4099,Noise Marines,Chaos Space Marines,6.0,5.0,3.0,,2.0,6.0,1.0,145.0,5
-1044,Plague Marines,Death Guard,5.0,6.0,3.0,,2.0,6.0,2.0,190.0,9
+4099,Chaos Space Marines Noise Marines,Chaos Space Marines,6.0,5.0,3.0,,2.0,6.0,1.0,145.0,5
+1044,Death Guard Plague Marines,Death Guard,5.0,6.0,3.0,,2.0,6.0,2.0,190.0,9
 1045,Death Guard Possessed,Death Guard,9.0,6.0,3.0,5.0,3.0,6.0,1.0,310.0,9
-1046,Helbrute,Death Guard,7.0,9.0,2.0,,8.0,6.0,3.0,115.0,1
-1047,Chaos Rhino,Death Guard,12.0,9.0,3.0,,10.0,6.0,2.0,85.0,1
-1048,Chaos Spawn,Death Guard,8.0,7.0,4.0,,4.0,7.0,1.0,80.0,2
-1049,Chaos Land Raider,Death Guard,10.0,12.0,2.0,,16.0,6.0,5.0,240.0,1
-1050,Chaos Predator Annihilator,Death Guard,10.0,10.0,3.0,,11.0,6.0,3.0,135.0,1
-1051,Defiler,Death Guard,8.0,11.0,3.0,5.0,14.0,6.0,5.0,165.0,1
+1046,Death Guard Helbrute,Death Guard,7.0,9.0,2.0,,8.0,6.0,3.0,115.0,1
+1047,Death Guard Chaos Rhino,Death Guard,12.0,9.0,3.0,,10.0,6.0,2.0,85.0,1
+1048,Death Guard Chaos Spawn,Death Guard,8.0,7.0,4.0,,4.0,7.0,1.0,80.0,2
+1049,Death Guard Chaos Land Raider,Death Guard,10.0,12.0,2.0,,16.0,6.0,5.0,240.0,1
+1050,Death Guard Chaos Predator Annihilator,Death Guard,10.0,10.0,3.0,,11.0,6.0,3.0,135.0,1
+1051,Death Guard Defiler,Death Guard,8.0,11.0,3.0,5.0,14.0,6.0,5.0,165.0,1
 1052,Daemon Prince of Nurgle,Death Guard,8.0,12.0,2.0,4.0,10.0,6.0,3.0,195.0,1
 1053,Typhus,Death Guard,5.0,7.0,2.0,4.0,6.0,6.0,1.0,100.0,1
 1054,Lord of Contagion,Death Guard,5.0,7.0,2.0,4.0,6.0,6.0,1.0,120.0,1
@@ -604,48 +604,48 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1376,Plagueburst Crawler,Death Guard,10.0,10.0,2.0,5.0,12.0,6.0,3.0,210.0,1
 1377,Mortarion,Death Guard,10.0,12.0,2.0,4.0,16.0,5.0,6.0,380.0,1
 2460,Lord of Virulence,Death Guard,5.0,7.0,2.0,4.0,6.0,6.0,1.0,100.0,1
-2461,Chaos Predator Destructor,Death Guard,10.0,10.0,3.0,,11.0,6.0,3.0,145.0,1
+2461,Death Guard Chaos Predator Destructor,Death Guard,10.0,10.0,3.0,,11.0,6.0,3.0,145.0,1
 2462,Miasmic Malignifier,Death Guard,,10.0,3.0,,12.0,6.0,0.0,105.0,1
 2749,Daemon Prince of Nurgle with Wings,Death Guard,12.0,11.0,2.0,4.0,10.0,6.0,3.0,195.0,1
 2750,Icon Bearer,Death Guard,5.0,6.0,3.0,,4.0,5.0,1.0,45.0,1
-3585,Chaos Thunderhawk,Death Guard,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
-3586,Greater Blight Drone,Death Guard,10.0,9.0,3.0,5.0,10.0,6.0,3.0,150.0,1
-3592,Chaos Lord On Palanquin Of Nurgle,Death Guard,5.0,5.0,3.0,4.0,8.0,6.0,2.0,90.0,1
-3593,Gellerpox Infected,Death Guard,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
-3594,Hell Blade,Death Guard,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
-3595,Hell Talon,Death Guard,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
-3596,Mutoid Vermin,Death Guard,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
-3600,Sorcerer On Palanquin Of Nurgle,Death Guard,5.0,5.0,3.0,,7.0,6.0,2.0,80.0,1
-3604,Terrax-pattern Termite,Death Guard,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
-3608,Land Raider Achilles,Death Guard,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
-3612,Land Raider Proteus,Death Guard,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
-3616,Fire Raptor Gunship,Death Guard,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
-3620,Spartan,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
-3624,Deredeo Dreadnought,Death Guard,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
-3628,Cerberus,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
-3632,Kratos,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
-3636,Sokar-pattern Stormbird,Death Guard,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
-3640,Sicaran Battle Tank,Death Guard,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3644,Mastodon,Death Guard,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
-3648,Leviathan Dreadnought,Death Guard,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
-3652,Fellblade,Death Guard,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
-3656,Relic Contemptor Dreadnought,Death Guard,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
-3660,Whirlwind Scorpius,Death Guard,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
-3664,Xiphon Interceptor,Death Guard,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
-3668,Rapier Carrier,Death Guard,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
-3672,Storm Eagle Gunship,Death Guard,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
-3676,Sicaran Venator,Death Guard,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3680,Typhon,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
-3684,Sicaran Punisher,Death Guard,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3688,Falchion,Death Guard,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
+3585,Death Guard Chaos Thunderhawk,Death Guard,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
+3586,Death Guard Greater Blight Drone,Death Guard,10.0,9.0,3.0,5.0,10.0,6.0,3.0,150.0,1
+3592,Death Guard Chaos Lord On Palanquin Of Nurgle,Death Guard,5.0,5.0,3.0,4.0,8.0,6.0,2.0,90.0,1
+3593,Death Guard Gellerpox Infected,Death Guard,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
+3594,Death Guard Hell Blade,Death Guard,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
+3595,Death Guard Hell Talon,Death Guard,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
+3596,Death Guard Mutoid Vermin,Death Guard,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
+3600,Death Guard Sorcerer On Palanquin Of Nurgle,Death Guard,5.0,5.0,3.0,,7.0,6.0,2.0,80.0,1
+3604,Death Guard Terrax-pattern Termite,Death Guard,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
+3608,Death Guard Land Raider Achilles,Death Guard,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
+3612,Death Guard Land Raider Proteus,Death Guard,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
+3616,Death Guard Fire Raptor Gunship,Death Guard,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
+3620,Death Guard Spartan,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
+3624,Death Guard Deredeo Dreadnought,Death Guard,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
+3628,Death Guard Cerberus,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
+3632,Death Guard Kratos,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
+3636,Death Guard Sokar-pattern Stormbird,Death Guard,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
+3640,Death Guard Sicaran Battle Tank,Death Guard,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3644,Death Guard Mastodon,Death Guard,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
+3648,Death Guard Leviathan Dreadnought,Death Guard,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
+3652,Death Guard Fellblade,Death Guard,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
+3656,Death Guard Relic Contemptor Dreadnought,Death Guard,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
+3660,Death Guard Whirlwind Scorpius,Death Guard,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
+3664,Death Guard Xiphon Interceptor,Death Guard,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
+3668,Death Guard Rapier Carrier,Death Guard,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
+3672,Death Guard Storm Eagle Gunship,Death Guard,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
+3676,Death Guard Sicaran Venator,Death Guard,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3680,Death Guard Typhon,Death Guard,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
+3684,Death Guard Sicaran Punisher,Death Guard,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3688,Death Guard Falchion,Death Guard,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
 4109,Lord of Poxes,Death Guard,5.0,6.0,3.0,4.0,5.0,6.0,1.0,75.0,1
 4110,Foetid Bloat-drone with Heavy Blight Launcher,Death Guard,10.0,9.0,3.0,5.0,10.0,6.0,3.0,120.0,1
-4111,Rotigus,Death Guard,7.0,12.0,5.0,4.0,22.0,6.0,5.0,250.0,1
-4112,Great Unclean One,Death Guard,7.0,12.0,5.0,4.0,20.0,6.0,5.0,250.0,1
-4113,Plaguebearers,Death Guard,5.0,5.0,7.0,5.0,2.0,7.0,2.0,110.0,9
-4114,Plague Drones,Death Guard,10.0,8.0,6.0,5.0,5.0,7.0,2.0,230.0,5
+4111,Death Guard Rotigus,Death Guard,7.0,12.0,5.0,4.0,22.0,6.0,5.0,250.0,1
+4112,Death Guard Great Unclean One,Death Guard,7.0,12.0,5.0,4.0,20.0,6.0,5.0,250.0,1
+4113,Death Guard Plaguebearers,Death Guard,5.0,5.0,7.0,5.0,2.0,7.0,2.0,110.0,9
+4114,Death Guard Plague Drones,Death Guard,10.0,8.0,6.0,5.0,5.0,7.0,2.0,230.0,5
 4115,Beasts of Nurgle,Death Guard,6.0,9.0,6.0,5.0,7.0,7.0,3.0,130.0,2
-4116,Nurglings,Death Guard,5.0,3.0,7.0,5.0,4.0,8.0,0.0,70.0,6
+4116,Death Guard Nurglings,Death Guard,5.0,3.0,7.0,5.0,4.0,8.0,0.0,70.0,6
 634,Archon,Drukhari,8.0,3.0,4.0,2.0,4.0,6.0,1.0,85.0,1
 639,Succubus,Drukhari,8.0,3.0,6.0,4.0,4.0,6.0,1.0,45.0,1
 640,Lelith Hesperax,Drukhari,8.0,3.0,6.0,4.0,4.0,6.0,1.0,95.0,1
@@ -673,33 +673,33 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 667,Tantalus,Drukhari,16.0,10.0,4.0,5.0,18.0,6.0,5.0,230.0,1
 1390,Raven Strike Fighter,Drukhari,20.0,8.0,4.0,5.0,10.0,6.0,0.0,130.0,1
 2471,Court Of The Archon,Drukhari,8.0,3.0,5.0,5.0,2.0,6.0,1.0,95.0,1
-3931,Corsair Voidreavers,Drukhari,7.0,3.0,4.0,,1.0,7.0,2.0,110.0,9
-3932,Corsair Voidscarred,Drukhari,7.0,3.0,4.0,,1.0,7.0,1.0,160.0,10
-3933,Corsair Cloud Dancer Band,Drukhari,14.0,4.0,3.0,,2.0,6.0,2.0,245.0,6
-3934,Corsair Reaver Band,Drukhari,7.0,3.0,5.0,,3.0,6.0,2.0,275.0,10
-3935,Corsair Skyreaver Band,Drukhari,14.0,3.0,5.0,,3.0,6.0,1.0,275.0,10
+3931,Drukhari Corsair Voidreavers,Drukhari,7.0,3.0,4.0,,1.0,7.0,2.0,110.0,9
+3932,Drukhari Corsair Voidscarred,Drukhari,7.0,3.0,4.0,,1.0,7.0,1.0,160.0,10
+3933,Drukhari Corsair Cloud Dancer Band,Drukhari,14.0,4.0,3.0,,2.0,6.0,2.0,245.0,6
+3934,Drukhari Corsair Reaver Band,Drukhari,7.0,3.0,5.0,,3.0,6.0,2.0,275.0,10
+3935,Drukhari Corsair Skyreaver Band,Drukhari,14.0,3.0,5.0,,3.0,6.0,1.0,275.0,10
 4077,Fulgrim,Emperor’s Children,16.0,11.0,2.0,4.0,16.0,5.0,6.0,340.0,1
 4078,Lord Exultant,Emperor’s Children,7.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
 4079,Tormentors,Emperor’s Children,7.0,4.0,3.0,,2.0,6.0,2.0,170.0,9
 4080,Infractors,Emperor’s Children,7.0,4.0,3.0,,2.0,6.0,2.0,160.0,9
-4081,Chaos Terminators,Emperor’s Children,6.0,5.0,2.0,4.0,3.0,6.0,1.0,170.0,4
-4082,Chaos Land Raider,Emperor’s Children,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+4081,Emperor’s Children Chaos Terminators,Emperor’s Children,6.0,5.0,2.0,4.0,3.0,6.0,1.0,170.0,4
+4082,Emperor’s Children Chaos Land Raider,Emperor’s Children,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
 4083,Lucius the Eternal,Emperor’s Children,8.0,5.0,2.0,4.0,6.0,6.0,1.0,150.0,1
 4084,Lord Kakophonist,Emperor’s Children,6.0,5.0,2.0,4.0,6.0,6.0,1.0,70.0,1
-4085,Sorcerer,Emperor’s Children,7.0,4.0,3.0,,4.0,6.0,1.0,60.0,1
+4085,Emperor’s Children Sorcerer,Emperor’s Children,7.0,4.0,3.0,,4.0,6.0,1.0,60.0,1
 4086,Daemon Prince of Slaanesh,Emperor’s Children,10.0,10.0,2.0,4.0,10.0,6.0,3.0,195.0,1
 4087,Daemon Prince of Slaanesh with Wings,Emperor’s Children,14.0,9.0,2.0,4.0,10.0,6.0,3.0,200.0,1
-4088,Noise Marines,Emperor’s Children,6.0,5.0,3.0,,2.0,6.0,1.0,145.0,5
+4088,Emperor’s Children Noise Marines,Emperor’s Children,6.0,5.0,3.0,,2.0,6.0,1.0,145.0,5
 4089,Flawless Blades,Emperor’s Children,8.0,5.0,3.0,5.0,3.0,6.0,1.0,220.0,6
-4090,Chaos Spawn,Emperor’s Children,10.0,5.0,4.0,,4.0,7.0,1.0,80.0,2
-4091,Maulerfiend,Emperor’s Children,10.0,10.0,3.0,5.0,12.0,6.0,3.0,130.0,1
-4092,Heldrake,Emperor’s Children,20.0,10.0,3.0,5.0,14.0,7.0,0.0,195.0,1
-4093,Chaos Rhino,Emperor’s Children,12.0,9.0,3.0,,10.0,6.0,2.0,80.0,1
-4094,Shalaxi Helbane,Emperor’s Children,14.0,10.0,3.0,4.0,20.0,6.0,5.0,380.0,1
-4095,Daemonettes,Emperor’s Children,9.0,3.0,7.0,5.0,1.0,7.0,1.0,90.0,9
-4096,Fiends,Emperor’s Children,12.0,5.0,7.0,5.0,4.0,7.0,2.0,190.0,5
+4090,Emperor’s Children Chaos Spawn,Emperor’s Children,10.0,5.0,4.0,,4.0,7.0,1.0,80.0,2
+4091,Emperor’s Children Maulerfiend,Emperor’s Children,10.0,10.0,3.0,5.0,12.0,6.0,3.0,130.0,1
+4092,Emperor’s Children Heldrake,Emperor’s Children,20.0,10.0,3.0,5.0,14.0,7.0,0.0,195.0,1
+4093,Emperor’s Children Chaos Rhino,Emperor’s Children,12.0,9.0,3.0,,10.0,6.0,2.0,80.0,1
+4094,Emperor’s Children Shalaxi Helbane,Emperor’s Children,14.0,10.0,3.0,4.0,20.0,6.0,5.0,380.0,1
+4095,Emperor’s Children Daemonettes,Emperor’s Children,9.0,3.0,7.0,5.0,1.0,7.0,1.0,90.0,9
+4096,Emperor’s Children Fiends,Emperor’s Children,12.0,5.0,7.0,5.0,4.0,7.0,2.0,190.0,5
 4097,Keeper of Secrets,Emperor’s Children,14.0,10.0,5.0,4.0,18.0,6.0,5.0,270.0,1
-4098,Seekers,Emperor’s Children,14.0,4.0,7.0,5.0,2.0,7.0,1.0,160.0,9
+4098,Emperor’s Children Seekers,Emperor’s Children,14.0,4.0,7.0,5.0,2.0,7.0,1.0,160.0,9
 507,Patriarch,Genestealer Cults,8.0,5.0,4.0,4.0,6.0,6.0,1.0,75.0,1
 508,Magus,Genestealer Cults,6.0,3.0,5.0,5.0,4.0,6.0,1.0,50.0,1
 509,Primus,Genestealer Cults,6.0,3.0,5.0,5.0,4.0,6.0,1.0,70.0,1
@@ -725,117 +725,117 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2525,Reductus Saboteur,Genestealer Cults,6.0,3.0,5.0,5.0,3.0,7.0,1.0,65.0,1
 3715,Benefictus,Genestealer Cults,6.0,3.0,5.0,5.0,3.0,7.0,1.0,70.0,1
 3716,Acolyte Hybrids With Hand Flamers,Genestealer Cults,6.0,4.0,5.0,,1.0,7.0,2.0,140.0,9
-3877,Deathleaper,Genestealer Cults,8.0,6.0,3.0,4.0,7.0,7.0,1.0,80.0,1
-3878,Parasite Of Mortrex,Genestealer Cults,12.0,5.0,4.0,,5.0,8.0,1.0,80.0,1
-3879,Winged Hive Tyrant,Genestealer Cults,12.0,9.0,2.0,4.0,10.0,7.0,3.0,170.0,1
-3880,Winged Tyranid Prime,Genestealer Cults,12.0,5.0,4.0,,6.0,7.0,1.0,65.0,1
-3881,Gargoyles,Genestealer Cults,12.0,3.0,6.0,,1.0,8.0,2.0,170.0,20
-3882,Tyrannocyte,Genestealer Cults,8.0,9.0,3.0,,10.0,8.0,2.0,105.0,1
-3883,Lictor,Genestealer Cults,8.0,6.0,4.0,,6.0,7.0,1.0,60.0,1
-3884,Mawloc,Genestealer Cults,10.0,10.0,3.0,,14.0,8.0,4.0,135.0,1
-3885,Neurolictor,Genestealer Cults,8.0,5.0,4.0,4.0,7.0,7.0,1.0,70.0,1
-3886,Raveners,Genestealer Cults,10.0,5.0,4.0,,3.0,8.0,1.0,150.0,5
-3887,Trygon,Genestealer Cults,10.0,10.0,3.0,,14.0,8.0,4.0,140.0,1
-3888,Von Ryan’s Leapers,Genestealer Cults,10.0,5.0,4.0,6.0,3.0,8.0,1.0,140.0,6
-3938,Cadian Castellan,Genestealer Cults,6.0,3.0,5.0,5.0,4.0,7.0,1.0,55.0,1
-3939,Cadian Command Squad,Genestealer Cults,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
-3940,Catachan Command Squad,Genestealer Cults,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
-3941,Krieg Command Squad,Genestealer Cults,6.0,3.0,5.0,,3.0,6.0,1.0,65.0,5
-3942,Leman Russ Commander,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,235.0,1
-3943,Primaris Psyker,Genestealer Cults,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
-3944,Rogal Dorn Commander,Genestealer Cults,10.0,12.0,2.0,,18.0,7.0,5.0,275.0,1
-3945,Death Rider Commissar,Genestealer Cults,12.0,4.0,4.0,5.0,4.0,6.0,1.0,35.0,1
-3946,Quartermaster Cadre Squad,Genestealer Cults,6.0,3.0,4.0,,3.0,7.0,1.0,45.0,4
-3947,Hell’s Last,Genestealer Cults,6.0,3.0,5.0,5.0,3.0,7.0,1.0,80.0,4
-3948,Cadian Shock Troops,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
-3949,Catachan Jungle Fighters,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
-3950,Death Korps Of Krieg,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,2.0,145.0,18
-3951,Chimera,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,2.0,85.0,1
-3952,Taurox,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,2.0,75.0,1
-3953,Taurox Prime,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,2.0,90.0,1
-3954,Storm Chimera,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,2.0,90.0,1
-3955,Aegis Defence Line,Genestealer Cults,,12.0,2.0,,10.0,7.0,0.0,145.0,1
-3956,Earthshaker Platform,Genestealer Cults,,8.0,3.0,,8.0,7.0,2.0,110.0,1
-3957,Hydra Platform,Genestealer Cults,,8.0,3.0,,8.0,7.0,2.0,95.0,1
-3958,Manticore Platform,Genestealer Cults,,8.0,3.0,,8.0,7.0,2.0,95.0,1
-3959,Sabre Weapons Battery,Genestealer Cults,,4.0,4.0,,4.0,7.0,1.0,90.0,2
-3960,Armoured Sentinels,Genestealer Cults,8.0,8.0,2.0,,7.0,7.0,2.0,130.0,2
-3961,Artillery Team,Genestealer Cults,3.0,7.0,3.0,,10.0,7.0,3.0,95.0,1
-3962,Attilan Rough Riders,Genestealer Cults,12.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
-3963,Baneblade,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
-3964,Banehammer,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
-3965,Banesword,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
-3966,Basilisk,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,140.0,1
-3967,Cadian Heavy Weapons Squad,Genestealer Cults,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
-3968,Catachan Heavy Weapons Squad,Genestealer Cults,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
-3969,Death Riders,Genestealer Cults,10.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
-3970,Deathstrike,Genestealer Cults,10.0,10.0,3.0,,11.0,7.0,3.0,145.0,1
-3971,Doomhammer,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
-3972,Field Ordnance Battery,Genestealer Cults,3.0,5.0,4.0,,6.0,7.0,2.0,110.0,2
-3973,Hellhammer,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
-3974,Hellhound,Genestealer Cults,10.0,10.0,2.0,,11.0,7.0,3.0,125.0,1
-3975,Hydra,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,95.0,1
-3976,Kasrkin,Genestealer Cults,6.0,3.0,4.0,,1.0,7.0,1.0,110.0,9
-3977,Krieg Combat Engineers,Genestealer Cults,6.0,3.0,4.0,,1.0,7.0,1.0,95.0,9
-3978,Krieg Heavy Weapons Squad,Genestealer Cults,4.0,3.0,4.0,,2.0,7.0,1.0,75.0,3
-3979,Leman Russ Battle Tank,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,185.0,1
-3980,Leman Russ Demolisher,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,190.0,1
-3981,Leman Russ Eradicator,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
-3982,Leman Russ Executioner,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
-3983,Leman Russ Exterminator,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
-3984,Leman Russ Punisher,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,150.0,1
-3985,Leman Russ Vanquisher,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,145.0,1
-3986,Manticore,Genestealer Cults,10.0,10.0,3.0,,11.0,7.0,3.0,165.0,1
-3987,Rogal Dorn Battle Tank,Genestealer Cults,10.0,12.0,2.0,,18.0,7.0,5.0,250.0,1
-3988,Scout Sentinels,Genestealer Cults,10.0,7.0,3.0,,7.0,7.0,2.0,110.0,2
-3989,Shadowsword,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,410.0,1
-3990,Stormlord,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,430.0,1
-3991,Stormsword,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,465.0,1
-3992,Wyvern,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,110.0,1
-3993,Cyclops Demolition Vehicle,Genestealer Cults,8.0,4.0,3.0,,4.0,8.0,0.0,25.0,1
-3994,Arkurian Stormhammer,Genestealer Cults,9.0,13.0,2.0,,24.0,7.0,8.0,480.0,1
-3995,Armageddon-pattern Medusa,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,105.0,1
-3996,Atlas Recovery Vehicle,Genestealer Cults,10.0,9.0,3.0,,10.0,7.0,3.0,80.0,1
-3997,Carnodon,Genestealer Cults,12.0,10.0,2.0,,12.0,7.0,3.0,160.0,1
-3998,Centaur Light Carrier,Genestealer Cults,10.0,7.0,3.0,,7.0,7.0,1.0,40.0,1
-3999,Colossus,Genestealer Cults,10.0,10.0,2.0,,11.0,7.0,3.0,160.0,1
-4000,Crassus,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,180.0,1
-4001,Death Korps Grenadier Squad,Genestealer Cults,6.0,3.0,4.0,,2.0,7.0,1.0,110.0,9
-4002,Dominus Armoured Siege Bombard,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,325.0,1
-4003,Earthshaker Carriage Battery,Genestealer Cults,4.0,7.0,4.0,,6.0,7.0,2.0,120.0,1
-4004,Elysian Drop Sentinel,Genestealer Cults,10.0,6.0,3.0,,6.0,7.0,2.0,85.0,1
-4005,Elysian Sniper Squad,Genestealer Cults,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
-4006,Gorgon Heavy Transport,Genestealer Cults,9.0,13.0,2.0,5.0,20.0,7.0,8.0,275.0,1
-4007,Griffon Mortar Carrier,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,115.0,1
-4008,Hades Breaching Drill,Genestealer Cults,6.0,9.0,3.0,,8.0,7.0,2.0,110.0,1
-4009,Heavy Mortar Team,Genestealer Cults,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
-4010,Heavy Quad Launcher Team,Genestealer Cults,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
-4011,Macharius,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
-4012,Macharius Omega,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
-4013,Macharius Vanquisher,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
-4014,Macharius Vulcan,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
-4015,Malcador,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,250.0,1
-4016,Malcador Annihilator,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,270.0,1
-4017,Malcador Defender,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,310.0,1
-4018,Malcador Infernus,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,235.0,1
-4019,Medusa Carriage Battery,Genestealer Cults,4.0,7.0,4.0,,6.0,7.0,2.0,125.0,1
-4020,Minotaur,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,225.0,1
-4021,Mukaali Riders,Genestealer Cults,8.0,6.0,4.0,,5.0,7.0,2.0,110.0,2
-4022,Munitorum Servitors,Genestealer Cults,6.0,3.0,4.0,6.0,1.0,8.0,0.0,35.0,4
-4023,Praetor,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,275.0,1
-4024,Rapier Laser Destroyer Battery,Genestealer Cults,6.0,4.0,4.0,,3.0,7.0,1.0,105.0,3
-4025,Regimental Attachés,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,1.0,40.0,1
-4026,Salamander Command Vehicle,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,3.0,80.0,1
-4027,Salamander Scout Vehicle,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,3.0,95.0,1
-4028,Sentinel Powerlifter,Genestealer Cults,8.0,7.0,3.0,,6.0,7.0,2.0,55.0,1
-4029,Stormblade,Genestealer Cults,9.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
-4030,Stygies Destroyer Tank Hunter,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
-4031,Tarantula Battery,Genestealer Cults,,5.0,3.0,,4.0,7.0,0.0,120.0,3
-4032,Tauros Assault Vehicle,Genestealer Cults,12.0,6.0,4.0,,6.0,7.0,2.0,50.0,1
-4033,Tauros Venator,Genestealer Cults,12.0,6.0,4.0,,6.0,7.0,2.0,55.0,1
-4034,Trojan Support Vehicle,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,2.0,80.0,1
-4035,Valdor,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
-4118,Hyperadapted Raveners,Genestealer Cults,10.0,5.0,4.0,,6.0,7.0,1.0,165.0,4
+3877,Genestealer Cults Deathleaper,Genestealer Cults,8.0,6.0,3.0,4.0,7.0,7.0,1.0,80.0,1
+3878,Genestealer Cults Parasite Of Mortrex,Genestealer Cults,12.0,5.0,4.0,,5.0,8.0,1.0,80.0,1
+3879,Genestealer Cults Winged Hive Tyrant,Genestealer Cults,12.0,9.0,2.0,4.0,10.0,7.0,3.0,170.0,1
+3880,Genestealer Cults Winged Tyranid Prime,Genestealer Cults,12.0,5.0,4.0,,6.0,7.0,1.0,65.0,1
+3881,Genestealer Cults Gargoyles,Genestealer Cults,12.0,3.0,6.0,,1.0,8.0,2.0,170.0,20
+3882,Genestealer Cults Tyrannocyte,Genestealer Cults,8.0,9.0,3.0,,10.0,8.0,2.0,105.0,1
+3883,Genestealer Cults Lictor,Genestealer Cults,8.0,6.0,4.0,,6.0,7.0,1.0,60.0,1
+3884,Genestealer Cults Mawloc,Genestealer Cults,10.0,10.0,3.0,,14.0,8.0,4.0,135.0,1
+3885,Genestealer Cults Neurolictor,Genestealer Cults,8.0,5.0,4.0,4.0,7.0,7.0,1.0,70.0,1
+3886,Genestealer Cults Raveners,Genestealer Cults,10.0,5.0,4.0,,3.0,8.0,1.0,150.0,5
+3887,Genestealer Cults Trygon,Genestealer Cults,10.0,10.0,3.0,,14.0,8.0,4.0,140.0,1
+3888,Genestealer Cults Von Ryan’s Leapers,Genestealer Cults,10.0,5.0,4.0,6.0,3.0,8.0,1.0,140.0,6
+3938,Genestealer Cults Cadian Castellan,Genestealer Cults,6.0,3.0,5.0,5.0,4.0,7.0,1.0,55.0,1
+3939,Genestealer Cults Cadian Command Squad,Genestealer Cults,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
+3940,Genestealer Cults Catachan Command Squad,Genestealer Cults,6.0,3.0,5.0,,3.0,7.0,1.0,65.0,4
+3941,Genestealer Cults Krieg Command Squad,Genestealer Cults,6.0,3.0,5.0,,3.0,6.0,1.0,65.0,5
+3942,Genestealer Cults Leman Russ Commander,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,235.0,1
+3943,Genestealer Cults Primaris Psyker,Genestealer Cults,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
+3944,Genestealer Cults Rogal Dorn Commander,Genestealer Cults,10.0,12.0,2.0,,18.0,7.0,5.0,275.0,1
+3945,Genestealer Cults Death Rider Commissar,Genestealer Cults,12.0,4.0,4.0,5.0,4.0,6.0,1.0,35.0,1
+3946,Genestealer Cults Quartermaster Cadre Squad,Genestealer Cults,6.0,3.0,4.0,,3.0,7.0,1.0,45.0,4
+3947,Genestealer Cults Hell’s Last,Genestealer Cults,6.0,3.0,5.0,5.0,3.0,7.0,1.0,80.0,4
+3948,Genestealer Cults Cadian Shock Troops,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
+3949,Genestealer Cults Catachan Jungle Fighters,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,2.0,120.0,18
+3950,Genestealer Cults Death Korps Of Krieg,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,2.0,145.0,18
+3951,Genestealer Cults Chimera,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,2.0,85.0,1
+3952,Genestealer Cults Taurox,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,2.0,75.0,1
+3953,Genestealer Cults Taurox Prime,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,2.0,90.0,1
+3954,Genestealer Cults Storm Chimera,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,2.0,90.0,1
+3955,Genestealer Cults Aegis Defence Line,Genestealer Cults,,12.0,2.0,,10.0,7.0,0.0,145.0,1
+3956,Genestealer Cults Earthshaker Platform,Genestealer Cults,,8.0,3.0,,8.0,7.0,2.0,110.0,1
+3957,Genestealer Cults Hydra Platform,Genestealer Cults,,8.0,3.0,,8.0,7.0,2.0,95.0,1
+3958,Genestealer Cults Manticore Platform,Genestealer Cults,,8.0,3.0,,8.0,7.0,2.0,95.0,1
+3959,Genestealer Cults Sabre Weapons Battery,Genestealer Cults,,4.0,4.0,,4.0,7.0,1.0,90.0,2
+3960,Genestealer Cults Armoured Sentinels,Genestealer Cults,8.0,8.0,2.0,,7.0,7.0,2.0,130.0,2
+3961,Genestealer Cults Artillery Team,Genestealer Cults,3.0,7.0,3.0,,10.0,7.0,3.0,95.0,1
+3962,Genestealer Cults Attilan Rough Riders,Genestealer Cults,12.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
+3963,Genestealer Cults Baneblade,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
+3964,Genestealer Cults Banehammer,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
+3965,Genestealer Cults Banesword,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,450.0,1
+3966,Genestealer Cults Basilisk,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,140.0,1
+3967,Genestealer Cults Cadian Heavy Weapons Squad,Genestealer Cults,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
+3968,Genestealer Cults Catachan Heavy Weapons Squad,Genestealer Cults,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
+3969,Genestealer Cults Death Riders,Genestealer Cults,10.0,4.0,4.0,,2.0,7.0,1.0,120.0,9
+3970,Genestealer Cults Deathstrike,Genestealer Cults,10.0,10.0,3.0,,11.0,7.0,3.0,145.0,1
+3971,Genestealer Cults Doomhammer,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
+3972,Genestealer Cults Field Ordnance Battery,Genestealer Cults,3.0,5.0,4.0,,6.0,7.0,2.0,110.0,2
+3973,Genestealer Cults Hellhammer,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,420.0,1
+3974,Genestealer Cults Hellhound,Genestealer Cults,10.0,10.0,2.0,,11.0,7.0,3.0,125.0,1
+3975,Genestealer Cults Hydra,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,95.0,1
+3976,Genestealer Cults Kasrkin,Genestealer Cults,6.0,3.0,4.0,,1.0,7.0,1.0,110.0,9
+3977,Genestealer Cults Krieg Combat Engineers,Genestealer Cults,6.0,3.0,4.0,,1.0,7.0,1.0,95.0,9
+3978,Genestealer Cults Krieg Heavy Weapons Squad,Genestealer Cults,4.0,3.0,4.0,,2.0,7.0,1.0,75.0,3
+3979,Genestealer Cults Leman Russ Battle Tank,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,185.0,1
+3980,Genestealer Cults Leman Russ Demolisher,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,190.0,1
+3981,Genestealer Cults Leman Russ Eradicator,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
+3982,Genestealer Cults Leman Russ Executioner,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,170.0,1
+3983,Genestealer Cults Leman Russ Exterminator,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
+3984,Genestealer Cults Leman Russ Punisher,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,150.0,1
+3985,Genestealer Cults Leman Russ Vanquisher,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,145.0,1
+3986,Genestealer Cults Manticore,Genestealer Cults,10.0,10.0,3.0,,11.0,7.0,3.0,165.0,1
+3987,Genestealer Cults Rogal Dorn Battle Tank,Genestealer Cults,10.0,12.0,2.0,,18.0,7.0,5.0,250.0,1
+3988,Genestealer Cults Scout Sentinels,Genestealer Cults,10.0,7.0,3.0,,7.0,7.0,2.0,110.0,2
+3989,Genestealer Cults Shadowsword,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,410.0,1
+3990,Genestealer Cults Stormlord,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,430.0,1
+3991,Genestealer Cults Stormsword,Genestealer Cults,12.0,13.0,2.0,,24.0,7.0,8.0,465.0,1
+3992,Genestealer Cults Wyvern,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,110.0,1
+3993,Genestealer Cults Cyclops Demolition Vehicle,Genestealer Cults,8.0,4.0,3.0,,4.0,8.0,0.0,25.0,1
+3994,Genestealer Cults Arkurian Stormhammer,Genestealer Cults,9.0,13.0,2.0,,24.0,7.0,8.0,480.0,1
+3995,Genestealer Cults Armageddon-pattern Medusa,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,105.0,1
+3996,Genestealer Cults Atlas Recovery Vehicle,Genestealer Cults,10.0,9.0,3.0,,10.0,7.0,3.0,80.0,1
+3997,Genestealer Cults Carnodon,Genestealer Cults,12.0,10.0,2.0,,12.0,7.0,3.0,160.0,1
+3998,Genestealer Cults Centaur Light Carrier,Genestealer Cults,10.0,7.0,3.0,,7.0,7.0,1.0,40.0,1
+3999,Genestealer Cults Colossus,Genestealer Cults,10.0,10.0,2.0,,11.0,7.0,3.0,160.0,1
+4000,Genestealer Cults Crassus,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,180.0,1
+4001,Genestealer Cults Death Korps Grenadier Squad,Genestealer Cults,6.0,3.0,4.0,,2.0,7.0,1.0,110.0,9
+4002,Genestealer Cults Dominus Armoured Siege Bombard,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,325.0,1
+4003,Genestealer Cults Earthshaker Carriage Battery,Genestealer Cults,4.0,7.0,4.0,,6.0,7.0,2.0,120.0,1
+4004,Genestealer Cults Elysian Drop Sentinel,Genestealer Cults,10.0,6.0,3.0,,6.0,7.0,2.0,85.0,1
+4005,Genestealer Cults Elysian Sniper Squad,Genestealer Cults,6.0,3.0,5.0,,2.0,7.0,2.0,65.0,3
+4006,Genestealer Cults Gorgon Heavy Transport,Genestealer Cults,9.0,13.0,2.0,5.0,20.0,7.0,8.0,275.0,1
+4007,Genestealer Cults Griffon Mortar Carrier,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,3.0,115.0,1
+4008,Genestealer Cults Hades Breaching Drill,Genestealer Cults,6.0,9.0,3.0,,8.0,7.0,2.0,110.0,1
+4009,Genestealer Cults Heavy Mortar Team,Genestealer Cults,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
+4010,Genestealer Cults Heavy Quad Launcher Team,Genestealer Cults,4.0,5.0,3.0,,4.0,7.0,2.0,50.0,1
+4011,Genestealer Cults Macharius,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
+4012,Genestealer Cults Macharius Omega,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
+4013,Genestealer Cults Macharius Vanquisher,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
+4014,Genestealer Cults Macharius Vulcan,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,310.0,1
+4015,Genestealer Cults Malcador,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,250.0,1
+4016,Genestealer Cults Malcador Annihilator,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,270.0,1
+4017,Genestealer Cults Malcador Defender,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,310.0,1
+4018,Genestealer Cults Malcador Infernus,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,235.0,1
+4019,Genestealer Cults Medusa Carriage Battery,Genestealer Cults,4.0,7.0,4.0,,6.0,7.0,2.0,125.0,1
+4020,Genestealer Cults Minotaur,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,225.0,1
+4021,Genestealer Cults Mukaali Riders,Genestealer Cults,8.0,6.0,4.0,,5.0,7.0,2.0,110.0,2
+4022,Genestealer Cults Munitorum Servitors,Genestealer Cults,6.0,3.0,4.0,6.0,1.0,8.0,0.0,35.0,4
+4023,Genestealer Cults Praetor,Genestealer Cults,10.0,11.0,2.0,,18.0,7.0,5.0,275.0,1
+4024,Genestealer Cults Rapier Laser Destroyer Battery,Genestealer Cults,6.0,4.0,4.0,,3.0,7.0,1.0,105.0,3
+4025,Genestealer Cults Regimental Attachés,Genestealer Cults,6.0,3.0,5.0,,1.0,7.0,1.0,40.0,1
+4026,Genestealer Cults Salamander Command Vehicle,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,3.0,80.0,1
+4027,Genestealer Cults Salamander Scout Vehicle,Genestealer Cults,12.0,8.0,3.0,,10.0,7.0,3.0,95.0,1
+4028,Genestealer Cults Sentinel Powerlifter,Genestealer Cults,8.0,7.0,3.0,,6.0,7.0,2.0,55.0,1
+4029,Genestealer Cults Stormblade,Genestealer Cults,9.0,13.0,2.0,,24.0,7.0,8.0,415.0,1
+4030,Genestealer Cults Stygies Destroyer Tank Hunter,Genestealer Cults,10.0,11.0,2.0,,13.0,7.0,3.0,180.0,1
+4031,Genestealer Cults Tarantula Battery,Genestealer Cults,,5.0,3.0,,4.0,7.0,0.0,120.0,3
+4032,Genestealer Cults Tauros Assault Vehicle,Genestealer Cults,12.0,6.0,4.0,,6.0,7.0,2.0,50.0,1
+4033,Genestealer Cults Tauros Venator,Genestealer Cults,12.0,6.0,4.0,,6.0,7.0,2.0,55.0,1
+4034,Genestealer Cults Trojan Support Vehicle,Genestealer Cults,10.0,9.0,3.0,,11.0,7.0,2.0,80.0,1
+4035,Genestealer Cults Valdor,Genestealer Cults,9.0,13.0,2.0,,20.0,7.0,8.0,285.0,1
+4118,Genestealer Cults Hyperadapted Raveners,Genestealer Cults,10.0,5.0,4.0,,6.0,7.0,1.0,165.0,4
 374,Grand Master Voldus,Grey Knights,5.0,5.0,2.0,4.0,7.0,6.0,1.0,110.0,1
 375,Grand Master,Grey Knights,5.0,5.0,2.0,4.0,7.0,6.0,1.0,95.0,1
 376,Brother-captain,Grey Knights,5.0,5.0,2.0,4.0,6.0,6.0,1.0,90.0,1
@@ -849,21 +849,21 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 388,Purgation Squad,Grey Knights,6.0,4.0,2.0,,2.0,6.0,1.0,250.0,9
 389,Nemesis Dreadknight,Grey Knights,8.0,8.0,2.0,4.0,13.0,6.0,4.0,210.0,1
 390,Grey Knights Dreadnought,Grey Knights,6.0,9.0,2.0,,8.0,6.0,3.0,160.0,1
-391,Land Raider,Grey Knights,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
-392,Land Raider Crusader,Grey Knights,12.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
-393,Land Raider Redeemer,Grey Knights,12.0,12.0,2.0,,16.0,6.0,5.0,270.0,1
-395,Razorback,Grey Knights,12.0,9.0,3.0,,10.0,6.0,2.0,85.0,1
-396,Rhino,Grey Knights,12.0,9.0,3.0,,10.0,6.0,2.0,80.0,1
-398,Stormraven Gunship,Grey Knights,20.0,10.0,3.0,,14.0,6.0,0.0,280.0,1
+391,Grey Knights Land Raider,Grey Knights,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+392,Grey Knights Land Raider Crusader,Grey Knights,12.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+393,Grey Knights Land Raider Redeemer,Grey Knights,12.0,12.0,2.0,,16.0,6.0,5.0,270.0,1
+395,Grey Knights Razorback,Grey Knights,12.0,9.0,3.0,,10.0,6.0,2.0,85.0,1
+396,Grey Knights Rhino,Grey Knights,12.0,9.0,3.0,,10.0,6.0,2.0,80.0,1
+398,Grey Knights Stormraven Gunship,Grey Knights,20.0,10.0,3.0,,14.0,6.0,0.0,280.0,1
 399,Brotherhood Techmarine,Grey Knights,6.0,4.0,2.0,,4.0,6.0,1.0,70.0,1
-400,Venerable Dreadnought,Grey Knights,8.0,9.0,2.0,,8.0,6.0,3.0,140.0,1
+400,Grey Knights Venerable Dreadnought,Grey Knights,8.0,9.0,2.0,,8.0,6.0,3.0,140.0,1
 1196,Land Raider Banisher,Grey Knights,10.0,12.0,2.0,,16.0,6.0,5.0,255.0,1
 1197,Grey Knights Thunderhawk Gunship,Grey Knights,20.0,12.0,2.0,,30.0,6.0,0.0,805.0,1
 1360,Grand Master In Nemesis Dreadknight,Grey Knights,8.0,8.0,2.0,4.0,13.0,6.0,4.0,225.0,1
 1361,Brotherhood Librarian,Grey Knights,5.0,5.0,2.0,4.0,5.0,6.0,1.0,80.0,1
 1362,Brotherhood Chaplain,Grey Knights,5.0,5.0,2.0,4.0,5.0,5.0,1.0,65.0,1
-1363,Stormhawk Interceptor,Grey Knights,20.0,9.0,3.0,,10.0,6.0,0.0,160.0,1
-1364,Stormtalon Gunship,Grey Knights,20.0,9.0,3.0,,10.0,6.0,0.0,170.0,1
+1363,Grey Knights Stormhawk Interceptor,Grey Knights,20.0,9.0,3.0,,10.0,6.0,0.0,160.0,1
+1364,Grey Knights Stormtalon Gunship,Grey Knights,20.0,9.0,3.0,,10.0,6.0,0.0,170.0,1
 2768,Grey Knights Relic Razorback,Grey Knights,12.0,9.0,3.0,,10.0,6.0,2.0,95.0,1
 2593,Ûthar the Destined,Leagues of Votann,5.0,5.0,3.0,4.0,5.0,6.0,1.0,95.0,1
 2594,Kâhl,Leagues of Votann,5.0,5.0,3.0,4.0,4.0,7.0,1.0,70.0,1
@@ -1054,11 +1054,11 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1664,Acastus Knight Asterius,Imperial Knights,8.0,13.0,2.0,5.0,30.0,6.0,10.0,765.0,1
 2769,Armiger Moirax,Imperial Knights,12.0,9.0,3.0,5.0,14.0,7.0,6.0,150.0,1
 2770,Sir Hekhtur,Imperial Knights,6.0,3.0,4.0,,3.0,5.0,1.0,,1
-3839,Tech-priest Dominus,Imperial Knights,6.0,4.0,2.0,5.0,4.0,7.0,1.0,65.0,1
-3840,Tech-priest Manipulus,Imperial Knights,6.0,4.0,2.0,5.0,4.0,7.0,1.0,60.0,1
-3841,Skitarii Marshal,Imperial Knights,6.0,3.0,4.0,5.0,3.0,6.0,1.0,35.0,1
-3842,Skitarii Rangers,Imperial Knights,6.0,3.0,4.0,5.0,1.0,7.0,2.0,85.0,9
-3843,Skitarii Vanguard,Imperial Knights,6.0,3.0,4.0,5.0,1.0,7.0,2.0,95.0,9
+3839,Imperial Knights Tech-priest Dominus,Imperial Knights,6.0,4.0,2.0,5.0,4.0,7.0,1.0,65.0,1
+3840,Imperial Knights Tech-priest Manipulus,Imperial Knights,6.0,4.0,2.0,5.0,4.0,7.0,1.0,60.0,1
+3841,Imperial Knights Skitarii Marshal,Imperial Knights,6.0,3.0,4.0,5.0,3.0,6.0,1.0,35.0,1
+3842,Imperial Knights Skitarii Rangers,Imperial Knights,6.0,3.0,4.0,5.0,1.0,7.0,2.0,85.0,9
+3843,Imperial Knights Skitarii Vanguard,Imperial Knights,6.0,3.0,4.0,5.0,1.0,7.0,2.0,95.0,9
 1094,Chaos Cerastus Knight Acheron,Chaos Knights,12.0,11.0,3.0,5.0,28.0,6.0,10.0,385.0,1
 1095,Chaos Cerastus Knight Lancer,Chaos Knights,14.0,11.0,3.0,4.0,28.0,6.0,10.0,385.0,1
 1096,Chaos Cerastus Knight Castigator,Chaos Knights,12.0,11.0,3.0,5.0,28.0,6.0,10.0,385.0,1
@@ -1078,30 +1078,30 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2565,War Dog Brigand,Chaos Knights,12.0,9.0,3.0,5.0,14.0,7.0,6.0,140.0,1
 2566,War Dog Huntsman,Chaos Knights,12.0,9.0,3.0,5.0,14.0,7.0,6.0,140.0,1
 2567,Knight Abominant,Chaos Knights,10.0,11.0,3.0,5.0,26.0,6.0,10.0,355.0,1
-3844,Cultist Firebrand,Chaos Knights,6.0,4.0,4.0,,4.0,6.0,1.0,45.0,1
-3845,Dark Commune,Chaos Knights,6.0,3.0,6.0,,4.0,6.0,1.0,90.0,2
-3846,Traitor Enforcer,Chaos Knights,6.0,6.0,5.0,,4.0,7.0,1.0,55.0,1
-3847,Renegade Enforcer,Chaos Knights,6.0,3.0,5.0,5.0,3.0,6.0,1.0,65.0,1
-3848,Rogue Psyker,Chaos Knights,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
-3849,Cultist Mob,Chaos Knights,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
-3850,Cultist Mob with Firearms,Chaos Knights,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
-3851,Accursed Cultists,Chaos Knights,6.0,4.0,6.0,,3.0,7.0,1.0,195.0,10
-3852,Fellgor Beastmen,Chaos Knights,6.0,4.0,5.0,,1.0,7.0,1.0,70.0,9
-3853,Traitor Guardsmen Squad,Chaos Knights,6.0,3.0,5.0,,1.0,7.0,2.0,70.0,9
-3854,Gellerpox Infected,Chaos Knights,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
-3855,Mutoid Vermin,Chaos Knights,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
-3856,Negavolt Cultists,Chaos Knights,6.0,3.0,7.0,5.0,1.0,7.0,1.0,55.0,4
-3857,Renegade Heavy Weapons Squad,Chaos Knights,6.0,3.0,5.0,,2.0,7.0,2.0,75.0,3
-3858,Renegade Ogryn Beast Handler,Chaos Knights,6.0,6.0,5.0,,4.0,7.0,1.0,70.0,3
-3859,Renegade Ogryn Brutes,Chaos Knights,6.0,6.0,5.0,,3.0,7.0,1.0,95.0,3
-3860,Renegade Plague Ogryns,Chaos Knights,5.0,7.0,5.0,,3.0,7.0,1.0,95.0,3
+3844,Chaos Knights Cultist Firebrand,Chaos Knights,6.0,4.0,4.0,,4.0,6.0,1.0,45.0,1
+3845,Chaos Knights Dark Commune,Chaos Knights,6.0,3.0,6.0,,4.0,6.0,1.0,90.0,2
+3846,Chaos Knights Traitor Enforcer,Chaos Knights,6.0,6.0,5.0,,4.0,7.0,1.0,55.0,1
+3847,Chaos Knights Renegade Enforcer,Chaos Knights,6.0,3.0,5.0,5.0,3.0,6.0,1.0,65.0,1
+3848,Chaos Knights Rogue Psyker,Chaos Knights,6.0,3.0,5.0,,3.0,7.0,1.0,60.0,1
+3849,Chaos Knights Cultist Mob,Chaos Knights,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
+3850,Chaos Knights Cultist Mob with Firearms,Chaos Knights,6.0,3.0,6.0,,1.0,7.0,1.0,100.0,19
+3851,Chaos Knights Accursed Cultists,Chaos Knights,6.0,4.0,6.0,,3.0,7.0,1.0,195.0,10
+3852,Chaos Knights Fellgor Beastmen,Chaos Knights,6.0,4.0,5.0,,1.0,7.0,1.0,70.0,9
+3853,Chaos Knights Traitor Guardsmen Squad,Chaos Knights,6.0,3.0,5.0,,1.0,7.0,2.0,70.0,9
+3854,Chaos Knights Gellerpox Infected,Chaos Knights,5.0,5.0,6.0,,4.0,7.0,1.0,125.0,4
+3855,Chaos Knights Mutoid Vermin,Chaos Knights,8.0,2.0,7.0,,1.0,8.0,0.0,85.0,16
+3856,Chaos Knights Negavolt Cultists,Chaos Knights,6.0,3.0,7.0,5.0,1.0,7.0,1.0,55.0,4
+3857,Chaos Knights Renegade Heavy Weapons Squad,Chaos Knights,6.0,3.0,5.0,,2.0,7.0,2.0,75.0,3
+3858,Chaos Knights Renegade Ogryn Beast Handler,Chaos Knights,6.0,6.0,5.0,,4.0,7.0,1.0,70.0,3
+3859,Chaos Knights Renegade Ogryn Brutes,Chaos Knights,6.0,6.0,5.0,,3.0,7.0,1.0,95.0,3
+3860,Chaos Knights Renegade Plague Ogryns,Chaos Knights,5.0,7.0,5.0,,3.0,7.0,1.0,95.0,3
 4134,Knight Ruinator,Chaos Knights,10.0,11.0,3.0,5.0,26.0,6.0,10.0,375.0,1
 60,Apothecary Biologis,Space Marines,5.0,6.0,3.0,,5.0,6.0,3.0,70.0,1
 61,Assault Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,190.0,9
 63,Apothecary On Bike,Space Marines,12.0,5.0,3.0,,5.0,6.0,2.0,65.0,1
 64,Assault Squad With Jump Packs,Space Marines,12.0,4.0,3.0,,2.0,6.0,1.0,230.0,9
-65,Land Raider,Space Marines,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
-66,Land Raider Crusader,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+65,Space Marines Land Raider,Space Marines,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+66,Space Marines Land Raider Crusader,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
 67,Land Raider Excelsior,Space Marines,10.0,12.0,2.0,5.0,16.0,6.0,5.0,310.0,1
 68,Suppressor Squad,Space Marines,12.0,4.0,3.0,,2.0,6.0,1.0,75.0,2
 70,Tactical Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,140.0,9
@@ -1112,13 +1112,13 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 79,Librarian In Terminator Armour,Space Marines,5.0,5.0,2.0,4.0,5.0,6.0,1.0,75.0,1
 81,Captain Sicarius,Space Marines,6.0,4.0,2.0,4.0,5.0,6.0,1.0,85.0,1
 83,Captain With Jump Pack,Space Marines,12.0,4.0,3.0,4.0,5.0,6.0,1.0,75.0,1
-84,Stormhawk Interceptor,Space Marines,20.0,9.0,3.0,,10.0,6.0,0.0,155.0,1
+84,Space Marines Stormhawk Interceptor,Space Marines,20.0,9.0,3.0,,10.0,6.0,0.0,155.0,1
 85,Rhino Primaris,Space Marines,12.0,9.0,3.0,,10.0,6.0,3.0,95.0,1
 86,Firestrike Servo-turrets,Space Marines,3.0,6.0,2.0,,6.0,6.0,2.0,150.0,2
 87,Drop Pod,Space Marines,,7.0,3.0,,8.0,6.0,0.0,70.0,1
 91,Ballistus Dreadnought,Space Marines,8.0,10.0,2.0,,12.0,6.0,4.0,150.0,1
-92,Sicaran Venator,Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-93,Typhon,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
+92,Space Marines Sicaran Venator,Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+93,Space Marines Typhon,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
 94,Chaplain On Bike,Space Marines,12.0,5.0,3.0,4.0,5.0,5.0,1.0,75.0,1
 95,Ultramarines Honour Guard,Space Marines,6.0,4.0,2.0,,2.0,6.0,1.0,155.0,2
 96,Carab Culln The Risen,Space Marines,8.0,10.0,2.0,5.0,12.0,6.0,4.0,250.0,1
@@ -1128,10 +1128,10 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 103,Eradicator Squad,Space Marines,5.0,6.0,3.0,,3.0,6.0,1.0,200.0,5
 104,Relic Terminator Squad,Space Marines,5.0,5.0,2.0,4.0,3.0,6.0,1.0,400.0,9
 107,Javelin Attack Speeder,Space Marines,14.0,8.0,3.0,,9.0,6.0,3.0,110.0,1
-110,Rapier Carrier,Space Marines,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
+110,Space Marines Rapier Carrier,Space Marines,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
 111,Mortis Dreadnought,Space Marines,6.0,9.0,2.0,,8.0,6.0,3.0,130.0,1
 112,Chaplain With Jump Pack,Space Marines,12.0,4.0,3.0,4.0,4.0,5.0,1.0,75.0,1
-113,Storm Eagle Gunship,Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
+113,Space Marines Storm Eagle Gunship,Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
 114,Storm Speeder Hammerstrike,Space Marines,14.0,9.0,3.0,,11.0,6.0,3.0,125.0,1
 115,Chaplain In Terminator Armour,Space Marines,5.0,5.0,2.0,4.0,5.0,5.0,1.0,75.0,1
 116,Bike Squad,Space Marines,12.0,5.0,3.0,,5.0,6.0,2.0,160.0,5
@@ -1141,14 +1141,14 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 120,Venerable Dreadnought (Legendary),Space Marines,6.0,9.0,2.0,,8.0,6.0,3.0,165.0,1
 121,Uriel Ventris,Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,95.0,1
 122,Dreadnought Drop Pod,Space Marines,,7.0,3.0,,8.0,6.0,2.0,75.0,1
-123,Sicaran Punisher,Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+123,Space Marines Sicaran Punisher,Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
 124,Storm Speeder Hailstrike,Space Marines,14.0,9.0,3.0,,11.0,6.0,3.0,115.0,1
 125,Inceptor Squad,Space Marines,10.0,6.0,3.0,,3.0,6.0,1.0,240.0,5
 126,Infernus Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,180.0,9
 127,Iron Father Feirros,Space Marines,5.0,6.0,2.0,,6.0,6.0,1.0,95.0,1
 128,Infiltrator Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,200.0,9
-129,Razorback,Space Marines,12.0,9.0,3.0,,10.0,6.0,2.0,95.0,1
-131,Leviathan Dreadnought,Space Marines,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
+129,Space Marines Razorback,Space Marines,12.0,9.0,3.0,,10.0,6.0,2.0,95.0,1
+131,Space Marines Leviathan Dreadnought,Space Marines,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
 132,Land Speeder Storm,Space Marines,14.0,7.0,4.0,,7.0,6.0,1.0,70.0,1
 134,Astartes Servitors,Space Marines,6.0,4.0,4.0,6.0,1.0,8.0,0.0,55.0,4
 135,Captain In Terminator Armour,Space Marines,5.0,5.0,2.0,4.0,6.0,6.0,1.0,95.0,1
@@ -1202,8 +1202,8 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 318,Wolf Guard Terminators,Space Marines,6.0,5.0,2.0,4.0,3.0,6.0,1.0,340.0,9
 322,Thunderwolf Cavalry,Space Marines,12.0,6.0,3.0,,4.0,6.0,2.0,230.0,5
 323,Fenrisian Wolves,Space Marines,10.0,4.0,6.0,,1.0,8.0,0.0,80.0,10
-358,Corvus Blackstar,Space Marines,20.0,10.0,3.0,,14.0,6.0,0.0,180.0,1
-1153,Cerberus,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
+358,Space Marines Corvus Blackstar,Space Marines,20.0,10.0,3.0,,14.0,6.0,0.0,180.0,1
+1153,Space Marines Cerberus,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
 1154,Vanguard Veteran Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,240.0,9
 1156,Invictor Tactical Warsuit,Space Marines,8.0,8.0,3.0,,12.0,6.0,4.0,125.0,1
 1157,Intercessor Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,160.0,9
@@ -1221,18 +1221,18 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1169,Land Speeder Tornado,Space Marines,14.0,7.0,3.0,,6.0,6.0,2.0,95.0,1
 1172,Captain In Gravis Armour,Space Marines,5.0,6.0,3.0,4.0,6.0,6.0,1.0,80.0,1
 1174,Chaplain,Space Marines,6.0,4.0,3.0,4.0,4.0,5.0,1.0,60.0,1
-1175,Kratos,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
+1175,Space Marines Kratos,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
 1177,Heavy Intercessor Squad,Space Marines,5.0,6.0,3.0,,3.0,6.0,2.0,200.0,9
 1178,Vindicator Laser Destroyer,Space Marines,9.0,11.0,2.0,,11.0,6.0,3.0,175.0,1
-1179,Sokar-pattern Stormbird,Space Marines,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
+1179,Space Marines Sokar-pattern Stormbird,Space Marines,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
 1182,Ancient On Bike,Space Marines,12.0,5.0,3.0,,5.0,6.0,2.0,90.0,1
 1183,Terminator Squad,Space Marines,5.0,5.0,2.0,4.0,3.0,6.0,1.0,340.0,9
 1184,Terminus Ultra,Space Marines,10.0,12.0,2.0,,16.0,6.0,5.0,285.0,1
-1185,Sicaran Battle Tank,Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+1185,Space Marines Sicaran Battle Tank,Space Marines,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
 1188,Vindicator,Space Marines,9.0,11.0,2.0,,11.0,6.0,3.0,185.0,1
-1189,Mastodon,Space Marines,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
-1190,Stormtalon Gunship,Space Marines,20.0,8.0,3.0,,10.0,6.0,0.0,165.0,1
-1191,Stormraven Gunship,Space Marines,20.0,10.0,3.0,,14.0,6.0,0.0,280.0,1
+1189,Space Marines Mastodon,Space Marines,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
+1190,Space Marines Stormtalon Gunship,Space Marines,20.0,8.0,3.0,,10.0,6.0,0.0,165.0,1
+1191,Space Marines Stormraven Gunship,Space Marines,20.0,10.0,3.0,,14.0,6.0,0.0,280.0,1
 1192,Chaplain Venerable Dreadnought,Space Marines,6.0,9.0,2.0,5.0,8.0,6.0,3.0,150.0,1
 1193,Centurion Devastator Squad,Space Marines,4.0,7.0,2.0,,4.0,6.0,2.0,330.0,5
 1344,Librarian With Jump Pack,Space Marines,12.0,4.0,3.0,,4.0,6.0,1.0,75.0,1
@@ -1245,16 +1245,16 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1524,Sergeant Chronus,Space Marines,6.0,4.0,2.0,,3.0,6.0,1.0,75.0,1
 1527,Techmarine On Bike,Space Marines,12.0,5.0,3.0,,5.0,6.0,2.0,110.0,1
 1606,Assault Intercessor Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,150.0,9
-1607,Land Raider Achilles,Space Marines,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
-1608,Land Raider Proteus,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
-1609,Fire Raptor Gunship,Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
+1607,Space Marines Land Raider Achilles,Space Marines,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
+1608,Space Marines Land Raider Proteus,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
+1609,Space Marines Fire Raptor Gunship,Space Marines,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
 1610,Storm Speeder Thunderstrike,Space Marines,14.0,9.0,3.0,,11.0,6.0,3.0,150.0,1
 1611,Chief Librarian Tigurius,Space Marines,6.0,4.0,3.0,4.0,4.0,6.0,1.0,75.0,1
-1666,Falchion,Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
+1666,Space Marines Falchion,Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
 1667,Gladiator Reaper,Space Marines,10.0,10.0,3.0,,12.0,6.0,3.0,160.0,1
 1668,Eliminator Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,85.0,2
 1825,Gladiator Valiant,Space Marines,10.0,10.0,3.0,,12.0,6.0,3.0,150.0,1
-1991,Terrax-pattern Termite,Space Marines,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
+1991,Space Marines Terrax-pattern Termite,Space Marines,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
 1997,Death Company Marines,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,160.0,10
 2076,Attack Bike Squad,Space Marines,12.0,5.0,3.0,,5.0,6.0,2.0,165.0,3
 2098,Hellblaster Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,220.0,9
@@ -1263,17 +1263,17 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2102,Land Speeder Typhoon,Space Marines,14.0,7.0,3.0,,6.0,6.0,2.0,100.0,1
 2103,Command Squad,Space Marines,6.0,4.0,3.0,,3.0,6.0,1.0,165.0,2
 2105,Darnath Lysander,Space Marines,5.0,5.0,2.0,4.0,7.0,6.0,1.0,100.0,1
-2173,Land Raider Redeemer,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,270.0,1
+2173,Space Marines Land Raider Redeemer,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,270.0,1
 2199,Marneus Calgar,Space Marines,6.0,6.0,2.0,4.0,6.0,6.0,1.0,200.0,2
 2202,Devastator Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,200.0,9
 2234,Primaris Company Champion,Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,55.0,1
-2252,Spartan,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
+2252,Space Marines Spartan,Space Marines,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
 2255,Sternguard Veteran Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,200.0,9
 2258,Stalker,Space Marines,9.0,11.0,3.0,,11.0,6.0,3.0,140.0,1
 2266,Librarian,Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,65.0,1
 2267,Deathstorm Drop Pod,Space Marines,,7.0,3.0,,8.0,6.0,2.0,95.0,1
 2268,Deimos Predator,Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
-2269,Deredeo Dreadnought,Space Marines,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
+2269,Space Marines Deredeo Dreadnought,Space Marines,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
 2270,Desolation Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,200.0,4
 2285,Death Company Marines with Bolt Rifles,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,160.0,10
 2291,Sammael,Space Marines,12.0,5.0,3.0,4.0,7.0,6.0,2.0,115.0,1
@@ -1290,7 +1290,7 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2701,Captain In Phobos Armour,Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,70.0,1
 2702,Captain On Bike,Space Marines,12.0,5.0,3.0,4.0,6.0,6.0,2.0,95.0,1
 2703,Centurion Assault Squad,Space Marines,4.0,7.0,2.0,,4.0,6.0,2.0,300.0,5
-2704,Fellblade,Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
+2704,Space Marines Fellblade,Space Marines,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
 2705,Gladiator Lancer,Space Marines,10.0,10.0,3.0,,12.0,6.0,3.0,160.0,1
 2706,Ironclad Dreadnought,Space Marines,6.0,10.0,2.0,,8.0,6.0,3.0,150.0,1
 2707,Judiciar,Space Marines,6.0,4.0,3.0,4.0,4.0,5.0,1.0,70.0,1
@@ -1304,17 +1304,17 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2715,Predator Destructor,Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,140.0,1
 2717,Redemptor Dreadnought,Space Marines,8.0,10.0,2.0,,12.0,6.0,4.0,195.0,1
 2718,Reiver Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,160.0,9
-2719,Relic Contemptor Dreadnought,Space Marines,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
+2719,Space Marines Relic Contemptor Dreadnought,Space Marines,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
 2720,Relic Razorback,Space Marines,12.0,9.0,3.0,,10.0,6.0,2.0,105.0,1
 2721,Repulsor,Space Marines,10.0,12.0,3.0,,16.0,6.0,5.0,180.0,1
 2722,Repulsor Executioner,Space Marines,10.0,12.0,3.0,,16.0,6.0,5.0,220.0,1
-2723,Rhino,Space Marines,12.0,9.0,3.0,,10.0,6.0,2.0,75.0,1
+2723,Space Marines Rhino,Space Marines,12.0,9.0,3.0,,10.0,6.0,2.0,75.0,1
 2724,Thunderhawk Transporter,Space Marines,20.0,12.0,2.0,,30.0,6.0,0.0,495.0,1
 2725,Tyrannic War Veterans,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,85.0,4
 2726,Vulkan He’stan,Space Marines,6.0,4.0,2.0,4.0,5.0,6.0,1.0,100.0,1
 2727,Whirlwind,Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,190.0,1
-2728,Whirlwind Scorpius,Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
-2729,Xiphon Interceptor,Space Marines,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
+2728,Space Marines Whirlwind Scorpius,Space Marines,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
+2729,Space Marines Xiphon Interceptor,Space Marines,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
 2737,Death Company Marines With Jump Packs,Space Marines,12.0,4.0,3.0,,2.0,6.0,1.0,230.0,10
 2738,Sanguinary Priest With Jump Pack,Space Marines,12.0,4.0,3.0,,4.0,6.0,1.0,100.0,1
 2748,Ravenwing Command Squad,Space Marines,12.0,5.0,3.0,5.0,4.0,6.0,2.0,120.0,1
@@ -1322,9 +1322,9 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2773,Apothecary,Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,50.0,1
 2775,Ancient,Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,50.0,1
 2776,Assault Intercessors With Jump Packs,Space Marines,12.0,4.0,3.0,,2.0,6.0,1.0,170.0,9
-2779,Spectrus Kill Team,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,180.0,10
-2780,Fortis Kill Team,Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,180.0,10
-2781,Indomitor Kill Team,Space Marines,5.0,6.0,3.0,,3.0,6.0,1.0,250.0,10
+2779,Space Marines Spectrus Kill Team,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,180.0,10
+2780,Space Marines Fortis Kill Team,Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,180.0,10
+2781,Space Marines Indomitor Kill Team,Space Marines,5.0,6.0,3.0,,3.0,6.0,1.0,250.0,10
 2783,Deathwatch Veterans,Space Marines,6.0,4.0,3.0,,2.0,6.0,2.0,190.0,9
 2786,Impulsor,Space Marines,12.0,9.0,3.0,,11.0,6.0,2.0,85.0,1
 2787,Gladiator Lancer,Space Marines,10.0,10.0,3.0,,12.0,6.0,3.0,160.0,1
@@ -1339,11 +1339,10 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2796,Marshal,Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
 2798,Sword Brethren Squad,Space Marines,6.0,4.0,3.0,,3.0,6.0,1.0,260.0,10
 2799,Crusader Squad,Space Marines,6.0,4.0,4.0,,2.0,6.0,2.0,310.0,11
-2801,Venerable Dreadnought,Space Marines,8.0,9.0,2.0,,8.0,6.0,3.0,140.0,1
+2801,Space Marines Venerable Dreadnought,Space Marines,8.0,9.0,2.0,,8.0,6.0,3.0,140.0,1
 3696,Chapter Master Draaken Vorn,Space Marines,5.0,5.0,2.0,4.0,6.0,6.0,1.0,120.0,1
 3697,Chapter Champion Facio,Space Marines,6.0,4.0,3.0,4.0,6.0,6.0,1.0,100.0,1
 3698,Inner Circle Companions,Space Marines,6.0,4.0,3.0,,3.0,6.0,2.0,180.0,6
-3708,Example Wargear,Space Marines,,,,,,,,,1
 3831,Blood Angels Captain,Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
 3832,Death Company Captain,Space Marines,6.0,4.0,3.0,4.0,5.0,6.0,1.0,70.0,1
 3833,Death Company Captain with Jump Pack,Space Marines,12.0,4.0,3.0,4.0,5.0,6.0,1.0,75.0,1
@@ -1351,11 +1350,11 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 3836,Death Company Marines with Boltguns,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,250.0,10
 3837,Death Company Marines with Boltguns and Jump Packs,Space Marines,12.0,4.0,3.0,,2.0,6.0,1.0,280.0,10
 3838,Lieutenant Titus,Space Marines,6.0,4.0,3.0,,5.0,6.0,1.0,70.0,1
-3871,Watch Master,Space Marines,6.0,4.0,2.0,4.0,5.0,6.0,1.0,95.0,1
-3872,Watch Captain Artemis,Space Marines,6.0,4.0,3.0,4.0,4.0,6.0,1.0,65.0,1
-3873,Deathwatch Terminator Squad,Space Marines,5.0,5.0,2.0,4.0,3.0,6.0,1.0,350.0,9
+3871,Space Marines Watch Master,Space Marines,6.0,4.0,2.0,4.0,5.0,6.0,1.0,95.0,1
+3872,Space Marines Watch Captain Artemis,Space Marines,6.0,4.0,3.0,4.0,4.0,6.0,1.0,65.0,1
+3873,Space Marines Deathwatch Terminator Squad,Space Marines,5.0,5.0,2.0,4.0,3.0,6.0,1.0,350.0,9
 3874,Talonstrike Kill Team,Space Marines,10.0,6.0,3.0,,3.0,6.0,1.0,275.0,10
-3875,Kill Team Cassius,Space Marines,6.0,4.0,3.0,4.0,4.0,5.0,2.0,220.0,8
+3875,Space Marines Kill Team Cassius,Space Marines,6.0,4.0,3.0,4.0,4.0,5.0,2.0,220.0,8
 4129,Wolf Priest,Space Marines,7.0,4.0,3.0,4.0,4.0,6.0,1.0,70.0,1
 4130,Wolf Guard Battle Leader,Space Marines,7.0,4.0,3.0,4.0,5.0,6.0,1.0,65.0,1
 4131,Wolf Guard Headtakers,Space Marines,7.0,4.0,3.0,,3.0,6.0,1.0,220.0,6
@@ -1365,7 +1364,7 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 4136,Crusade Ancient,Space Marines,6.0,4.0,3.0,,4.0,6.0,1.0,65.0,1
 4137,Sternguard Veteran Squad,Space Marines,6.0,4.0,3.0,,2.0,6.0,1.0,170.0,9
 4138,Terminator Squad,Space Marines,5.0,5.0,2.0,4.0,3.0,6.0,1.0,330.0,9
-4139,Land Raider Crusader,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+4139,Space Marines Land Raider Crusader,Space Marines,12.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
 4148,Aethon Shaan,Space Marines,14.0,4.0,3.0,4.0,5.0,6.0,1.0,85.0,1
 402,Commander In Coldstar Battlesuit,T’au Empire,12.0,5.0,3.0,,6.0,7.0,2.0,95.0,1
 403,Tactical Drones,T’au Empire,8.0,3.0,4.0,,1.0,7.0,0.0,210.0,12
@@ -1433,19 +1432,19 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 868,Reaver Titan,Adeptus Titanicus,12.0,14.0,2.0,5.0,60.0,6.0,20.0,2200.0,1
 869,Warlord Titan,Adeptus Titanicus,10.0,16.0,2.0,5.0,100.0,6.0,30.0,3500.0,1
 2077,Warbringer Nemesis Titan,Adeptus Titanicus,12.0,14.0,2.0,5.0,80.0,6.0,20.0,2600.0,1
-1016,Sorcerer,Thousand Sons,6.0,4.0,3.0,5.0,4.0,6.0,1.0,85.0,1
-1017,Sorcerer In Terminator Armour,Thousand Sons,5.0,5.0,2.0,4.0,5.0,6.0,1.0,85.0,1
-1020,Rubric Marines,Thousand Sons,6.0,4.0,3.0,5.0,3.0,6.0,2.0,190.0,9
-1021,Helbrute,Thousand Sons,8.0,9.0,2.0,5.0,8.0,6.0,3.0,110.0,1
-1022,Chaos Rhino,Thousand Sons,12.0,9.0,3.0,,10.0,6.0,2.0,90.0,1
-1023,Chaos Spawn,Thousand Sons,8.0,5.0,4.0,5.0,4.0,7.0,1.0,65.0,2
-1024,Heldrake,Thousand Sons,20.0,9.0,3.0,5.0,12.0,6.0,0.0,215.0,1
-1025,Chaos Land Raider,Thousand Sons,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
-1026,Chaos Predator Destructor,Thousand Sons,10.0,10.0,3.0,,11.0,6.0,3.0,140.0,1
-1027,Chaos Vindicator,Thousand Sons,9.0,11.0,2.0,,11.0,6.0,3.0,185.0,1
-1028,Forgefiend,Thousand Sons,8.0,10.0,3.0,5.0,12.0,6.0,3.0,140.0,1
-1029,Maulerfiend,Thousand Sons,10.0,10.0,3.0,5.0,12.0,6.0,3.0,130.0,1
-1030,Defiler,Thousand Sons,8.0,10.0,3.0,5.0,14.0,6.0,5.0,165.0,1
+1016,Thousand Sons Sorcerer,Thousand Sons,6.0,4.0,3.0,5.0,4.0,6.0,1.0,85.0,1
+1017,Thousand Sons Sorcerer In Terminator Armour,Thousand Sons,5.0,5.0,2.0,4.0,5.0,6.0,1.0,85.0,1
+1020,Thousand Sons Rubric Marines,Thousand Sons,6.0,4.0,3.0,5.0,3.0,6.0,2.0,190.0,9
+1021,Thousand Sons Helbrute,Thousand Sons,8.0,9.0,2.0,5.0,8.0,6.0,3.0,110.0,1
+1022,Thousand Sons Chaos Rhino,Thousand Sons,12.0,9.0,3.0,,10.0,6.0,2.0,90.0,1
+1023,Thousand Sons Chaos Spawn,Thousand Sons,8.0,5.0,4.0,5.0,4.0,7.0,1.0,65.0,2
+1024,Thousand Sons Heldrake,Thousand Sons,20.0,9.0,3.0,5.0,12.0,6.0,0.0,215.0,1
+1025,Thousand Sons Chaos Land Raider,Thousand Sons,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+1026,Thousand Sons Chaos Predator Destructor,Thousand Sons,10.0,10.0,3.0,,11.0,6.0,3.0,140.0,1
+1027,Thousand Sons Chaos Vindicator,Thousand Sons,9.0,11.0,2.0,,11.0,6.0,3.0,185.0,1
+1028,Thousand Sons Forgefiend,Thousand Sons,8.0,10.0,3.0,5.0,12.0,6.0,3.0,140.0,1
+1029,Thousand Sons Maulerfiend,Thousand Sons,10.0,10.0,3.0,5.0,12.0,6.0,3.0,130.0,1
+1030,Thousand Sons Defiler,Thousand Sons,8.0,10.0,3.0,5.0,14.0,6.0,5.0,165.0,1
 1031,Magnus The Red,Thousand Sons,14.0,11.0,2.0,4.0,16.0,5.0,6.0,435.0,1
 1032,Ahriman,Thousand Sons,10.0,4.0,3.0,4.0,6.0,6.0,2.0,100.0,1
 1033,Exalted Sorcerer,Thousand Sons,6.0,4.0,3.0,4.0,5.0,6.0,1.0,80.0,1
@@ -1456,43 +1455,43 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1474,Tzaangor Enlightened,Thousand Sons,10.0,4.0,5.0,5.0,2.0,7.0,2.0,90.0,5
 1476,Mutalith Vortex Beast,Thousand Sons,10.0,10.0,4.0,5.0,13.0,6.0,4.0,175.0,1
 2500,Infernal Master,Thousand Sons,6.0,4.0,3.0,5.0,4.0,6.0,1.0,95.0,1
-2501,Chaos Predator Annihilator,Thousand Sons,10.0,10.0,3.0,,11.0,6.0,3.0,130.0,1
+2501,Thousand Sons Chaos Predator Annihilator,Thousand Sons,10.0,10.0,3.0,,11.0,6.0,3.0,130.0,1
 2755,Exalted Sorcerer on Disc of Tzeentch,Thousand Sons,10.0,4.0,3.0,4.0,6.0,6.0,2.0,100.0,1
-3591,Chaos Thunderhawk,Thousand Sons,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
-3597,Chaos Lord On Disc Of Tzeentch,Thousand Sons,12.0,4.0,3.0,4.0,6.0,6.0,1.0,100.0,1
-3598,Hell Blade,Thousand Sons,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
-3599,Hell Talon,Thousand Sons,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
-3603,Terrax-pattern Termite,Thousand Sons,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
-3607,Land Raider Achilles,Thousand Sons,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
-3611,Land Raider Proteus,Thousand Sons,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
-3615,Fire Raptor Gunship,Thousand Sons,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
-3619,Spartan,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
-3623,Deredeo Dreadnought,Thousand Sons,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
-3627,Cerberus,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
-3631,Kratos,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
-3635,Sokar-pattern Stormbird,Thousand Sons,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
-3639,Sicaran Battle Tank,Thousand Sons,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3643,Mastodon,Thousand Sons,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
-3647,Leviathan Dreadnought,Thousand Sons,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
-3651,Fellblade,Thousand Sons,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
-3655,Relic Contemptor Dreadnought,Thousand Sons,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
-3659,Whirlwind Scorpius,Thousand Sons,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
-3663,Xiphon Interceptor,Thousand Sons,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
-3667,Rapier Carrier,Thousand Sons,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
-3671,Storm Eagle Gunship,Thousand Sons,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
-3675,Sicaran Venator,Thousand Sons,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3679,Typhon,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
-3683,Sicaran Punisher,Thousand Sons,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3687,Falchion,Thousand Sons,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
+3591,Thousand Sons Chaos Thunderhawk,Thousand Sons,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
+3597,Thousand Sons Chaos Lord On Disc Of Tzeentch,Thousand Sons,12.0,4.0,3.0,4.0,6.0,6.0,1.0,100.0,1
+3598,Thousand Sons Hell Blade,Thousand Sons,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
+3599,Thousand Sons Hell Talon,Thousand Sons,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
+3603,Thousand Sons Terrax-pattern Termite,Thousand Sons,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
+3607,Thousand Sons Land Raider Achilles,Thousand Sons,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
+3611,Thousand Sons Land Raider Proteus,Thousand Sons,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
+3615,Thousand Sons Fire Raptor Gunship,Thousand Sons,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
+3619,Thousand Sons Spartan,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
+3623,Thousand Sons Deredeo Dreadnought,Thousand Sons,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
+3627,Thousand Sons Cerberus,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
+3631,Thousand Sons Kratos,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
+3635,Thousand Sons Sokar-pattern Stormbird,Thousand Sons,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
+3639,Thousand Sons Sicaran Battle Tank,Thousand Sons,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3643,Thousand Sons Mastodon,Thousand Sons,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
+3647,Thousand Sons Leviathan Dreadnought,Thousand Sons,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
+3651,Thousand Sons Fellblade,Thousand Sons,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
+3655,Thousand Sons Relic Contemptor Dreadnought,Thousand Sons,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
+3659,Thousand Sons Whirlwind Scorpius,Thousand Sons,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
+3663,Thousand Sons Xiphon Interceptor,Thousand Sons,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
+3667,Thousand Sons Rapier Carrier,Thousand Sons,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
+3671,Thousand Sons Storm Eagle Gunship,Thousand Sons,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
+3675,Thousand Sons Sicaran Venator,Thousand Sons,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3679,Thousand Sons Typhon,Thousand Sons,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
+3683,Thousand Sons Sicaran Punisher,Thousand Sons,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3687,Thousand Sons Falchion,Thousand Sons,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
 4120,Daemon Prince of Tzeentch with Wings,Thousand Sons,13.0,9.0,2.0,4.0,10.0,6.0,3.0,170.0,1
 4121,Sekhetar Robots,Thousand Sons,8.0,6.0,3.0,5.0,4.0,7.0,1.0,160.0,4
 4122,Tzaangor Enlightened with Fatecaster Greatbows,Thousand Sons,10.0,4.0,5.0,5.0,2.0,7.0,2.0,110.0,5
-4123,Kairos Fateweaver,Thousand Sons,12.0,10.0,6.0,4.0,20.0,6.0,5.0,260.0,1
-4124,Lord of Change,Thousand Sons,12.0,10.0,6.0,4.0,18.0,6.0,5.0,250.0,1
-4125,Flamers,Thousand Sons,9.0,4.0,7.0,4.0,3.0,7.0,1.0,130.0,5
-4126,Screamers,Thousand Sons,14.0,4.0,6.0,4.0,3.0,7.0,1.0,160.0,6
-4127,Pink Horrors,Thousand Sons,6.0,3.0,7.0,4.0,1.0,7.0,1.0,115.0,10
-4128,Blue Horrors,Thousand Sons,6.0,3.0,7.0,4.0,1.0,8.0,0.0,90.0,10
+4123,Thousand Sons Kairos Fateweaver,Thousand Sons,12.0,10.0,6.0,4.0,20.0,6.0,5.0,260.0,1
+4124,Thousand Sons Lord of Change,Thousand Sons,12.0,10.0,6.0,4.0,18.0,6.0,5.0,250.0,1
+4125,Thousand Sons Flamers,Thousand Sons,9.0,4.0,7.0,4.0,3.0,7.0,1.0,130.0,5
+4126,Thousand Sons Screamers,Thousand Sons,14.0,4.0,6.0,4.0,3.0,7.0,1.0,160.0,6
+4127,Thousand Sons Pink Horrors,Thousand Sons,6.0,3.0,7.0,4.0,1.0,7.0,1.0,115.0,10
+4128,Thousand Sons Blue Horrors,Thousand Sons,6.0,3.0,7.0,4.0,1.0,8.0,0.0,90.0,10
 460,Hive Tyrant,Tyranids,8.0,10.0,2.0,4.0,10.0,7.0,3.0,195.0,1
 461,The Swarmlord,Tyranids,8.0,10.0,2.0,4.0,10.0,7.0,3.0,220.0,1
 462,Old One Eye,Tyranids,8.0,9.0,2.0,,9.0,8.0,3.0,150.0,1
@@ -1504,25 +1503,25 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 470,Ripper Swarms,Tyranids,6.0,2.0,6.0,,4.0,8.0,0.0,50.0,3
 471,Tyrant Guard,Tyranids,6.0,8.0,3.0,,4.0,8.0,1.0,160.0,6
 472,Hive Guard,Tyranids,6.0,7.0,3.0,,4.0,8.0,1.0,180.0,6
-473,Lictor,Tyranids,8.0,6.0,4.0,,6.0,7.0,1.0,60.0,1
+473,Tyranids Lictor,Tyranids,8.0,6.0,4.0,,6.0,7.0,1.0,60.0,1
 474,Maleceptor,Tyranids,8.0,11.0,3.0,4.0,14.0,7.0,4.0,170.0,1
 475,Zoanthropes,Tyranids,5.0,5.0,5.0,4.0,3.0,7.0,1.0,200.0,5
 476,Venomthropes,Tyranids,6.0,5.0,4.0,,3.0,8.0,1.0,140.0,6
 477,Pyrovores,Tyranids,5.0,6.0,3.0,,5.0,8.0,1.0,105.0,3
 478,Haruspex,Tyranids,8.0,11.0,3.0,,14.0,8.0,4.0,125.0,1
-479,Deathleaper,Tyranids,8.0,6.0,3.0,4.0,7.0,7.0,1.0,80.0,1
-482,Raveners,Tyranids,10.0,5.0,4.0,,3.0,8.0,1.0,150.0,5
+479,Tyranids Deathleaper,Tyranids,8.0,6.0,3.0,4.0,7.0,7.0,1.0,80.0,1
+482,Tyranids Raveners,Tyranids,10.0,5.0,4.0,,3.0,8.0,1.0,150.0,5
 483,Sky-slasher Swarms,Tyranids,12.0,2.0,6.0,,4.0,8.0,0.0,60.0,3
-484,Gargoyles,Tyranids,12.0,3.0,6.0,,1.0,8.0,2.0,170.0,20
+484,Tyranids Gargoyles,Tyranids,12.0,3.0,6.0,,1.0,8.0,2.0,170.0,20
 485,Harpy,Tyranids,20.0,9.0,3.0,,12.0,8.0,0.0,215.0,1
 486,Hive Crone,Tyranids,20.0,9.0,3.0,,12.0,8.0,0.0,200.0,1
 487,Mucolid Spores,Tyranids,4.0,4.0,7.0,,3.0,8.0,0.0,60.0,2
 488,Spore Mines,Tyranids,4.0,1.0,7.0,,1.0,8.0,0.0,110.0,6
-489,Tyrannocyte,Tyranids,8.0,9.0,3.0,,10.0,8.0,2.0,105.0,1
+489,Tyranids Tyrannocyte,Tyranids,8.0,9.0,3.0,,10.0,8.0,2.0,105.0,1
 490,Carnifexes,Tyranids,8.0,9.0,2.0,,8.0,8.0,3.0,230.0,2
 491,Biovores,Tyranids,5.0,6.0,3.0,,5.0,8.0,1.0,150.0,3
-493,Trygon,Tyranids,10.0,10.0,3.0,,14.0,8.0,4.0,140.0,1
-494,Mawloc,Tyranids,10.0,10.0,3.0,,14.0,8.0,4.0,135.0,1
+493,Tyranids Trygon,Tyranids,10.0,10.0,3.0,,14.0,8.0,4.0,140.0,1
+494,Tyranids Mawloc,Tyranids,10.0,10.0,3.0,,14.0,8.0,4.0,135.0,1
 495,Exocrine,Tyranids,8.0,10.0,3.0,,14.0,8.0,4.0,140.0,1
 496,Tyrannofex,Tyranids,9.0,12.0,2.0,,16.0,8.0,5.0,200.0,1
 497,Toxicrene,Tyranids,8.0,11.0,3.0,,14.0,8.0,4.0,150.0,1
@@ -1533,8 +1532,8 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 504,Harridan,Tyranids,20.0,10.0,3.0,,30.0,8.0,0.0,610.0,1
 505,Hierophant,Tyranids,12.0,14.0,2.0,5.0,30.0,8.0,12.0,810.0,1
 506,Scythed Hierodule,Tyranids,12.0,12.0,2.0,,18.0,8.0,5.0,330.0,1
-2528,Winged Hive Tyrant,Tyranids,12.0,9.0,2.0,4.0,10.0,7.0,3.0,170.0,1
-2529,Parasite Of Mortrex,Tyranids,12.0,5.0,4.0,,5.0,8.0,1.0,80.0,1
+2528,Tyranids Winged Hive Tyrant,Tyranids,12.0,9.0,2.0,4.0,10.0,7.0,3.0,170.0,1
+2529,Tyranids Parasite Of Mortrex,Tyranids,12.0,5.0,4.0,,5.0,8.0,1.0,80.0,1
 2686,Barbgaunts,Tyranids,6.0,4.0,4.0,,2.0,8.0,1.0,110.0,10
 2687,Neurogaunts,Tyranids,6.0,3.0,6.0,,1.0,8.0,1.0,90.0,20
 2688,Neurotyrant,Tyranids,6.0,8.0,4.0,4.0,9.0,7.0,3.0,105.0,1
@@ -1542,12 +1541,12 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2690,Screamer-killer,Tyranids,8.0,9.0,2.0,,10.0,8.0,3.0,135.0,1
 2691,Tyranid Warriors With Melee Bio-weapons,Tyranids,6.0,5.0,4.0,,3.0,7.0,2.0,150.0,5
 2692,Tyranid Warriors With Ranged Bio-weapons,Tyranids,6.0,5.0,4.0,,3.0,7.0,2.0,130.0,5
-2693,Von Ryan’s Leapers,Tyranids,10.0,5.0,4.0,6.0,3.0,8.0,1.0,140.0,6
-2694,Winged Tyranid Prime,Tyranids,12.0,5.0,4.0,,6.0,7.0,1.0,65.0,1
+2693,Tyranids Von Ryan’s Leapers,Tyranids,10.0,5.0,4.0,6.0,3.0,8.0,1.0,140.0,6
+2694,Tyranids Winged Tyranid Prime,Tyranids,12.0,5.0,4.0,,6.0,7.0,1.0,65.0,1
 2751,Norn Emissary,Tyranids,10.0,11.0,2.0,4.0,16.0,7.0,5.0,260.0,1
 2752,Norn Assimilator,Tyranids,10.0,11.0,2.0,,16.0,7.0,5.0,275.0,1
-2753,Neurolictor,Tyranids,8.0,5.0,4.0,4.0,7.0,7.0,1.0,70.0,1
-4117,Hyperadapted Raveners,Tyranids,10.0,5.0,4.0,,6.0,7.0,1.0,165.0,4
+2753,Tyranids Neurolictor,Tyranids,8.0,5.0,4.0,4.0,7.0,7.0,1.0,70.0,1
+4117,Tyranids Hyperadapted Raveners,Tyranids,10.0,5.0,4.0,,6.0,7.0,1.0,165.0,4
 243,Fortress Of Redemption,Unaligned Forces,,13.0,2.0,,30.0,7.0,0.0,480.0,1
 785,Imperial Fortress Walls,Unaligned Forces,,14.0,2.0,,80.0,7.0,0.0,,2
 786,Primaris Redoubt,Unaligned Forces,,12.0,3.0,5.0,18.0,7.0,0.0,220.0,1
@@ -1574,55 +1573,55 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2624,Daemon Prince of Khorne,World Eaters,10.0,10.0,2.0,4.0,10.0,6.0,3.0,200.0,1
 2625,Lord on Juggernaut,World Eaters,10.0,6.0,3.0,4.0,7.0,6.0,2.0,90.0,1
 2626,Master of Executions,World Eaters,8.0,4.0,3.0,,4.0,6.0,1.0,60.0,1
-2627,Khorne Berzerkers,World Eaters,8.0,4.0,3.0,,2.0,6.0,2.0,360.0,19
+2627,World Eaters Khorne Berzerkers,World Eaters,8.0,4.0,3.0,,2.0,6.0,2.0,360.0,19
 2628,Jakhals,World Eaters,7.0,4.0,6.0,,1.0,7.0,1.0,140.0,17
-2629,Chaos Terminators,World Eaters,7.0,5.0,2.0,4.0,3.0,6.0,1.0,350.0,9
+2629,World Eaters Chaos Terminators,World Eaters,7.0,5.0,2.0,4.0,3.0,6.0,1.0,350.0,9
 2630,Eightbound,World Eaters,10.0,6.0,3.0,5.0,3.0,6.0,1.0,270.0,5
 2631,Exalted Eightbound,World Eaters,10.0,6.0,3.0,5.0,3.0,6.0,1.0,280.0,5
-2632,Helbrute,World Eaters,9.0,9.0,2.0,,8.0,6.0,3.0,120.0,1
-2633,Chaos Spawn,World Eaters,10.0,5.0,4.0,,4.0,7.0,1.0,90.0,2
-2634,Chaos Land Raider,World Eaters,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
-2635,Defiler,World Eaters,10.0,10.0,3.0,5.0,14.0,6.0,5.0,180.0,1
-2636,Chaos Predator Destructor,World Eaters,10.0,10.0,3.0,,11.0,6.0,3.0,145.0,1
-2637,Chaos Predator Annihilator,World Eaters,10.0,10.0,3.0,,11.0,6.0,3.0,145.0,1
-2638,Forgefiend,World Eaters,10.0,10.0,3.0,5.0,12.0,6.0,3.0,170.0,1
-2639,Maulerfiend,World Eaters,12.0,10.0,3.0,5.0,12.0,6.0,3.0,150.0,1
-2640,Chaos Rhino,World Eaters,12.0,9.0,3.0,,10.0,6.0,2.0,85.0,1
-2641,Heldrake,World Eaters,20.0,9.0,3.0,5.0,12.0,6.0,0.0,200.0,1
+2632,World Eaters Helbrute,World Eaters,9.0,9.0,2.0,,8.0,6.0,3.0,120.0,1
+2633,World Eaters Chaos Spawn,World Eaters,10.0,5.0,4.0,,4.0,7.0,1.0,90.0,2
+2634,World Eaters Chaos Land Raider,World Eaters,10.0,12.0,2.0,,16.0,6.0,5.0,220.0,1
+2635,World Eaters Defiler,World Eaters,10.0,10.0,3.0,5.0,14.0,6.0,5.0,180.0,1
+2636,World Eaters Chaos Predator Destructor,World Eaters,10.0,10.0,3.0,,11.0,6.0,3.0,145.0,1
+2637,World Eaters Chaos Predator Annihilator,World Eaters,10.0,10.0,3.0,,11.0,6.0,3.0,145.0,1
+2638,World Eaters Forgefiend,World Eaters,10.0,10.0,3.0,5.0,12.0,6.0,3.0,170.0,1
+2639,World Eaters Maulerfiend,World Eaters,12.0,10.0,3.0,5.0,12.0,6.0,3.0,150.0,1
+2640,World Eaters Chaos Rhino,World Eaters,12.0,9.0,3.0,,10.0,6.0,2.0,85.0,1
+2641,World Eaters Heldrake,World Eaters,20.0,9.0,3.0,5.0,12.0,6.0,0.0,200.0,1
 2642,Khorne Lord of Skulls,World Eaters,12.0,13.0,3.0,5.0,24.0,6.0,8.0,505.0,1
 2757,Daemon Prince of Khorne with Wings,World Eaters,14.0,9.0,2.0,4.0,10.0,6.0,3.0,180.0,1
-3587,Blood Slaughterer,World Eaters,12.0,9.0,3.0,5.0,10.0,6.0,3.0,160.0,1
-3588,Chaos Thunderhawk,World Eaters,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
-3589,Greater Brass Scorpion,World Eaters,12.0,12.0,3.0,5.0,26.0,6.0,10.0,560.0,1
-3590,Kytan Ravager,World Eaters,10.0,12.0,3.0,5.0,24.0,6.0,10.0,425.0,1
-3601,Hell Blade,World Eaters,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
-3602,Hell Talon,World Eaters,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
-3605,Terrax-pattern Termite,World Eaters,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
-3609,Land Raider Achilles,World Eaters,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
-3613,Land Raider Proteus,World Eaters,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
-3617,Fire Raptor Gunship,World Eaters,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
-3621,Spartan,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
-3625,Deredeo Dreadnought,World Eaters,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
-3629,Cerberus,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
-3633,Kratos,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
-3637,Sokar-pattern Stormbird,World Eaters,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
-3641,Sicaran Battle Tank,World Eaters,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3645,Mastodon,World Eaters,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
-3649,Leviathan Dreadnought,World Eaters,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
-3653,Fellblade,World Eaters,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
-3657,Relic Contemptor Dreadnought,World Eaters,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
-3661,Whirlwind Scorpius,World Eaters,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
-3665,Xiphon Interceptor,World Eaters,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
-3669,Rapier Carrier,World Eaters,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
-3673,Storm Eagle Gunship,World Eaters,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
-3677,Sicaran Venator,World Eaters,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3681,Typhon,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
-3685,Sicaran Punisher,World Eaters,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
-3689,Falchion,World Eaters,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
+3587,World Eaters Blood Slaughterer,World Eaters,12.0,9.0,3.0,5.0,10.0,6.0,3.0,160.0,1
+3588,World Eaters Chaos Thunderhawk,World Eaters,20.0,12.0,2.0,,30.0,6.0,0.0,840.0,1
+3589,World Eaters Greater Brass Scorpion,World Eaters,12.0,12.0,3.0,5.0,26.0,6.0,10.0,560.0,1
+3590,World Eaters Kytan Ravager,World Eaters,10.0,12.0,3.0,5.0,24.0,6.0,10.0,425.0,1
+3601,World Eaters Hell Blade,World Eaters,20.0,8.0,3.0,5.0,10.0,6.0,0.0,115.0,1
+3602,World Eaters Hell Talon,World Eaters,20.0,9.0,3.0,5.0,14.0,6.0,0.0,140.0,1
+3605,World Eaters Terrax-pattern Termite,World Eaters,8.0,10.0,3.0,,14.0,6.0,2.0,200.0,1
+3609,World Eaters Land Raider Achilles,World Eaters,10.0,12.0,2.0,4.0,16.0,6.0,5.0,285.0,1
+3613,World Eaters Land Raider Proteus,World Eaters,12.0,12.0,2.0,,16.0,6.0,5.0,250.0,1
+3617,World Eaters Fire Raptor Gunship,World Eaters,20.0,10.0,3.0,,18.0,6.0,0.0,290.0,1
+3621,World Eaters Spartan,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,315.0,1
+3625,World Eaters Deredeo Dreadnought,World Eaters,6.0,9.0,2.0,5.0,12.0,6.0,3.0,170.0,1
+3629,World Eaters Cerberus,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,285.0,1
+3633,World Eaters Kratos,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,265.0,1
+3637,World Eaters Sokar-pattern Stormbird,World Eaters,20.0,13.0,2.0,4.0,40.0,6.0,0.0,1100.0,1
+3641,World Eaters Sicaran Battle Tank,World Eaters,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3645,World Eaters Mastodon,World Eaters,9.0,14.0,2.0,,30.0,6.0,12.0,610.0,1
+3649,World Eaters Leviathan Dreadnought,World Eaters,8.0,10.0,2.0,5.0,12.0,6.0,4.0,215.0,1
+3653,World Eaters Fellblade,World Eaters,9.0,13.0,2.0,,24.0,6.0,8.0,535.0,1
+3657,World Eaters Relic Contemptor Dreadnought,World Eaters,6.0,9.0,2.0,5.0,10.0,6.0,3.0,180.0,1
+3661,World Eaters Whirlwind Scorpius,World Eaters,10.0,10.0,3.0,,11.0,6.0,3.0,115.0,1
+3665,World Eaters Xiphon Interceptor,World Eaters,20.0,9.0,3.0,,12.0,6.0,0.0,115.0,1
+3669,World Eaters Rapier Carrier,World Eaters,3.0,6.0,2.0,,6.0,6.0,2.0,100.0,1
+3673,World Eaters Storm Eagle Gunship,World Eaters,20.0,10.0,3.0,,18.0,6.0,0.0,255.0,1
+3677,World Eaters Sicaran Venator,World Eaters,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3681,World Eaters Typhon,World Eaters,10.0,12.0,2.0,,18.0,6.0,6.0,385.0,1
+3685,World Eaters Sicaran Punisher,World Eaters,10.0,11.0,2.0,,14.0,6.0,4.0,220.0,1
+3689,World Eaters Falchion,World Eaters,9.0,13.0,2.0,,24.0,6.0,8.0,515.0,1
 4076,Goremongers,World Eaters,9.0,4.0,6.0,,1.0,7.0,1.0,85.0,7
 4103,Slaughterbound,World Eaters,10.0,6.0,3.0,5.0,6.0,6.0,1.0,85.0,1
-4104,Skarbrand,World Eaters,10.0,11.0,3.0,4.0,20.0,6.0,5.0,305.0,1
-4105,Bloodthirster,World Eaters,12.0,11.0,3.0,4.0,18.0,6.0,5.0,305.0,1
-4106,Bloodletters,World Eaters,8.0,4.0,7.0,5.0,1.0,7.0,1.0,90.0,9
-4107,Bloodcrushers,World Eaters,10.0,7.0,3.0,5.0,4.0,7.0,2.0,220.0,5
-4108,Flesh Hounds,World Eaters,12.0,4.0,7.0,5.0,2.0,7.0,1.0,150.0,9
+4104,World Eaters Skarbrand,World Eaters,10.0,11.0,3.0,4.0,20.0,6.0,5.0,305.0,1
+4105,World Eaters Bloodthirster,World Eaters,12.0,11.0,3.0,4.0,18.0,6.0,5.0,305.0,1
+4106,World Eaters Bloodletters,World Eaters,8.0,4.0,7.0,5.0,1.0,7.0,1.0,90.0,9
+4107,World Eaters Bloodcrushers,World Eaters,10.0,7.0,3.0,5.0,4.0,7.0,2.0,220.0,5
+4108,World Eaters Flesh Hounds,World Eaters,12.0,4.0,7.0,5.0,2.0,7.0,1.0,150.0,9

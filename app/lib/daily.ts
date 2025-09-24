@@ -11,7 +11,7 @@ export function dailyIndex(d = new Date()): number {
 
 export function getDailyUnit() {
   const units = loadUnits();
-  const target = units[dailyIndex() + 10];
+  const target = units[dailyIndex()];
   console.log("🎯 Today's target unit is:", target["Unit Name"], target); // <--
   return target;
 }
