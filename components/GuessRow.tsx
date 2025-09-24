@@ -13,7 +13,7 @@ export default function GuessRow({ label, feedback }: { label: string; feedback:
       <div className="col-span-2 truncate text-sm text-neutral-300 pr-2">{label}</div>
       {feedback.map((f) => (
         <div key={f.field as string} className={`text-xs text-center py-2 rounded ${color(f.status)}`} title={f.field}>
-          {f.status === "correct" ? "✓" : f.status === "higher" ? "⬆" : f.status === "lower" ? "⬇" : f.status === "related" ? "≈" : "✗"}
+          {f.status === "correct" ? "✓" : f.status === "higher" ? "⬇" : f.status === "lower" ? "⬆" : f.status === "related" ? "≈" : "✗"}
         </div>
       ))}
     </div>
