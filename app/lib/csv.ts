@@ -20,7 +20,7 @@ export function loadUnits(): UnitRow[] {
   const units: UnitRow[] = rows.map((r) => ({
     "Unit ID": String(r["Unit ID"]).trim(),
     "Unit Name": String(r["Unit Name"]).trim(),
-    "Faction ID": String(r["Faction ID"]).trim(),
+    "Faction": String(r["Faction"]).trim(),
     Movement: toNum(r["Movement"]),
     Toughness: toNum(r["Toughness"]),
     Save: toNum(r["Save"]),
@@ -30,7 +30,6 @@ export function loadUnits(): UnitRow[] {
     OC: toNum(r["OC"]),
     Points: toNum(r["Points"]),
     "Model Count": Number(r["Model Count"]) || 1,
-    Legends: (r["Legends"] ?? "").toString().trim() || null,
   }));
   _cache = units.filter(u => !!u["Unit Name"]);
   return _cache;

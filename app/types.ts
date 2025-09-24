@@ -1,7 +1,7 @@
 export type UnitRow = {
   "Unit ID": string;
   "Unit Name": string;
-  "Faction ID": string;
+  "Faction": string;
   Movement: number | null;
   Toughness: number | null;
   Save: number | null;
@@ -11,7 +11,6 @@ export type UnitRow = {
   OC: number | null;
   Points: number | null;
   "Model Count": number;
-  Legends?: string | null;
 };
 
 export type StatKey = keyof Pick<UnitRow,
@@ -24,11 +23,10 @@ export type StatKey = keyof Pick<UnitRow,
   | "OC"
   | "Points"
   | "Model Count"
-  | "Faction ID"
-  | "Legends"
+  | "Faction"
 >;
 
 export type Feedback = {
   field: StatKey;
-  status: "correct" | "higher" | "lower" | "mismatch";
+  status: "correct" | "higher" | "lower" | "mismatch" | "related";
 };
