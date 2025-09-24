@@ -673,14 +673,6 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 667,Tantalus,Drukhari,16.0,10.0,4.0,5.0,18.0,6.0,5.0,230.0,1
 1390,Raven Strike Fighter,Drukhari,20.0,8.0,4.0,5.0,10.0,6.0,0.0,130.0,1
 2471,Court Of The Archon,Drukhari,8.0,3.0,5.0,5.0,2.0,6.0,1.0,95.0,1
-3923,Death Jester,Drukhari,8.0,3.0,6.0,4.0,4.0,6.0,1.0,90.0,1
-3924,Shadowseer,Drukhari,8.0,3.0,6.0,4.0,4.0,6.0,1.0,60.0,1
-3925,Solitaire,Drukhari,12.0,3.0,6.0,4.0,4.0,6.0,1.0,115.0,1
-3926,Drukhari Troupe Master,Drukhari,8.0,3.0,6.0,4.0,4.0,6.0,1.0,75.0,1
-3927,Starweaver,Drukhari,14.0,6.0,4.0,4.0,6.0,6.0,2.0,80.0,1
-3928,Skyweavers,Drukhari,14.0,4.0,4.0,4.0,3.0,6.0,2.0,190.0,4
-3929,Drukhari Troupe,Drukhari,8.0,3.0,6.0,4.0,1.0,6.0,1.0,205.0,11
-3930,Voidweaver,Drukhari,14.0,6.0,4.0,4.0,6.0,6.0,2.0,125.0,1
 3931,Corsair Voidreavers,Drukhari,7.0,3.0,4.0,,1.0,7.0,2.0,110.0,9
 3932,Corsair Voidscarred,Drukhari,7.0,3.0,4.0,,1.0,7.0,1.0,160.0,10
 3933,Corsair Cloud Dancer Band,Drukhari,14.0,4.0,3.0,,2.0,6.0,2.0,245.0,6
