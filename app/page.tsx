@@ -82,6 +82,8 @@ export default function Page() {
         {solved && <span className="text-emerald-400">You solved it!</span>}
       </div>
       <p className="text-sm text-neutral-300">Devolped by Sean Thornton. Dataset provided by Wahapedia.ru</p>
+      <div><p className="text-sm text-neutral-300">Please report bugs or suggest ideas in the Issues section of the</p>
+        <a className="text-sm text-neutral-300" href="https://github.com/Seano3/Wahadle/"> GitHub</a></div>
     </main>
   );
 }
