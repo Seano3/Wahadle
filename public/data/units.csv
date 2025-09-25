@@ -39,8 +39,6 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 851,Sicarian Ruststalkers,Adeptus Mechanicus,8,4,4,5,2,7,1,150,10
 852,Ironstrider Ballistarii,Adeptus Mechanicus,10,7,3,5,7,7,2,225,3
 853,Sydonian Dragoons With Taser Lances,Adeptus Mechanicus,10,7,3,5,7,7,2,195,3
-1525,Secutarii Hoplites,Adeptus Mechanicus,6,3,5,4,1,7,1,130,10
-1526,Secutarii Peltasts,Adeptus Mechanicus,6,3,5,6,1,7,1,100,10
 1580,Tech-priest Manipulus,Adeptus Mechanicus,6,4,2,5,4,7,1,60,1
 1650,Skorpius Dunerider,Adeptus Mechanicus,12,9,3,,11,7,2,85,1
 1651,Skorpius Disintegrator,Adeptus Mechanicus,10,10,2,,12,7,3,165,1
@@ -418,8 +416,6 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 3582,Chaos Space Marines Khorne Berzerkers,Chaos Space Marines,8,4,3,,2,6,2,360,19
 3583,Chaos Space Marines Rubric Marines,Chaos Space Marines,6,4,3,5,3,6,2,190,10
 3584,Chaos Space Marines Plague Marines,Chaos Space Marines,5,6,3,,2,6,2,190,10
-3610,Chaos Space Marines Land Raider Achilles,Chaos Space Marines,10,12,2,4,16,6,5,285,1
-3614,Chaos Space Marines Land Raider Proteus,Chaos Space Marines,12,12,2,,16,6,5,250,1
 3618,Chaos Space Marines Fire Raptor Gunship,Chaos Space Marines,20,10,3,,18,6,0,290,1
 3622,Chaos Space Marines Spartan,Chaos Space Marines,10,12,2,,18,6,6,315,1
 3630,Chaos Space Marines Cerberus,Chaos Space Marines,10,12,2,,18,6,6,285,1
@@ -459,8 +455,6 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 3585,Death Guard Chaos Thunderhawk,Death Guard,20,12,2,,30,6,0,840,1
 3592,Death Guard Chaos Lord On Palanquin Of Nurgle,Death Guard,5,5,3,4,8,6,2,90,1
 3600,Death Guard Sorcerer On Palanquin Of Nurgle,Death Guard,5,5,3,,7,6,2,80,1
-3608,Death Guard Land Raider Achilles,Death Guard,10,12,2,4,16,6,5,285,1
-3612,Death Guard Land Raider Proteus,Death Guard,12,12,2,,16,6,5,250,1
 3616,Death Guard Fire Raptor Gunship,Death Guard,20,10,3,,18,6,0,290,1
 3620,Death Guard Spartan,Death Guard,10,12,2,,18,6,6,315,1
 3628,Death Guard Cerberus,Death Guard,10,12,2,,18,6,6,285,1
@@ -798,8 +792,6 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 1523,Scout Sniper Squad,Space Marines,6,4,4,,2,6,1,150,10
 1524,Sergeant Chronus,Space Marines,6,4,2,,3,6,1,75,1
 1606,Assault Intercessor Squad,Space Marines,6,4,3,,2,6,2,150,10
-1607,Space Marines Land Raider Achilles,Space Marines,10,12,2,4,16,6,5,285,1
-1608,Space Marines Land Raider Proteus,Space Marines,12,12,2,,16,6,5,250,1
 1609,Space Marines Fire Raptor Gunship,Space Marines,20,10,3,,18,6,0,290,1
 1610,Storm Speeder Thunderstrike,Space Marines,14,9,3,,11,6,3,150,1
 1611,Chief Librarian Tigurius,Space Marines,6,4,3,4,4,6,1,75,1
@@ -955,8 +947,6 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2755,Exalted Sorcerer on Disc of Tzeentch,Thousand Sons,10,4,3,4,6,6,2,100,1
 3591,Thousand Sons Chaos Thunderhawk,Thousand Sons,20,12,2,,30,6,0,840,1
 3597,Thousand Sons Chaos Lord On Disc Of Tzeentch,Thousand Sons,12,4,3,4,6,6,1,100,1
-3607,Thousand Sons Land Raider Achilles,Thousand Sons,10,12,2,4,16,6,5,285,1
-3611,Thousand Sons Land Raider Proteus,Thousand Sons,12,12,2,,16,6,5,250,1
 3615,Thousand Sons Fire Raptor Gunship,Thousand Sons,20,10,3,,18,6,0,290,1
 3619,Thousand Sons Spartan,Thousand Sons,10,12,2,,18,6,6,315,1
 3627,Thousand Sons Cerberus,Thousand Sons,10,12,2,,18,6,6,285,1
@@ -1038,9 +1028,6 @@ Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,
 2757,Daemon Prince of Khorne with Wings,World Eaters,14,9,2,4,10,6,3,180,1
 3587,World Eaters Blood Slaughterer,World Eaters,12,9,3,5,10,6,3,160,1
 3588,World Eaters Chaos Thunderhawk,World Eaters,20,12,2,,30,6,0,840,1
-3589,World Eaters Greater Brass Scorpion,World Eaters,12,12,3,5,26,6,10,560,1
-3609,World Eaters Land Raider Achilles,World Eaters,10,12,2,4,16,6,5,285,1
-3613,World Eaters Land Raider Proteus,World Eaters,12,12,2,,16,6,5,250,1
 3617,World Eaters Fire Raptor Gunship,World Eaters,20,10,3,,18,6,0,290,1
 3621,World Eaters Spartan,World Eaters,10,12,2,,18,6,6,315,1
 3629,World Eaters Cerberus,World Eaters,10,12,2,,18,6,6,285,1
