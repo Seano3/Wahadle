@@ -15,7 +15,7 @@ export default function Page() {
   const [suggestions, setSuggestions] = useState<Hit[]>([]);
   const [rows, setRows] = useState<{ label: string; feedback: Feedback[] }[]>([]);
   const [solved, setSolved] = useState(false);
-  const maxGuesses = 6;
+
 
   useEffect(() => {
     const ctrl = new AbortController();
@@ -30,7 +30,7 @@ export default function Page() {
   }, [query]);
 
   const guess = async (name: string) => {
-    if (solved || rows.length >= maxGuesses) return;
+    if (solved) return;
     const res = await fetch("/api/guess", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }) });
     if (!res.ok) return;
     const data = await res.json();
@@ -78,7 +78,7 @@ export default function Page() {
 
       <div className="text-sm text-neutral-300 flex items-center gap-2">
         <span>Guesses:</span>
-        <span className="font-semibold">{rows.length} / {maxGuesses}</span>
+        <span className="font-semibold">{rows.length}</span>
         {solved && <span className="text-emerald-400">You solved it!</span>}
       </div>
     </main>
