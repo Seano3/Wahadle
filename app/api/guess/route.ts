@@ -9,8 +9,10 @@ const FIELDS: StatKey[] = [
 ];
 
 function compareNumeric(a: number | null, b: number | null): "correct" | "higher" | "lower" | "mismatch" {
-  if (a == null || b == null) return "mismatch";
+  if (a == null && b == null) return "correct";
+  if ((a == null && b != null) || (b == null && a != null)) return "mismatch"; //Checks for infuln saves 
   if (a === b) return "correct";
+  if (a === null || b === null) return "mismatch"; //This should never be hit but its here for errors 
   return a > b ? "higher" : "lower";
 }
 
