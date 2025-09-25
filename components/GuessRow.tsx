@@ -2,8 +2,8 @@ import { Feedback } from "@/app/types";
 
 const color = (s: Feedback["status"]) =>
   s === "correct" ? "bg-emerald-600"
-    : s === "higher" ? "bg-amber-600"
-      : s === "lower" ? "bg-sky-600"
+    : s === "higher" ? "bg-red-600"
+      : s === "lower" ? "bg-red-600"
         : s === "related" ? "bg-amber-500" // orange for related/higher-order match
           : "bg-neutral-700";
 
