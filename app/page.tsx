@@ -41,9 +41,9 @@ export default function Page() {
   };
 
   const header = useMemo(() => (
-    <div className="grid grid-cols-12 gap-1 text-[10px] uppercase text-neutral-400 mb-2">
-      <div className="col-span-2">Unit</div>
-      {COLS.map(c => <div key={c} className="text-center">{c}</div>)}
+    <div className="grid gap-1 text-[10px] uppercase text-neutral-400 mb-2" style={{ gridTemplateColumns: "minmax(150px,25%) repeat(10, minmax(0,1fr))" }}>
+      <div className="truncate py-2">Unit</div>
+      {COLS.map(c => <div key={c} className="text-center py-2">{c}</div>)}
     </div>
   ), []);
 
