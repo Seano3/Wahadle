@@ -29,21 +29,17 @@ function judge(guess: UnitRow, target: UnitRow): Feedback[] {
       const imperium = new Set(["Adeptus Custodes", "Adeptus Mechanicus", "Astra Militarum", "Agents", "Adepta Sororitas", "Grey Knights", "Imperial Knights", "Adeptus Titanicus"].map(s => s.toUpperCase()));
       const spaceMarines = new Set(["Space Marines", "Blood Angels", "Dark Angels", "Space Wolves", "Ultramarines", "Salamanders", "Iron Hands", "Raven Guard", "White Scars", "Black Templars", "Crimson Fists", "Deathwatch"].map(s => s.toUpperCase()));
       const chaos = new Set(["Chaos Daemons", "Chaos Space Marines", "Death Guard", "Emperor’s Children", "Chaos Knights", "Thousand Sons", "World Eaters"].map(s => s.toUpperCase()));
-      const eldar = new Set(["Aeldari", "Drukhari"].map(s => s.toUpperCase()));
-      const hiveMinde = new Set(["Genestealer Cults", "Tyranids"].map(s => s.toUpperCase()));
-      const xenos = new Set(["Necrons", "Orks", "T’au Empire", "Leagues of Votann"].map(s => s.toUpperCase()));
+      const xenos = new Set(["Necrons", "Orks", "T’au Empire", "Leagues of Votann", "Genestealer Cults", "Tyranids", "Aeldari", "Drukhari"].map(s => s.toUpperCase()));
       const none = new Set(["Unaligned Forces"].map(s => s.toUpperCase()));
 
 
       const inImperium = imperium.has(g) && imperium.has(t);
       const inChaos = chaos.has(g) && chaos.has(t);
       const inXenos = xenos.has(g) && xenos.has(t);
-      const inEldar = eldar.has(g) && eldar.has(t);
-      const inHiveMind = hiveMinde.has(g) && hiveMinde.has(t);
       const inSpaceMarines = spaceMarines.has(g) && spaceMarines.has(t);
       const inNoneOfTheAbove = none.has(g) && none.has(t);
 
-      if (inImperium || inChaos || inXenos || inEldar || inHiveMind || inSpaceMarines || inNoneOfTheAbove) return { field: f, status: "related" };
+      if (inImperium || inChaos || inXenos || inSpaceMarines || inNoneOfTheAbove) return { field: f, status: "related" };
       return { field: f, status: "mismatch" };
     }
 
