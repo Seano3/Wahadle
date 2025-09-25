@@ -50,6 +50,9 @@ function judge(guess: UnitRow, target: UnitRow): Feedback[] {
     if (f === "Points") {
       const g = guess["Points"];
       const t = target["Points"];
+      if (g !== null && t !== null && Math.abs(g - t) == 0) {
+        return { field: f, status: "correct", data: g };
+      }
       if (g !== null && t !== null && Math.abs(g - t) <= 50) {
         return { field: f, status: g > t ? "close-higher" : "close-lower", data: g };
       }
