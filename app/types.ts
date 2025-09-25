@@ -29,4 +29,5 @@ export type StatKey = keyof Pick<UnitRow,
 export type Feedback = {
   field: StatKey;
   status: "correct" | "higher" | "lower" | "mismatch" | "related" | "close-higher" | "close-lower";
+  data: string | number | null;
 };

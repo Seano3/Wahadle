@@ -17,7 +17,7 @@ const arrow = (s: Feedback["status"]) =>
     : s === "lower" || s === "close-lower" ? "⬆"
       : s === "correct" ? "✔"
         : s === "related" ? "〰"
-      : "❌";
+          : "❌";
 
 export default function GuessRow({ label, feedback }: { label: string; feedback: Feedback[] }) {
   const [visibleCount, setVisibleCount] = useState(0);
@@ -55,7 +55,7 @@ export default function GuessRow({ label, feedback }: { label: string; feedback:
           >
             <div className="flex flex-col items-center justify-center">
               <span className="text-lg font-bold">{arrow(f.status)}</span>
-              {/* <span className="text-sm">{f.field === "Faction" ? f.field : f.status}</span> */}
+              <span className="text-sm">{f.data !== null ? f.data : "-"}</span>
             </div>
           </div>
         );
