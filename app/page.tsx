@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import GuessRow from "@/components/GuessRow";
 import type { Feedback, StatKey } from "./types";
 
@@ -15,7 +15,17 @@ export default function Page() {
   const [suggestions, setSuggestions] = useState<Hit[]>([]);
   const [rows, setRows] = useState<{ label: string; feedback: Feedback[] }[]>([]);
   const [solved, setSolved] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
+  const shareResults = useCallback(() => {
+    const result = `Wahadle - ${rows.length} guesses\n\n` +
+      rows.map((r, i) => `${r.feedback.map(f => f.status === "correct" ? "🟩" : f.status === "higher" ? "🟥" : f.status === "lower" ? "🟥" : f.status === "related" ? "🟧" : "🟥").join("")}`).join("\n");
+    navigator.clipboard.writeText(result).then(() => alert("Results copied to clipboard!"));
+  }, [rows]);
+
+  useEffect(() => {
+    if (solved) setShowModal(true);
+  }, [solved]);
 
   useEffect(() => {
     const ctrl = new AbortController();
@@ -82,8 +92,33 @@ export default function Page() {
         {solved && <span className="text-emerald-400">You solved it!</span>}
       </div>
       <p className="text-sm text-neutral-300">Devolped by Sean Thornton. Dataset provided by Wahapedia.ru</p>
-      <div><p className="text-sm text-neutral-300">Please report bugs or suggest ideas in the Issues section of the</p>
-        <a className="text-sm text-neutral-300" href="https://github.com/Seano3/Wahadle/"> GitHub</a></div>
+      <div className="text-sm text-neutral-300">
+        <span>
+          <p>Please report bugs or suggest ideas in the Issues section of the</p>
+          <a href="https://github.com/Seano3/Wahadle/"> GitHub</a>
+        </span>
+      </div>
+
+      {showModal && (
+        <div>
+          <div className="bg-neutral-900 p-6 rounded-xl text-center space-y-4">
+            <h2 className="text-xl font-semibold text-emerald-400">Congratulations!</h2>
+            <p className="text-sm text-neutral-300">You guessed the correct unit in {rows.length} guesses!</p>
+            <button
+              onClick={shareResults}
+              className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700"
+            >
+              Share Results
+            </button>
+            <button
+              onClick={() => setShowModal(false)}
+              className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
