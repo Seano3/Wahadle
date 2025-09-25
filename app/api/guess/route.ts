@@ -39,8 +39,8 @@ function judge(guess: UnitRow, target: UnitRow): Feedback[] {
       const inSpaceMarines = spaceMarines.has(g) && spaceMarines.has(t);
       const inNoneOfTheAbove = none.has(g) && none.has(t);
 
-      if (inImperium || inChaos || inXenos || inSpaceMarines || inNoneOfTheAbove) return { field: f, status: "related" };
-      return { field: f, status: "mismatch" };
+      if (inImperium || inChaos || inXenos || inSpaceMarines || inNoneOfTheAbove) return { field: f, status: "related", data: null };
+      return { field: f, status: "mismatch", data: null };
     }
 
     if (f === "Points") {
