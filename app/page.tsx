@@ -18,7 +18,8 @@ export default function Page() {
   const [showModal, setShowModal] = useState(false);
 
   const shareResults = useCallback(() => {
-    const result = `Wahadle - ${rows.length} guesses\n\n` +
+    const result = `Wahadle - ${rows.length} guesses\n` +
+      `https://wahadle.seanpthornton.com/\n\n` + 
       rows.map((r, i) => `${r.feedback.map(f => f.status === "correct" ? "🟩" : f.status === "higher" ? "🟥" : f.status === "lower" ? "🟥" : f.status === "related" ? "🟧" : "🟥").join("")}`).join("\n");
     navigator.clipboard.writeText(result).then(() => alert("Results copied to clipboard!"));
   }, [rows]);
