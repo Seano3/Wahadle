@@ -46,7 +46,7 @@ export default function GuessRow({ label, feedback }: { label: string; feedback:
             className={`text-xs text-center py-2 rounded ${color(f.status)} transition-all duration-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"}`}
             title={f.field}
           >
-            {f.status === "correct" ? "✓" : f.status === "higher" ? "⬇" : f.status === "lower" ? "⬆" : f.status === "related" ? "≈" : "✗"}
+            {f.status === "correct" ? "✓" : f.status === "higher" ? "⬇" : f.status === "lower" ? "⬆" : f.status === "related" ? "≈" : f.status === "close-higher" ? "⬇" : f.status === "close-lower" ? "⬆" : "✗"}
           </div>
         );
       })}

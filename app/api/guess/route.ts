@@ -12,8 +12,8 @@ function compareNumeric(a: number | null, b: number | null): "correct" | "higher
   if (a == null && b == null) return "correct";
   if ((a == null && b != null) || (b == null && a != null)) return "mismatch"; //Checks for infuln saves 
   if (a === b) return "correct";
-  if (Math.abs(a - b) === 1) return a > b ? "close-higher" : "close-lower"; // Check if the guess is within 1 of the target
   if (a === null || b === null) return "mismatch"; //This should never be hit but its here for errors 
+  if (Math.abs(a - b) === 1) return a > b ? "close-higher" : "close-lower"; // Check if the guess is within 1 of the target
   return a > b ? "higher" : "lower";
 }
 
@@ -46,6 +46,15 @@ function judge(guess: UnitRow, target: UnitRow): Feedback[] {
       if (inImperium || inChaos || inXenos || inEldar || inHiveMind || inSpaceMarines || inNoneOfTheAbove) return { field: f, status: "related" };
       return { field: f, status: "mismatch" };
     }
+
+    if (f === "Points") {
+      const g = guess["Points"];
+      const t = target["Points"];
+      if (g !== null && t !== null && Math.abs(g - t) <= 50) {
+        return { field: f, status: g > t ? "close-higher" : "close-lower" }; // Use "close-higher" or "close-lower"
+      }
+    }
+
     const status = compareNumeric(guess[f] as any, target[f] as any);
     return { field: f, status };
   });
