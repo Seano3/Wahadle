@@ -8,5 +8,5 @@ export function GET(req: Request) {
   const hits = q
     ? units.filter(u => u["Unit Name"].toLowerCase().includes(q)).slice(0, 20)
     : units.slice(0, 20);
-  return NextResponse.json(hits.map(u => ({ id: u["Unit ID"], name: u["Unit Name"], faction: u["Faction ID"] })));
+  return NextResponse.json(hits.map(u => ({ id: u["Unit ID"], name: u["Unit Name"], faction: u["Faction"] })));
 }
