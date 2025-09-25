@@ -23,7 +23,7 @@ function judge(guess: UnitRow, target: UnitRow): Feedback[] {
       const g = (guess["Faction"] || "").toUpperCase();
       const t = (target["Faction"] || "").toUpperCase();
       console.log("Comparing factions:", g, t);
-      if (g === t) return { field: f, status: "correct" };
+      if (g === t) return { field: f, status: "correct", data: g };
 
       // Map known faction codes into higher-order groups
       const imperium = new Set(["Adeptus Custodes", "Adeptus Mechanicus", "Astra Militarum", "Agents", "Adepta Sororitas", "Grey Knights", "Imperial Knights", "Adeptus Titanicus"].map(s => s.toUpperCase()));
@@ -46,13 +46,24 @@ function judge(guess: UnitRow, target: UnitRow): Feedback[] {
     if (f === "Points") {
       const g = guess["Points"];
       const t = target["Points"];
+      if (g !== null && t !== null && Math.abs(g - t) == 0) {
+        return { field: f, status: "correct", data: g };
+      }
       if (g !== null && t !== null && Math.abs(g - t) <= 50) {
-        return { field: f, status: g > t ? "close-higher" : "close-lower" }; // Use "close-higher" or "close-lower"
+        return { field: f, status: g > t ? "close-higher" : "close-lower", data: g };
       }
     }
 
     const status = compareNumeric(guess[f] as any, target[f] as any);
-    return { field: f, status };
+    let data = guess[f];
+
+    // Add "+" for specific fields
+    let formattedData = null;
+    if (f === "Save" || f === "Invunl Save" || f === "Leadership") {
+      formattedData = data !== null ? `${data}+` : null;
+    }
+
+    return { field: f, status, data: f === "Save" || f === "Invunl Save" || f === "Leadership" ? formattedData : data };
   });
 }
 

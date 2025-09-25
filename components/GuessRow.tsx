@@ -7,10 +7,17 @@ const color = (s: Feedback["status"]) =>
   s === "correct" ? "bg-emerald-600"
     : s === "higher" ? "bg-red-600"
       : s === "lower" ? "bg-red-600"
-        : s === "close-higher" ? "bg-amber-400" // amber for close-higher guesses
-          : s === "close-lower" ? "bg-amber-400" // amber for close-lower guesses
+        : s === "close-higher" ? "bg-amber-400"
+          : s === "close-lower" ? "bg-amber-400"
             : s === "related" ? "bg-amber-500"
               : "bg-neutral-700";
+
+const arrow = (s: Feedback["status"]) =>
+  s === "higher" || s === "close-higher" ? "⬇"
+    : s === "lower" || s === "close-lower" ? "⬆"
+      : s === "correct" ? "✔"
+        : s === "related" ? "〰"
+          : "❌";
 
 export default function GuessRow({ label, feedback }: { label: string; feedback: Feedback[] }) {
   const [visibleCount, setVisibleCount] = useState(0);
@@ -46,7 +53,10 @@ export default function GuessRow({ label, feedback }: { label: string; feedback:
             className={`text-xs text-center py-2 rounded ${color(f.status)} transition-all duration-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"}`}
             title={f.field}
           >
-            {f.status === "correct" ? "✓" : f.status === "higher" ? "⬇" : f.status === "lower" ? "⬆" : f.status === "related" ? "≈" : f.status === "close-higher" ? "⬇" : f.status === "close-lower" ? "⬆" : "✗"}
+            <div className="flex flex-col items-center justify-center">
+              <span className="text-lg font-bold">{arrow(f.status)}</span>
+              <span className="text-sm">{f.data !== null ? f.data : "-"}</span>
+            </div>
           </div>
         );
       })}
