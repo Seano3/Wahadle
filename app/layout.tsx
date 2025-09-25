@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "40K Profile Wordle",
+  title: "Wahadle",
   description: "Guess the 40K datasheet by its stats",
 };
 
