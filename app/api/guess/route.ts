@@ -8,10 +8,11 @@ const FIELDS: StatKey[] = [
   "Movement", "Toughness", "Save", "Invunl Save", "Wounds", "Leadership", "OC", "Points", "Model Count", "Faction"
 ];
 
-function compareNumeric(a: number | null, b: number | null): "correct" | "higher" | "lower" | "mismatch" {
+function compareNumeric(a: number | null, b: number | null): "correct" | "higher" | "lower" | "close-higher" | "close-lower" | "mismatch" {
   if (a == null && b == null) return "correct";
   if ((a == null && b != null) || (b == null && a != null)) return "mismatch"; //Checks for infuln saves 
   if (a === b) return "correct";
+  if (Math.abs(a - b) === 1) return a > b ? "close-higher" : "close-lower"; // Check if the guess is within 1 of the target
   if (a === null || b === null) return "mismatch"; //This should never be hit but its here for errors 
   return a > b ? "higher" : "lower";
 }

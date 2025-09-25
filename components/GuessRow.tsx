@@ -7,8 +7,10 @@ const color = (s: Feedback["status"]) =>
   s === "correct" ? "bg-emerald-600"
     : s === "higher" ? "bg-red-600"
       : s === "lower" ? "bg-red-600"
-        : s === "related" ? "bg-amber-500" // orange for related/higher-order match
-          : "bg-neutral-700";
+        : s === "close-higher" ? "bg-amber-400" // amber for close-higher guesses
+          : s === "close-lower" ? "bg-amber-400" // amber for close-lower guesses
+            : s === "related" ? "bg-amber-500"
+              : "bg-neutral-700";
 
 export default function GuessRow({ label, feedback }: { label: string; feedback: Feedback[] }) {
   const [visibleCount, setVisibleCount] = useState(0);
