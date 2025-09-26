@@ -60,7 +60,10 @@ export default function Page() {
 
   return (
     <main className="space-y-4">
-      <h1 className="text-2xl font-semibold">Wahadle</h1>
+      <div className="flex items-baseline gap-4">
+        <h1 className="text-2xl font-semibold">Wahadle</h1>
+        <a href="/endless" className="text-sm text-emerald-400 underline">Endless mode</a>
+      </div>
       <p className="text-sm text-neutral-300">Guess the daily unit by comparing its stats. ✓ = match, ⬆ = your guess is lower than the target, ⬇ = higher, ✗ = mismatch, ~ is same grand order for factions (imperium, chaos, Space Marines, Hive Mind, Eldar, and Xenos). All profiles are assumed to be as big as possible.</p>
 
       <div className="relative">
