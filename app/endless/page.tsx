@@ -12,6 +12,7 @@ export default function EndlessPage() {
     const [suggestions, setSuggestions] = useState<Hit[]>([]);
     const [rows, setRows] = useState<{ label: string; feedback: Feedback[] }[]>([]);
     const [solved, setSolved] = useState(false);
+    const [seed, setSeed] = useState<string | null>(null);
 
     const loadTarget = useCallback(async (opts?: { seed?: string }) => {
         const url = opts && opts.seed ? `/api/endless?seed=${encodeURIComponent(opts.seed)}` : `/api/endless`;
@@ -25,10 +26,16 @@ export default function EndlessPage() {
     }, []);
 
     useEffect(() => {
-        // pick up seed from URL if present
+        // ensure a seed is always present in the URL; generate one if missing
         const params = new URLSearchParams(window.location.search);
-        const seed = params.get("seed");
-        loadTarget(seed ? { seed } : undefined);
+        let s = params.get("seed");
+        if (!s) {
+            s = Math.random().toString(36).slice(2, 9);
+            const newUrl = `${window.location.pathname}?seed=${encodeURIComponent(s)}`;
+            window.history.replaceState({}, '', newUrl);
+        }
+        setSeed(s);
+        loadTarget({ seed: s });
     }, [loadTarget]);
 
     useEffect(() => {
@@ -100,27 +107,27 @@ export default function EndlessPage() {
             </div>
 
             <div className="flex gap-2 items-center">
-                <button onClick={() => loadTarget()} className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800">Next Target (random)</button>
-                <button onClick={() => {
-                    // re-seed using a random token and navigate so the seed is visible in URL
-                    const token = Math.random().toString(36).slice(2, 9);
-                    const newUrl = `${window.location.pathname}?seed=${encodeURIComponent(token)}`;
-                    window.history.replaceState({}, '', newUrl);
-                    loadTarget({ seed: token });
-                }} className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700">New Seeded Target</button>
-
                 {target && <div className="text-sm text-neutral-300">Current target id: <span className="font-mono">{target.id}</span></div>}
-                {typeof window !== 'undefined' && (
+                {seed && (
                     <div className="text-sm text-neutral-300">
-                        {new URLSearchParams(window.location.search).get('seed') ? (
-                            <>
-                                <span>Seed: <span className="font-mono">{new URLSearchParams(window.location.search).get('seed')}</span></span>
-                                <button onClick={() => { navigator.clipboard.writeText(window.location.href); }} className="ml-2 text-xs text-emerald-400">Copy link</button>
-                            </>
-                        ) : (
-                            <span className="text-neutral-500">No seed in URL</span>
-                        )}
+                        <span>Seed: <span className="font-mono">{seed}</span></span>
+                        <button onClick={() => { navigator.clipboard.writeText(window.location.href); }} className="ml-2 text-xs text-emerald-400">Copy link</button>
                     </div>
+                )}
+
+                {solved && (
+                    <button
+                        onClick={() => {
+                            const token = Math.random().toString(36).slice(2, 9);
+                            const newUrl = `${window.location.pathname}?seed=${encodeURIComponent(token)}`;
+                            window.history.replaceState({}, '', newUrl);
+                            setSeed(token);
+                            loadTarget({ seed: token });
+                        }}
+                        className="ml-2 px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800"
+                    >
+                        Next Target
+                    </button>
                 )}
             </div>
         </main>
