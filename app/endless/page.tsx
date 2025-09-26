@@ -13,8 +13,9 @@ export default function EndlessPage() {
     const [rows, setRows] = useState<{ label: string; feedback: Feedback[] }[]>([]);
     const [solved, setSolved] = useState(false);
 
-    const loadTarget = useCallback(async () => {
-        const res = await fetch(`/api/endless`);
+    const loadTarget = useCallback(async (opts?: { seed?: string }) => {
+        const url = opts && opts.seed ? `/api/endless?seed=${encodeURIComponent(opts.seed)}` : `/api/endless`;
+        const res = await fetch(url);
         if (res.ok) {
             const j = await res.json();
             setTarget(j);
@@ -23,7 +24,12 @@ export default function EndlessPage() {
         }
     }, []);
 
-    useEffect(() => { loadTarget(); }, [loadTarget]);
+    useEffect(() => {
+        // pick up seed from URL if present
+        const params = new URLSearchParams(window.location.search);
+        const seed = params.get("seed");
+        loadTarget(seed ? { seed } : undefined);
+    }, [loadTarget]);
 
     useEffect(() => {
         const ctrl = new AbortController();
@@ -93,9 +99,29 @@ export default function EndlessPage() {
                 </div>
             </div>
 
-            <div className="flex gap-2">
-                <button onClick={() => loadTarget()} className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800">Next Target</button>
+            <div className="flex gap-2 items-center">
+                <button onClick={() => loadTarget()} className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800">Next Target (random)</button>
+                <button onClick={() => {
+                    // re-seed using a random token and navigate so the seed is visible in URL
+                    const token = Math.random().toString(36).slice(2, 9);
+                    const newUrl = `${window.location.pathname}?seed=${encodeURIComponent(token)}`;
+                    window.history.replaceState({}, '', newUrl);
+                    loadTarget({ seed: token });
+                }} className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700">New Seeded Target</button>
+
                 {target && <div className="text-sm text-neutral-300">Current target id: <span className="font-mono">{target.id}</span></div>}
+                {typeof window !== 'undefined' && (
+                    <div className="text-sm text-neutral-300">
+                        {new URLSearchParams(window.location.search).get('seed') ? (
+                            <>
+                                <span>Seed: <span className="font-mono">{new URLSearchParams(window.location.search).get('seed')}</span></span>
+                                <button onClick={() => { navigator.clipboard.writeText(window.location.href); }} className="ml-2 text-xs text-emerald-400">Copy link</button>
+                            </>
+                        ) : (
+                            <span className="text-neutral-500">No seed in URL</span>
+                        )}
+                    </div>
+                )}
             </div>
         </main>
     );
