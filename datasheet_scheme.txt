@@ -1,0 +1,7 @@
+datasheets (id, name, faction_id, source_id, legend, role, loadout, transport, virtual, leader_head, leader_footer, damaged_w, damaged_description, link)
+datasheets_keywords (datasheet_id, keyword, model, is_faction_keyword)
+datasheets_models (datasheet_id, line, name, m, T, Sv, inv_sv, inv_sv_descr, w, Ld, OC, base_size, base_size_descr)
+datasheets_models_cost (datasheet_id, description, line, cost)
+datasheets_unit_composition (datasheet_id, line, description)
+factions(id, name, link)
+source (id, name, type, edition, version, errata_date, errata_link)
