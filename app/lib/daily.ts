@@ -7,8 +7,8 @@ export function dailyIndexForDate(d = new Date(), total = 1): number {
   return Math.abs(h) % Math.max(1, total);
 }
 
-export async function getDailyUnit(d = new Date()) {
-  const units = await loadUnits();
+export async function getDailyUnit(d = new Date(), sources?: Array<string | number>) {
+  const units = await loadUnits(sources);
   const idx = dailyIndexForDate(d, units.length);
   const target = units[idx];
   console.log("🎯 Today's target unit is:", target?.["Unit Name"], target);

@@ -4,8 +4,10 @@ import { judge } from "@/app/lib/judge";
 import { UnitRow } from "@/app/types";
 
 export async function GET(req: Request) {
-    const units = await loadUnits();
     const { searchParams } = new URL(req.url);
+    const rawSources = searchParams.get("sources");
+    const sources = rawSources ? rawSources.split(',').map(s => s.trim()).filter(Boolean) : undefined;
+    const units = await loadUnits(sources);
     const seed = searchParams.get("seed");
 
     let idx: number;
@@ -27,9 +29,9 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
     const body = await req.json();
-    const { targetId, name } = body as { targetId?: string; name?: string };
+    const { targetId, name, sources } = body as { targetId?: string; name?: string; sources?: Array<string | number> };
     if (!targetId) return NextResponse.json({ error: "missing targetId" }, { status: 400 });
-    const units = await loadUnits();
+    const units = await loadUnits(sources);
     const target = units.find(u => u["Unit ID"] === String(targetId));
     if (!target) return NextResponse.json({ error: "unknown target" }, { status: 404 });
 

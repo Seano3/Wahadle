@@ -7,9 +7,10 @@ import { judge } from "@/app/lib/judge";
 // judge and FIELDS are provided by app/lib/judge.ts
 
 export async function POST(req: Request) {
-  const { name } = await req.json();
-  const units = await loadUnits();
-  const target = await getDailyUnit();
+  const body = await req.json();
+  const { name, sources } = body as { name?: string; sources?: Array<string | number> };
+  const units = await loadUnits(sources);
+  const target = await getDailyUnit(new Date(), sources);
   const guess = units.find(u => u["Unit Name"].toLowerCase() === String(name).toLowerCase());
   if (!guess) return NextResponse.json({ error: "Unknown unit" }, { status: 404 });
   const feedback = judge(guess, target);
