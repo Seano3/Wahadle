@@ -1,63 +1,64 @@
-Unit ID	Unit Name	Faction	Movement	Toughness	Save	Invunl Save	Wounds	Leadership	OC	Points	Model Count	Keywords
-1	Aestred Thurga And Agathae Dolan	Adepta Sororitas	6	3	2	4	4	6	1	70	2	Infantry
-2	Canoness	Adepta Sororitas	6	3	3	4	4	7	1	50	1	Infantry
-3	Canoness with jump pack	Adepta Sororitas	12	3	3	4	3	7	1	75	1	Infantry
-4	Daemonifuge	Adepta Sororitas	8	3	3	4	5	7	1	85	2	Infantry
-5	Dialogus	Adepta Sororitas	6	3	3	4	3	6	1	40	1	Infantry
-6	Dogmata	Adepta Sororitas	6	3	3	6	3	6	1	45	1	Infantry
-7	Hospitaller	Adepta Sororitas	6	3	3	6	3	7	1	50	1	Infantry
-8	Imagifier	Adepta Sororitas	6	3	3	4	3	6	1	65	1	Infantry
-9	Junith Eruita	Adepta Sororitas	8	5	2	4	8	6	2	80	1	Mounted
-10	Ministorum Priest	Adepta Sororitas	6	3	6	4	3	7	1	50	1	Infantry
-11	Morvenn Vahl	Adepta Sororitas	8	7	2	4	8	6	3	170	1	Vehicle
-12	Palatine	Adepta Sororitas	6	3	3	4	4	7	1	50	1	Infantry
-13	Saint Celestine	Adepta Sororitas	12	3	2	4	5	6	1	150	3	Infantry
-14	Triumph Of Saint Katherine	Adepta Sororitas	6	3	3	4	18	6	6	235	1	Infantry
-15	Battle Sisters Squad	Adepta Sororitas	6	3	3	6	1	7	2	105	10	Infantry
-16	Immolator	Adepta Sororitas	12	10	3	6	11	7	2	115	1	Vehicle
-17	Sororitas Rhino	Adepta Sororitas	12	9	3	6	10	7	2	75	1	Vehicle
-18	Arco-flagellants	Adepta Sororitas	7	3	7	6	2	8	1	140	10	Infantry
-19	Castigator	Adepta Sororitas	10	10	3	6	11	7	3	160	1	Vehicle
-20	Celestian Sacresants	Adepta Sororitas	6	3	3	4	1	7	1	130	10	Infantry
-21	Dominion Squad	Adepta Sororitas	6	3	3	6	1	7	1	115	10	Infantry
-22	Exorcist	Adepta Sororitas	10	10	3	6	11	7	3	210	1	Vehicle
-23	Mortifiers	Adepta Sororitas	8	6	4	6	5	7	2	140	2	Vehicle
-24	Paragon Warsuits	Adepta Sororitas	8	7	2	4	4	7	2	210	3	Vehicle
-25	Penitent Engines	Adepta Sororitas	8	6	4	6	5	7	2	150	2	Vehicle
-26	Repentia Squad	Adepta Sororitas	7	3	7	6	1	7	1	160	10	Infantry
-27	Retributor Squad	Adepta Sororitas	6	3	3	6	1	7	1	105	5	Infantry
-28	Seraphim Squad	Adepta Sororitas	12	3	3	5	1	7	1	160	10	Infantry
-29	Sisters Novitiate Squad	Adepta Sororitas	6	3	4	6	1	8	2	100	10	Infantry
-30	Zephyrim Squad	Adepta Sororitas	12	3	3	5	1	7	1	160	10	Infantry
-31	Sanctifiers	Adepta Sororitas	6	3	6	5	1	7	1	100	9	Infantry
-	Aleya	Adeptus Custodes 	6	3	3	5	4	6	1	65	1	Infantry
-	Blade Champion	Adeptus Custodes 	6	6	2	4	6	6	2	120	1	Infantry
-	Knight-centura	Adeptus Custodes 	6	3	3	5	4	6	1	55	1	Infantry
-	Shield-captain	Adeptus Custodes 	6	6	2	4	6	6	2	120	1	Infantry
-	Shield-captain In Allarus Terminator Armour	Adeptus Custodes 	5	7	2	4	7	6	2	130	1	Infantry
-	Shield-captain On Dawneagle Jetbike	Adeptus Custodes 	12	7	2	4	8	6	2	150	1	Mounted
-	Trajann Valoris	Adeptus Custodes 	6	6	2	4	7	5	2	140	1	Infantry
-	Valerian	Adeptus Custodes 	6	6	2	4	6	6	2	110	1	Infantry
-	Custodian Guard	Adeptus Custodes 	6	6	2	4	3	6	2	160	5	Infantry
-	Anathema Psykana Rhino	Adeptus Custodes 	12	9	3		10	6	2	75	1	Vehicle
-	Allarus Custodians	Adeptus Custodes 	5	7	2	4	4	6	2	360	6	Infantry
-	Custodian Wardens	Adeptus Custodes 	6	6	2	4	3	6	2	260	5	Infantry
-	Prosecutors	Adeptus Custodes 	6	3	3		1	6	2	85	10	Infantry
-	Venerable Contemptor Dreadnought	Adeptus Custodes 	6	9	2	5	10	6	3	170	1	Vehicle
-	Venerable Land Raider	Adeptus Custodes 	10	12	2		16	6	5	220	1	Vehicle
-	Vertus Praetors	Adeptus Custodes 	12	7	2	4	5	6	2	225	3	Mounted
-	Vigilators	Adeptus Custodes 	6	3	3		1	6	1	110	10	Infantry
-	Witchseekers	Adeptus Custodes 	6	3	3		1	6	1	125	10	Infantry
-	Agamatus Custodians	Adeptus Custodes 	12	6	2	4	4	6	2	450	6	Mounted
-	Aquilon Custodians	Adeptus Custodes 	5	7	2	4	4	6	2	390	6	Infantry
-	Ares Gunship	Adeptus Custodes 	20	12	2	5	22	6	0	580	1	Vehicle
-	Caladius Grav-tank	Adeptus Custodes 	10	11	2	5	14	6	4	215	1	Vehicle
-	Contemptor-achillus Dreadnought	Adeptus Custodes 	6	9	2	5	10	6	3	155	1	Vehicle
-	Contemptor-galatus Dreadnought	Adeptus Custodes 	6	9	2	4	10	6	3	165	1	Vehicle
-	Coronus Grav-carrier	Adeptus Custodes 	12	12	2	5	16	6	5	200	1	Vehicle
-	Custodian Guard With Adrasite And Pyrithite Spears	Adeptus Custodes 	6	6	2	4	3	6	2	250	5	Infantry
-	Orion Assault Dropship	Adeptus Custodes 	20	12	2	5	22	6	0	690	1	Vehicle
-	Pallas Grav-attack	Adeptus Custodes 	12	8	2	5	9	6	2	105	1	Vehicle
-	Sagittarum Custodians	Adeptus Custodes 	6	6	2	4	3	6	2	225	5	Infantry
-	Telemon Heavy Dreadnought	Adeptus Custodes 	8	10	2	4	12	6	4	225	1	Vehicle
-	Venatari Custodians	Adeptus Custodes 	10	6	2	4	3	6	2	330	6	Infantry
+Unit ID,Unit Name,Faction,Movement,Toughness,Save,Invunl Save,Wounds,Leadership,OC,Points,Model Count,Keywords
+1,Aestred Thurga And Agathae Dolan,Adepta Sororitas,6,3,2,4,4,6,1,70,2,Infantry
+2,Canoness,Adepta Sororitas,6,3,3,4,4,7,1,50,1,Infantry
+3,Canoness with jump pack,Adepta Sororitas,12,3,3,4,3,7,1,75,1,Infantry
+4,Daemonifuge,Adepta Sororitas,8,3,3,4,5,7,1,85,2,Infantry
+5,Dialogus,Adepta Sororitas,6,3,3,4,3,6,1,40,1,Infantry
+6,Dogmata,Adepta Sororitas,6,3,3,6,3,6,1,45,1,Infantry
+7,Hospitaller,Adepta Sororitas,6,3,3,6,3,7,1,50,1,Infantry
+8,Imagifier,Adepta Sororitas,6,3,3,4,3,6,1,65,1,Infantry
+9,Junith Eruita,Adepta Sororitas,8,5,2,4,8,6,2,80,1,Mounted
+10,Ministorum Priest,Adepta Sororitas,6,3,6,4,3,7,1,50,1,Infantry
+11,Morvenn Vahl,Adepta Sororitas,8,7,2,4,8,6,3,170,1,Vehicle
+12,Palatine,Adepta Sororitas,6,3,3,4,4,7,1,50,1,Infantry
+13,Saint Celestine,Adepta Sororitas,12,3,2,4,5,6,1,150,3,Infantry
+14,Triumph Of Saint Katherine,Adepta Sororitas,6,3,3,4,18,6,6,235,1,Infantry
+15,Battle Sisters Squad,Adepta Sororitas,6,3,3,6,1,7,2,105,10,Infantry
+16,Immolator,Adepta Sororitas,12,10,3,6,11,7,2,115,1,Vehicle
+17,Sororitas Rhino,Adepta Sororitas,12,9,3,6,10,7,2,75,1,Vehicle
+18,Arco-flagellants,Adepta Sororitas,7,3,7,6,2,8,1,140,10,Infantry
+19,Castigator,Adepta Sororitas,10,10,3,6,11,7,3,160,1,Vehicle
+20,Celestian Sacresants,Adepta Sororitas,6,3,3,4,1,7,1,130,10,Infantry
+21,Dominion Squad,Adepta Sororitas,6,3,3,6,1,7,1,115,10,Infantry
+22,Exorcist,Adepta Sororitas,10,10,3,6,11,7,3,210,1,Vehicle
+23,Mortifiers,Adepta Sororitas,8,6,4,6,5,7,2,140,2,Vehicle
+24,Paragon Warsuits,Adepta Sororitas,8,7,2,4,4,7,2,210,3,Vehicle
+25,Penitent Engines,Adepta Sororitas,8,6,4,6,5,7,2,150,2,Vehicle
+26,Repentia Squad,Adepta Sororitas,7,3,7,6,1,7,1,160,10,Infantry
+27,Retributor Squad,Adepta Sororitas,6,3,3,6,1,7,1,105,5,Infantry
+28,Seraphim Squad,Adepta Sororitas,12,3,3,5,1,7,1,160,10,Infantry
+29,Sisters Novitiate Squad,Adepta Sororitas,6,3,4,6,1,8,2,100,10,Infantry
+30,Zephyrim Squad,Adepta Sororitas,12,3,3,5,1,7,1,160,10,Infantry
+31,Sanctifiers,Adepta Sororitas,6,3,6,5,1,7,1,100,9,Infantry
+31,Aleya,Adeptus Custodes ,6,3,3,5,4,6,1,65,1,Infantry
+31,Blade Champion,Adeptus Custodes ,6,6,2,4,6,6,2,120,1,Infantry
+31,Knight-centura,Adeptus Custodes ,6,3,3,5,4,6,1,55,1,Infantry
+31,Shield-captain,Adeptus Custodes ,6,6,2,4,6,6,2,120,1,Infantry
+31,Shield-captain In Allarus Terminator Armour,Adeptus Custodes ,5,7,2,4,7,6,2,130,1,Infantry
+31,Shield-captain On Dawneagle Jetbike,Adeptus Custodes ,12,7,2,4,8,6,2,150,1,Mounted
+31,Trajann Valoris,Adeptus Custodes ,6,6,2,4,7,5,2,140,1,Infantry
+31,Valerian,Adeptus Custodes ,6,6,2,4,6,6,2,110,1,Infantry
+31,Custodian Guard,Adeptus Custodes ,6,6,2,4,3,6,2,160,5,Infantry
+31,Anathema Psykana Rhino,Adeptus Custodes ,12,9,3,,10,6,2,75,1,Vehicle
+31,Allarus Custodians,Adeptus Custodes ,5,7,2,4,4,6,2,360,6,Infantry
+31,Custodian Wardens,Adeptus Custodes ,6,6,2,4,3,6,2,260,5,Infantry
+31,Prosecutors,Adeptus Custodes ,6,3,3,,1,6,2,85,10,Infantry
+31,Venerable Contemptor Dreadnought,Adeptus Custodes ,6,9,2,5,10,6,3,170,1,Vehicle
+31,Venerable Land Raider,Adeptus Custodes ,10,12,2,,16,6,5,220,1,Vehicle
+31,Vertus Praetors,Adeptus Custodes ,12,7,2,4,5,6,2,225,3,Mounted
+31,Vigilators,Adeptus Custodes ,6,3,3,,1,6,1,110,10,Infantry
+31,Witchseekers,Adeptus Custodes ,6,3,3,,1,6,1,125,10,Infantry
+31,Agamatus Custodians,Adeptus Custodes ,12,6,2,4,4,6,2,450,6,Mounted
+31,Aquilon Custodians,Adeptus Custodes ,5,7,2,4,4,6,2,390,6,Infantry
+31,Ares Gunship,Adeptus Custodes ,20,12,2,5,22,6,0,580,1,Vehicle
+31,Caladius Grav-tank,Adeptus Custodes ,10,11,2,5,14,6,4,215,1,Vehicle
+31,Contemptor-achillus Dreadnought,Adeptus Custodes ,6,9,2,5,10,6,3,155,1,Vehicle
+31,Contemptor-galatus Dreadnought,Adeptus Custodes ,6,9,2,4,10,6,3,165,1,Vehicle
+31,Coronus Grav-carrier,Adeptus Custodes ,12,12,2,5,16,6,5,200,1,Vehicle
+31,Custodian Guard With Adrasite And Pyrithite Spears,Adeptus Custodes ,6,6,2,4,3,6,2,250,5,Infantry
+31,Orion Assault Dropship,Adeptus Custodes ,20,12,2,5,22,6,0,690,1,Vehicle
+31,Pallas Grav-attack,Adeptus Custodes ,12,8,2,5,9,6,2,105,1,Vehicle
+31,Sagittarum Custodians,Adeptus Custodes ,6,6,2,4,3,6,2,225,5,Infantry
+31,Telemon Heavy Dreadnought,Adeptus Custodes ,8,10,2,4,12,6,4,225,1,Vehicle
+31,Venatari Custodians,Adeptus Custodes ,10,6,2,4,3,6,2,330,6,Infantry
+,Belisarius Cawl,Adeptus Mechanicus,8,8,2,4,10,6,3,175,1,Monster

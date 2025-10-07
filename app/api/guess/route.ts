@@ -8,8 +8,8 @@ import { judge } from "@/app/lib/judge";
 
 export async function POST(req: Request) {
   const { name } = await req.json();
-  const units = loadUnits();
-  const target = getDailyUnit();
+  const units = await loadUnits();
+  const target = await getDailyUnit();
   const guess = units.find(u => u["Unit Name"].toLowerCase() === String(name).toLowerCase());
   if (!guess) return NextResponse.json({ error: "Unknown unit" }, { status: 404 });
   const feedback = judge(guess, target);
