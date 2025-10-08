@@ -64,16 +64,21 @@ export default function Page() {
         <h1 className="text-2xl font-semibold">Wahadle</h1>
         <a href="/endless" className="text-sm text-emerald-400 underline">Endless mode</a>
       </div>
-      <p className="text-sm text-neutral-300">Guess the daily unit by comparing its stats. ✓ = match, ⬆ = your guess is lower than the target, ⬇ = higher, ✗ = mismatch, ~ is same grand order for factions (imperium, chaos, Space Marines, Hive Mind, Eldar, and Xenos). All profiles are assumed to be as big as possible.</p>
+      <p className="text-sm text-neutral-300">Guess the daily unit by comparing its stats. ✓ = match, ⬆ = your guess is lower than the target, ⬇ = higher, ✗ = mismatch, ~ is same grand order for factions (imperium, chaos, Space Marines, and Xenos). Datasheets that can be diffrent sizes are treated as diffrent datashets (e.g., 20 man Gaurdsman vs 10 man Gaurdsman).</p>
 
       <div className="relative">
         <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && suggestions[0]) guess(suggestions[0].name); }} placeholder="Type a unit name..." className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none ring-1 ring-neutral-700 focus:ring-emerald-600" />
         {suggestions.length > 0 && (
           <div className="absolute z-10 mt-1 w-full rounded-xl bg-neutral-900 ring-1 ring-neutral-700 max-h-64 overflow-auto">
-            {suggestions.map((s) => (
+            {suggestions.map((s: any) => (
               <button key={s.id} onClick={() => guess(s.name)} className="w-full text-left px-4 py-2 hover:bg-neutral-800">
-                <div className="text-sm">{s.name}</div>
-                <div className="text-xs text-neutral-400">{s.faction}</div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm">{s.name}</div>
+                    <div className="text-xs text-neutral-400">{s.faction}</div>
+                  </div>
+                  <div className="text-sm text-neutral-300 ml-4">{s.model_count ?? '-'}</div>
+                </div>
               </button>
             ))}
           </div>
