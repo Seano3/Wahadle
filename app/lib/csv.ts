@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createClient } from '@supabase/supabase-js'
 
-let _cache: UnitRow[] | null = null;
+// No module-level cache: always fetch fresh data so pages get updated units on each request
 
 function toNum(x: string | undefined): number | null {
   if (!x) return null;
@@ -14,7 +14,6 @@ function toNum(x: string | undefined): number | null {
 }
 
 export async function loadUnits(): Promise<UnitRow[]> {
-  if (_cache) return _cache;
 
   const supabaseUrl = process.env.SUPABASE_URL;
   const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
@@ -109,6 +108,5 @@ export async function loadUnits(): Promise<UnitRow[]> {
   //   "Model Count": Number(r["Model Count"]) || 1,
   //}));
 
-  _cache = units.filter(u => !!u["Unit Name"]);
-  return _cache;
+  return units.filter(u => !!u["Unit Name"]);
 }
