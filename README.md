@@ -76,18 +76,11 @@ Open http://localhost:3000 to view the app.
 
 ## Performance & Caching
 
-- By default `loadUnits()` currently fetches fresh data on each call to ensure the UI sees updates immediately. This is safer for development but increases calls to the Edge Function.
-- Options:
-	- Add a short in-memory TTL (e.g., 30s) in `app/lib/csv.ts` if you want a compromise between freshness and performance.
-	- Re-enable module-level caching in production only (e.g., check `process.env.NODE_ENV`).
+- By default `loadUnits()` currently fetches fresh data on each call to ensure the UI sees updates immediately. 
 
 ## Contributing
 
-Feel free to open issues or pull requests. If you change the dataset shape, update `app/lib/csv.ts` and `app/types.ts` accordingly.
-
-## License
-
-MIT — see LICENSE or add one if you want.
+Feel free to open issues. Not a very complicated app so not looking for programming help for now. 
 
 ## Author
 
