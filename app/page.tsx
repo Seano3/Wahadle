@@ -41,10 +41,12 @@ export default function Page() {
   }, [query]);
 
   const guess = async (name: string) => {
+    console.log('guess invoked for', name)
     if (solved) return;
     const res = await fetch("/api/guess", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }) });
     if (!res.ok) return;
     const data = await res.json();
+    console.log('guess response', data)
     setRows(rs => [...rs, { label: data.guess.name, feedback: data.feedback }]);
     if (data.solved) setSolved(true);
     setQuery("");
@@ -69,9 +71,9 @@ export default function Page() {
       <div className="relative">
         <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && suggestions[0]) guess(suggestions[0].name); }} placeholder="Type a unit name..." className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none ring-1 ring-neutral-700 focus:ring-emerald-600" />
         {suggestions.length > 0 && (
-          <div className="absolute z-10 mt-1 w-full rounded-xl bg-neutral-900 ring-1 ring-neutral-700 max-h-64 overflow-auto">
+          <div className="absolute z-50 mt-1 w-full rounded-xl bg-neutral-900 ring-1 ring-neutral-700 max-h-64 overflow-auto" style={{ pointerEvents: 'auto' }}>
             {suggestions.map((s: any) => (
-              <button key={s.id} onClick={() => guess(s.name)} className="w-full text-left px-4 py-2 hover:bg-neutral-800">
+              <button key={s.id} type="button" onPointerDown={(e) => { e.preventDefault(); console.log('pointerdown suggestion', s); guess(s.name) }} onMouseDown={(e) => { e.preventDefault(); console.log('mousedown suggestion', s); guess(s.name) }} className="w-full text-left px-4 py-2 hover:bg-neutral-800">
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm">{s.name}</div>

@@ -3,8 +3,8 @@ import { loadUnits } from "@/app/lib/csv";
 import { judge } from "@/app/lib/judge";
 import { UnitRow } from "@/app/types";
 
-export function GET(req: Request) {
-    const units = loadUnits();
+export async function GET(req: Request) {
+    const units = await loadUnits();
     const { searchParams } = new URL(req.url);
     const seed = searchParams.get("seed");
 
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { targetId, name } = body as { targetId?: string; name?: string };
     if (!targetId) return NextResponse.json({ error: "missing targetId" }, { status: 400 });
-    const units = loadUnits();
+    const units = await loadUnits();
     const target = units.find(u => u["Unit ID"] === String(targetId));
     if (!target) return NextResponse.json({ error: "unknown target" }, { status: 404 });
 
