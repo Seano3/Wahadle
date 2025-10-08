@@ -32,15 +32,17 @@ export default function Page() {
   }, [solved]);
 
   useEffect(() => {
-    const ctrl = new AbortController();
-    const run = async () => {
-      const q = query.trim();
-      if (!q) { setSuggestions([]); return; }
-      const res = await fetch(`/api/units?q=${encodeURIComponent(q)}`, { signal: ctrl.signal });
-      if (res.ok) setSuggestions(await res.json());
-    };
-    run();
-    return () => ctrl.abort();
+    try {
+      const ctrl = new AbortController();
+      const run = async () => {
+        const q = query.trim();
+        if (!q) { setSuggestions([]); return; }
+        const res = await fetch(`/api/units?q=${encodeURIComponent(q)}`, { signal: ctrl.signal });
+        if (res.ok) setSuggestions(await res.json());
+      };
+      run();
+      return () => ctrl.abort();
+    } catch (e) { console.warn('Failed to fetch suggestions', e); }
   }, [query]);
 
   const guess = async (choice: string | Suggestion) => {
