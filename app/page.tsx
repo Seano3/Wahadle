@@ -10,9 +10,12 @@ const COLS: StatKey[] = [
 
 type Hit = { id: string; name: string; faction: string };
 
+// suggestion shape returned by /api/units (includes model_count)
+type Suggestion = { id: string; name: string; faction: string; model_count?: number; points?: number | null; variant_key?: string };
+
 export default function Page() {
   const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState<Hit[]>([]);
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [rows, setRows] = useState<{ label: string; feedback: Feedback[] }[]>([]);
   const [solved, setSolved] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -40,10 +43,13 @@ export default function Page() {
     return () => ctrl.abort();
   }, [query]);
 
-  const guess = async (name: string) => {
-    console.log('guess invoked for', name)
+  const guess = async (choice: string | Suggestion) => {
+    const payload: any = typeof choice === 'string'
+      ? { name: choice }
+      : { id: choice.id, name: choice.name, faction: choice.faction, points: choice.points, variant_key: choice.variant_key };
+    console.log('guess invoked for', payload)
     if (solved) return;
-    const res = await fetch("/api/guess", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }) });
+    const res = await fetch("/api/guess", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
     if (!res.ok) return;
     const data = await res.json();
     console.log('guess response', data)
@@ -69,11 +75,11 @@ export default function Page() {
       <p className="text-sm text-neutral-300">Guess the daily unit by comparing its stats. ✓ = match, ⬆ = your guess is lower than the target, ⬇ = higher, ✗ = mismatch, ~ is same grand order for factions (imperium, chaos, Space Marines, and Xenos). Datasheets that can be diffrent sizes are treated as diffrent datashets (e.g., 20 man Gaurdsman vs 10 man Gaurdsman).</p>
 
       <div className="relative">
-        <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && suggestions[0]) guess(suggestions[0].name); }} placeholder="Type a unit name..." className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none ring-1 ring-neutral-700 focus:ring-emerald-600" />
+        <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && suggestions[0]) guess(suggestions[0]); }} placeholder="Type a unit name..." className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none ring-1 ring-neutral-700 focus:ring-emerald-600" />
         {suggestions.length > 0 && (
           <div className="absolute z-50 mt-1 w-full rounded-xl bg-neutral-900 ring-1 ring-neutral-700 max-h-64 overflow-auto" style={{ pointerEvents: 'auto' }}>
-            {suggestions.map((s: any) => (
-              <button key={s.id} type="button" onPointerDown={(e) => { e.preventDefault(); console.log('pointerdown suggestion', s); guess(s.name) }} onMouseDown={(e) => { e.preventDefault(); console.log('mousedown suggestion', s); guess(s.name) }} className="w-full text-left px-4 py-2 hover:bg-neutral-800">
+            {suggestions.map((s: Suggestion) => (
+              <button key={s.id} type="button" onPointerDown={(e) => { e.preventDefault(); console.log('pointerdown suggestion', s); guess(s) }} onMouseDown={(e) => { e.preventDefault(); console.log('mousedown suggestion', s); guess(s) }} className="w-full text-left px-4 py-2 hover:bg-neutral-800">
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm">{s.name}</div>

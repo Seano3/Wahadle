@@ -30,7 +30,8 @@ export async function GET(req: Request) {
   const best = new Map<string, typeof entries[0]>();
   for (const e of filtered) {
     const modelCountKey = String(e.u["Model Count"] ?? "");
-    const key = `${e.norm}||${modelCountKey}`;
+    const factionKey = String(e.u["Faction"] ?? "");
+    const key = `${e.norm}||${modelCountKey}||${factionKey}`;
     const existing = best.get(key);
     if (!existing) {
       best.set(key, e);
@@ -72,5 +73,8 @@ export async function GET(req: Request) {
     oc: u.OC,
     points: u.Points,
     model_count: u["Model Count"],
+    // variant_key combines unit id and model count so the client can identify
+    // the exact datasheet variant (e.g. 10-man vs 20-man)
+    variant_key: `${u["Unit ID"]}::${u["Model Count"] ?? ""}`,
   })));
 }
