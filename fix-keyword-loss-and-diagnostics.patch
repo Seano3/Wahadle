@@ -1,0 +1,149 @@
+commit a4faca361ad806e8ec29c166fc9667f99cb9e8ca
+Author: Sean Thornton <sthornton8@outlook.com>
+Date:   Sat Jun 20 23:03:36 2026 +0000
+
+    Fix silent keyword data loss, add real diagnostics for the recurring duplicate-row error
+    
+    Found while investigating why the duplicate-row fix didn't resolve
+    the user's error on retry:
+    
+    - upsertInBatches() defaulted to deduping on a nonexistent 'id'
+      field for Datasheets_keywords (it has no id column -- its real
+      key is datasheet_id+keyword+model). Every keyword row collapsed
+      to the same dedup key and only the LAST keyword in the entire
+      export would have survived an apply -- silent, near-total data
+      loss for that table, worse than the error it was meant to fix.
+      Verified: 3 distinct keyword rows for one datasheet now correctly
+      produce 3 upserted rows instead of 1.
+    
+    - This doesn't explain the recurring 21000 error by itself (it's a
+      data-loss bug, not a Postgres rejection), so rather than guess
+      further at which table/row is the real source, added concrete
+      diagnostics: on a 21000 error, upsertInBatches now re-scans the
+      specific failing batch under its assumed key and logs either the
+      exact colliding row pair, or -- if no collision is found under
+      that key -- an explicit note that the assumed conflict key for
+      that table is probably wrong, with a pointer to check 01_schema.sql.
+    
+    - Both API routes (preview, apply) previously fell back to a
+      generic message for any non-Error-instance failure -- which is
+      exactly what Supabase/PostgREST errors are (plain objects with
+      code/message/details/hint, not real Error instances) -- so the
+      actual useful Postgres message was being discarded before it
+      ever reached the browser. Now surfaced directly.
+
+diff --git a/app/api/admin/import/apply/route.ts b/app/api/admin/import/apply/route.ts
+index 8e0ad4b..da7ff39 100644
+--- a/app/api/admin/import/apply/route.ts
++++ b/app/api/admin/import/apply/route.ts
+@@ -39,7 +39,19 @@ export async function POST(req: Request) {
+     return NextResponse.json({ ok: true });
+   } catch (err) {
+     console.error("POST /api/admin/import/apply failed:", err);
+-    const message = err instanceof Error ? err.message : "Failed to apply the update.";
++    // Supabase/PostgREST errors are plain objects with code/message/
++    // details/hint, NOT real Error instances, so `err instanceof
++    // Error` is false for them and a naive fallback would discard
++    // the actually-useful Postgres message. Surface it directly --
++    // see upsertInBatches in core.ts for the additional diagnostic
++    // logging (which table, which row) this triggers server-side
++    // for code 21000 specifically.
++    const message =
++      err instanceof Error
++        ? err.message
++        : typeof err === "object" && err !== null && "message" in err
++          ? String((err as { message: unknown }).message)
++          : "Failed to apply the update.";
+     return NextResponse.json({ error: message }, { status: 500 });
+   }
+ }
+diff --git a/app/api/admin/import/preview/route.ts b/app/api/admin/import/preview/route.ts
+index 9c8a681..7a83c0b 100644
+--- a/app/api/admin/import/preview/route.ts
++++ b/app/api/admin/import/preview/route.ts
+@@ -40,7 +40,12 @@ export async function POST(req: Request) {
+     return NextResponse.json({ edition, diff });
+   } catch (err) {
+     console.error("POST /api/admin/import/preview failed:", err);
+-    const message = err instanceof Error ? err.message : "Failed to check for updates.";
++    const message =
++      err instanceof Error
++        ? err.message
++        : typeof err === "object" && err !== null && "message" in err
++          ? String((err as { message: unknown }).message)
++          : "Failed to check for updates.";
+     return NextResponse.json({ error: message }, { status: 500 });
+   }
+ }
+diff --git a/scripts/import/core.ts b/scripts/import/core.ts
+index 4dcd315..76760e4 100644
+--- a/scripts/import/core.ts
++++ b/scripts/import/core.ts
+@@ -440,7 +440,23 @@ async function upsertInBatches(
+   rows: any[],
+   onConflict?: string
+ ) {
+-  const keyFields = onConflict ? onConflict.split(",") : ["id"];
++  // Datasheets_keywords has no `id` column at all -- its real
++  // primary key is (datasheet_id, keyword, model_key), where
++  // model_key is a generated column (see 01_schema.sql) that
++  // can't be targeted by an upsert's onConflict directly. Using
++  // the wrong default key here previously meant every keyword row
++  // deduped against the same (nonexistent) `id` field and silently
++  // collapsed down to a single row -- a worse bug than the
++  // duplicate-row error this function exists to catch. Dedup on
++  // the table's actual natural key instead; onConflict is still
++  // omitted from the upsert call itself, matching the table's
++  // real primary key.
++  const keyFields =
++    onConflict?.split(",") ??
++    (table === "Datasheets_keywords"
++      ? ["datasheet_id", "keyword", "model"]
++      : ["id"]);
++
+   const { deduped, droppedCount, droppedKeys } = dedupeByKey(rows, keyFields);
+ 
+   if (droppedCount > 0) {
+@@ -456,7 +472,41 @@ async function upsertInBatches(
+     const { error } = onConflict
+       ? await supabase.from(table).upsert(batch, { onConflict })
+       : await supabase.from(table).upsert(batch);
+-    if (error) throw error;
++
++    if (error) {
++      // Dedup should have made this impossible -- if it still
++      // happens, something about this table's real key differs
++      // from what we assumed. Identify the actual colliding
++      // row(s) within this specific batch so the error is
++      // actionable instead of a generic Postgres message.
++      if (error.code === "21000") {
++        const seenInBatch = new Map<string, number>();
++        const collisions: { key: string; rows: any[] }[] = [];
++        batch.forEach((row, idx) => {
++          const key = keyFields.map((f) => String(row[f])).join("::");
++          if (seenInBatch.has(key)) {
++            collisions.push({
++              key,
++              rows: [batch[seenInBatch.get(key)!], row],
++            });
++          }
++          seenInBatch.set(key, idx);
++        });
++        console.error(
++          `${table}: upsert batch ${i}-${i + batch.length} rejected by Postgres ` +
++            `(ON CONFLICT DO UPDATE cannot affect row a second time). ` +
++            `Dedup key assumed: ${keyFields.join(",")}. ` +
++            `Collisions found within this batch using that key: ${collisions.length}.` +
++            (collisions.length > 0
++              ? ` First colliding pair: ${JSON.stringify(collisions[0], null, 2)}`
++              : ` No collisions found under that key -- the table's real conflict ` +
++                `target is probably different from what this script assumes for ` +
++                `"${table}". Check the table's actual primary key in 01_schema.sql ` +
++                `and compare against the onConflict passed from applyImport().`)
++        );
++      }
++      throw error;
++    }
+   }
+ }
+ 
