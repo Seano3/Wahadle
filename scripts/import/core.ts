@@ -396,14 +396,63 @@ export async function computeDiff(
 
 const BATCH_SIZE = 200;
 
+/**
+ * Returns rows with duplicate conflict-key collisions removed
+ * (keeping the LAST occurrence of each key), plus how many were
+ * dropped. Postgres's ON CONFLICT DO UPDATE rejects a batch
+ * outright if it contains two rows with the same key -- "ON
+ * CONFLICT DO UPDATE command cannot affect row a second time" --
+ * which happens if Wahapedia's export itself has a duplicate row
+ * for some (datasheet_id, line) or id. This has actually occurred
+ * in practice (see the comment where this is called from
+ * applyImport) -- it's a real data-quality issue on Wahapedia's
+ * side, not just defensive code, so dedup counts are logged
+ * rather than silently discarded.
+ */
+function dedupeByKey<T extends Record<string, any>>(
+  rows: T[],
+  keyFields: string[]
+): { deduped: T[]; droppedCount: number; droppedKeys: string[] } {
+  const seen = new Map<string, T>();
+  const droppedKeys: string[] = [];
+
+  for (const row of rows) {
+    const key = keyFields.map((f) => String(row[f])).join("::");
+    if (seen.has(key)) {
+      droppedKeys.push(key);
+    }
+    // Keep the LAST occurrence -- if Wahapedia's export somehow
+    // lists the same key twice with different data, the later row
+    // in file order is the more likely "actual current" value.
+    seen.set(key, row);
+  }
+
+  return {
+    deduped: [...seen.values()],
+    droppedCount: droppedKeys.length,
+    droppedKeys,
+  };
+}
+
 async function upsertInBatches(
   supabase: SupabaseClient,
   table: string,
   rows: any[],
   onConflict?: string
 ) {
-  for (let i = 0; i < rows.length; i += BATCH_SIZE) {
-    const batch = rows.slice(i, i + BATCH_SIZE);
+  const keyFields = onConflict ? onConflict.split(",") : ["id"];
+  const { deduped, droppedCount, droppedKeys } = dedupeByKey(rows, keyFields);
+
+  if (droppedCount > 0) {
+    console.warn(
+      `${table}: dropped ${droppedCount} duplicate row(s) from the Wahapedia export ` +
+        `(duplicate key on ${keyFields.join(",")}): ${droppedKeys.slice(0, 10).join(", ")}` +
+        (droppedKeys.length > 10 ? ", ..." : "")
+    );
+  }
+
+  for (let i = 0; i < deduped.length; i += BATCH_SIZE) {
+    const batch = deduped.slice(i, i + BATCH_SIZE);
     const { error } = onConflict
       ? await supabase.from(table).upsert(batch, { onConflict })
       : await supabase.from(table).upsert(batch);
