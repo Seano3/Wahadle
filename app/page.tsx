@@ -14,7 +14,7 @@ export default function Page() {
         is lower than the target, ⬇ = higher, ✗ = mismatch, 〰 means same grand
         order for factions (Imperium, Chaos, Space Marines, and Xenos).
         Datasheets that can be different sizes are treated as different
-        variants (e.g. 20-model Guardsmen vs 10-model Guardsmen).
+        variants (e.g. 20-model Guardsmen vs 10-model Guardsmen). Im merging
       </p>
 
       <GameBoard title="Wahadle" guessEndpoint="/api/guess/daily" />
