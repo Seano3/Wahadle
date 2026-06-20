@@ -479,6 +479,14 @@ async function upsertInBatches(
       // from what we assumed. Identify the actual colliding
       // row(s) within this specific batch so the error is
       // actionable instead of a generic Postgres message.
+      //
+      // Throws a NEW error with the diagnostic baked into its
+      // message, rather than just logging and re-throwing the
+      // original -- a plain console.error here is easy to miss
+      // (it can scroll out of view behind other request logs
+      // before anyone reads it), whereas the message on a thrown
+      // Error flows straight through to the API route's error
+      // response and renders in the admin page's error banner.
       if (error.code === "21000") {
         const seenInBatch = new Map<string, number>();
         const collisions: { key: string; rows: any[] }[] = [];
@@ -492,17 +500,30 @@ async function upsertInBatches(
           }
           seenInBatch.set(key, idx);
         });
-        console.error(
-          `${table}: upsert batch ${i}-${i + batch.length} rejected by Postgres ` +
-            `(ON CONFLICT DO UPDATE cannot affect row a second time). ` +
-            `Dedup key assumed: ${keyFields.join(",")}. ` +
-            `Collisions found within this batch using that key: ${collisions.length}.` +
-            (collisions.length > 0
-              ? ` First colliding pair: ${JSON.stringify(collisions[0], null, 2)}`
-              : ` No collisions found under that key -- the table's real conflict ` +
-                `target is probably different from what this script assumes for ` +
-                `"${table}". Check the table's actual primary key in 01_schema.sql ` +
-                `and compare against the onConflict passed from applyImport().`)
+
+        // Full row detail goes to the server log (useful for
+        // actually fixing the root cause -- e.g. seeing exactly
+        // what differs between the two colliding rows), while a
+        // short summary goes into the thrown error's message so
+        // it's visible in the admin page's error banner without
+        // needing to go dig through logs at all.
+        if (collisions.length > 0) {
+          console.error(
+            `${table}: colliding rows for key "${collisions[0].key}":`,
+            JSON.stringify(collisions[0].rows, null, 2)
+          );
+        }
+
+        const diagnostic =
+          collisions.length > 0
+            ? `duplicate key "${collisions[0].key}" appears ${collisions.length + 1} time(s) in this batch (dedup key: ${keyFields.join(",")})`
+            : `no collision found under the assumed key (${keyFields.join(",")}) -- ` +
+              `this table's real conflict target is probably different from what's assumed here, ` +
+              `check the table's actual primary key in 01_schema.sql`;
+
+        throw new Error(
+          `${table}: upsert rejected by Postgres (batch rows ${i}-${i + batch.length}). ${diagnostic}. ` +
+            `Original error: ${error.message}`
         );
       }
       throw error;
