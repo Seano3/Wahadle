@@ -13,8 +13,7 @@ export default function Page() {
         Guess the daily unit by comparing its stats. ✓ = match, ⬆ = your guess
         is lower than the target, ⬇ = higher, ✗ = mismatch, 〰 means same grand
         order for factions (Imperium, Chaos, Space Marines, and Xenos).
-        Datasheets that can be different sizes are treated as different
-        variants (e.g. 20-model Guardsmen vs 10-model Guardsmen).
+        Datasheets are assumed to be cheapest versions without any upgrades.
       </p>
 
       <GameBoard title="Wahadle" guessEndpoint="/api/guess/daily" />
