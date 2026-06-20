@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 import { checkAdmin } from "@/app/lib/admin";
 import { createServiceRoleClient } from "@/app/lib/supabase/serviceRole";
-import { fetchExportFiles, parseExport, computeDiff } from "@/scripts/import/core";
+import {
+  fetchExportFiles,
+  parseExport,
+  computeDiff,
+  preflightDuplicateScan,
+} from "@/scripts/import/core";
 
 export const dynamic = "force-dynamic";
 // Server-only fetch to wahapedia.ru -- this needs the Node.js
@@ -36,8 +41,9 @@ export async function POST(req: Request) {
     const parsed = parseExport(files);
     const supabase = createServiceRoleClient();
     const diff = await computeDiff(supabase, parsed);
+    const duplicateWarning = preflightDuplicateScan(parsed);
 
-    return NextResponse.json({ edition, diff });
+    return NextResponse.json({ edition, diff, duplicateWarning: duplicateWarning || null });
   } catch (err) {
     console.error("POST /api/admin/import/preview failed:", err);
     const message =

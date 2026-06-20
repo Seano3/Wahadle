@@ -394,6 +394,57 @@ export async function computeDiff(
   };
 }
 
+/**
+ * Scans every table's parsed rows for duplicate conflict keys
+ * BEFORE any upsert is attempted, across all six tables in one
+ * pass. Returns a human-readable report (empty string if no
+ * duplicates found anywhere). This exists so a failure can be
+ * diagnosed in one shot instead of discovering which table is
+ * broken one Postgres error at a time -- each prior fix attempt
+ * for this exact symptom only caught the FIRST table to fail,
+ * which meant every retry just surfaced the next problem table
+ * instead of the full picture.
+ */
+export function preflightDuplicateScan(parsed: ParsedExport): string {
+  const checks: { table: string; rows: any[]; keyFields: string[] }[] = [
+    { table: "Factions", rows: parsed.factions, keyFields: ["id"] },
+    { table: "Source", rows: parsed.sources, keyFields: ["id"] },
+    { table: "Datasheets", rows: parsed.datasheets, keyFields: ["id"] },
+    { table: "Datasheets_models", rows: parsed.models, keyFields: ["datasheet_id", "line"] },
+    { table: "Datasheets_models_cost", rows: parsed.costs, keyFields: ["datasheet_id", "line"] },
+    {
+      table: "Datasheets_keywords",
+      rows: parsed.keywords,
+      keyFields: ["datasheet_id", "keyword", "model"],
+    },
+  ];
+
+  const lines: string[] = [];
+
+  for (const { table, rows, keyFields } of checks) {
+    const seen = new Map<string, number>();
+    const dupes = new Map<string, number>();
+    for (const row of rows) {
+      const key = keyFields.map((f) => String(row[f])).join("::");
+      seen.set(key, (seen.get(key) ?? 0) + 1);
+    }
+    for (const [key, count] of seen) {
+      if (count > 1) dupes.set(key, count);
+    }
+    if (dupes.size > 0) {
+      const sample = [...dupes.entries()].slice(0, 5);
+      lines.push(
+        `${table}: ${dupes.size} duplicate key(s) on (${keyFields.join(",")}), ` +
+          `total ${[...dupes.values()].reduce((a, b) => a + b, 0)} affected rows. ` +
+          `Examples: ${sample.map(([k, c]) => `${k} (x${c})`).join(", ")}` +
+          (dupes.size > 5 ? ", ..." : "")
+      );
+    }
+  }
+
+  return lines.join(" | ");
+}
+
 const BATCH_SIZE = 200;
 
 /**
@@ -545,6 +596,17 @@ export async function applyImport(
   supabase: SupabaseClient,
   parsed: ParsedExport
 ): Promise<void> {
+  const duplicateReport = preflightDuplicateScan(parsed);
+  if (duplicateReport) {
+    // Surfacing this doesn't block the import -- dedupeByKey
+    // inside upsertInBatches still removes these before each
+    // upsert. Logging it up front means the FULL picture across
+    // all six tables is visible in one shot, rather than only
+    // ever seeing the first table to fail and re-discovering the
+    // rest one retry at a time.
+    console.warn(`Pre-flight duplicate scan found issues: ${duplicateReport}`);
+  }
+
   await upsertInBatches(supabase, "Factions", parsed.factions);
   await upsertInBatches(supabase, "Source", parsed.sources);
   await upsertInBatches(supabase, "Datasheets", parsed.datasheets);

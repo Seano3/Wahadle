@@ -25,10 +25,12 @@ export default function DataRefreshPanel() {
   const [phase, setPhase] = useState<Phase>("idle");
   const [diff, setDiff] = useState<ImportDiff | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [duplicateWarning, setDuplicateWarning] = useState<string | null>(null);
 
   const checkForUpdates = async () => {
     setPhase("checking");
     setError(null);
+    setDuplicateWarning(null);
     try {
       const res = await fetch("/api/admin/import/preview", {
         method: "POST",
@@ -42,6 +44,7 @@ export default function DataRefreshPanel() {
         return;
       }
       setDiff(data.diff);
+      setDuplicateWarning(data.duplicateWarning ?? null);
       setPhase("previewed");
     } catch (e) {
       console.error(e);
@@ -115,6 +118,15 @@ export default function DataRefreshPanel() {
 
       {diff && (phase === "previewed" || phase === "applying") && (
         <div className="space-y-4">
+          {duplicateWarning && (
+            <div className="rounded-lg bg-amber-950 border border-amber-800 px-4 py-2 text-sm text-amber-200">
+              <strong>Wahapedia&apos;s export has duplicate rows</strong> (this is a
+              data-quality issue on their end, not something this app caused).
+              Duplicates are automatically removed before applying, but here&apos;s
+              what was found: {duplicateWarning}
+            </div>
+          )}
+
           <div className="grid grid-cols-3 gap-3 text-sm">
             <Stat label="Datasheets in export" value={diff.counts.datasheets} />
             <Stat label="Model lines" value={diff.counts.models} />
