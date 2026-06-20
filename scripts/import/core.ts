@@ -6,6 +6,40 @@ import {
 } from "./csv";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
+/**
+ * Fetches ALL rows matching a query, paginating past Supabase's
+ * default 1000-row-per-request cap (PostgREST applies this
+ * regardless of the dashboard's "Max rows" setting in practice --
+ * a plain .select() with no .range() silently truncates rather
+ * than erroring, so this is easy to miss until a table crosses
+ * 1000 rows). This table has 1,634+ datasheets, well past that
+ * cap, so every caller that needs "every row" must use this
+ * instead of a bare .select().
+ */
+async function fetchAllRows<T>(
+  supabase: SupabaseClient,
+  table: string,
+  columns: string
+): Promise<T[]> {
+  const PAGE_SIZE = 1000;
+  const all: T[] = [];
+  let from = 0;
+
+  while (true) {
+    const { data, error } = await supabase
+      .from(table)
+      .select(columns)
+      .range(from, from + PAGE_SIZE - 1);
+    if (error) throw error;
+    const page = (data ?? []) as T[];
+    all.push(...page);
+    if (page.length < PAGE_SIZE) break;
+    from += PAGE_SIZE;
+  }
+
+  return all;
+}
+
 export type WahapediaExportFiles = {
   factionsCsv: string;
   sourceCsv: string;
@@ -153,7 +187,7 @@ export type ParsedExport = {
 /** Parses raw export file text into typed, schema-shaped rows. */
 export function parseExport(files: WahapediaExportFiles): ParsedExport {
   const factions = parseCsvText(files.factionsCsv).map((r) => ({
-    id: r.id,
+    id: r.id.trim(),
     name: r.name,
     link: emptyToNull(r.link),
   }));
@@ -164,7 +198,7 @@ export function parseExport(files: WahapediaExportFiles): ParsedExport {
       name.toLowerCase().includes("legends") ||
       name.toLowerCase().startsWith("black library");
     return {
-      id: r.id,
+      id: r.id.trim(),
       name,
       type: emptyToNull(r.type),
       edition: emptyToNull(r.edition),
@@ -176,10 +210,10 @@ export function parseExport(files: WahapediaExportFiles): ParsedExport {
   });
 
   const datasheets = parseCsvText(files.datasheetsCsv).map((r) => ({
-    id: r.id,
+    id: r.id.trim(),
     name: emptyToNull(r.name),
-    faction_id: emptyToNull(r.faction_id),
-    source_id: emptyToNull(r.source_id),
+    faction_id: emptyToNull(r.faction_id?.trim()),
+    source_id: emptyToNull(r.source_id?.trim()),
     legend: emptyToNull(r.legend),
     role: emptyToNull(r.role),
     loadout: emptyToNull(r.loadout),
@@ -196,9 +230,9 @@ export function parseExport(files: WahapediaExportFiles): ParsedExport {
   const datasheetIds = new Set(datasheets.map((d) => d.id));
 
   const models = parseCsvText(files.modelsCsv)
-    .filter((r) => datasheetIds.has(r.datasheet_id))
+    .filter((r) => datasheetIds.has(r.datasheet_id.trim()))
     .map((r) => ({
-      datasheet_id: r.datasheet_id,
+      datasheet_id: r.datasheet_id.trim(),
       line: parseIntOrNull(r.line) ?? 0,
       name: emptyToNull(r.name),
       M: emptyToNull(r.M),
@@ -214,18 +248,18 @@ export function parseExport(files: WahapediaExportFiles): ParsedExport {
     }));
 
   const costs = parseCsvText(files.costCsv)
-    .filter((r) => datasheetIds.has(r.datasheet_id))
+    .filter((r) => datasheetIds.has(r.datasheet_id.trim()))
     .map((r) => ({
-      datasheet_id: r.datasheet_id,
+      datasheet_id: r.datasheet_id.trim(),
       line: parseIntOrNull(r.line) ?? 0,
       description: emptyToNull(r.description),
       cost: parseIntOrNull(r.cost),
     }));
 
   const keywords = parseCsvText(files.keywordsCsv)
-    .filter((r) => datasheetIds.has(r.datasheet_id))
+    .filter((r) => datasheetIds.has(r.datasheet_id.trim()))
     .map((r) => ({
-      datasheet_id: r.datasheet_id,
+      datasheet_id: r.datasheet_id.trim(),
       keyword: r.keyword,
       model: emptyToNull(r.model),
       is_faction_keyword: parseBool(r.is_faction_keyword),
@@ -259,6 +293,15 @@ export type ImportDiff = {
  * Computes what a refresh WOULD do, without writing anything.
  * This is what the admin "Check for updates" preview screen
  * renders, and what the CLI script's --dry-run prints.
+ *
+ * "New"/"changed" counts exclude Legends-sourced datasheets --
+ * those get upserted into the database the same as anything else
+ * (so the admin editor can still see/fix them, and so a unit that
+ * moves OUT of Legends in a future Wahapedia update is already
+ * there to pick up), but they're never playable (the `units` view
+ * filters them out via Source.is_legends) and showing "412 new
+ * datasheets!" when 400 of them are unplayable Legends entries
+ * would be a misleading preview.
  */
 export async function computeDiff(
   supabase: SupabaseClient,
@@ -266,19 +309,26 @@ export async function computeDiff(
 ): Promise<ImportDiff> {
   const exportIds = new Set(parsed.datasheets.map((d) => d.id));
 
-  const { data: existingRows, error: existingError } = await supabase
-    .from("Datasheets")
-    .select("id, name, faction_id");
-  if (existingError) throw existingError;
-
-  const existingById = new Map(
-    (existingRows ?? []).map((r: any) => [r.id as string, r])
+  const legendsSourceIds = new Set(
+    parsed.sources.filter((s) => s.is_legends).map((s) => s.id)
   );
+  const isLegendsDatasheet = (sourceId: string | null) =>
+    sourceId !== null && legendsSourceIds.has(sourceId);
+
+  const existingRows = await fetchAllRows<{
+    id: string;
+    name: string | null;
+    faction_id: string | null;
+  }>(supabase, "Datasheets", "id, name, faction_id");
+
+  const existingById = new Map(existingRows.map((r) => [r.id, r]));
 
   const newDatasheets: DatasheetDiffEntry[] = [];
   const changedDatasheets: DatasheetDiffEntry[] = [];
 
   for (const d of parsed.datasheets) {
+    if (isLegendsDatasheet(d.source_id)) continue;
+
     const existing = existingById.get(d.id);
     if (!existing) {
       newDatasheets.push({ id: d.id, name: d.name, faction_id: d.faction_id });
@@ -383,12 +433,12 @@ export async function applyImport(
   await upsertInBatches(supabase, "Datasheets_keywords", parsed.keywords);
 
   const exportIds = new Set(parsed.datasheets.map((d) => d.id));
-  const { data: existingIdsData, error: existingIdsError } = await supabase
-    .from("Datasheets")
-    .select("id");
-  if (existingIdsError) throw existingIdsError;
-
-  const existingIds = (existingIdsData ?? []).map((r: any) => r.id as string);
+  const existingIdRows = await fetchAllRows<{ id: string }>(
+    supabase,
+    "Datasheets",
+    "id"
+  );
+  const existingIds = existingIdRows.map((r) => r.id);
   const toRemove = existingIds.filter((id) => !exportIds.has(id));
 
   if (toRemove.length === 0) return;
