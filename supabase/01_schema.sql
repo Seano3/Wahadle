@@ -42,6 +42,17 @@ create table public."Source" (
   errata_date  text,
   errata_link  text,
   trash        text,
+  -- True for Legends / Horus Heresy Legends / Black Library promo
+  -- sources -- these are unsupported, often unbalanced datasheets
+  -- Wahapedia itself flags as not-recommended-by-default (see the
+  -- "Show Legends and not recommended rules/datasheets" toggle on
+  -- wahapedia.ru). Excluded from the player-facing `units` view
+  -- below so the game never picks one as an answer. Computed once
+  -- here from the source name at import time rather than filtered
+  -- ad hoc in application code, so it stays correct automatically
+  -- as new sources are added in future data refreshes (as long as
+  -- the importer keeps setting it -- see the name pattern below).
+  is_legends   boolean not null default false,
   constraint "Source_pkey" primary key (id)
 );
 
@@ -151,6 +162,11 @@ create index idx_datasheets_keywords_datasheet_id on public."Datasheets_keywords
 -- the cost table don't reliably ascend by price, e.g. squads
 -- with attached wargear options priced lower than their base
 -- squad size).
+--
+-- Also excludes Legends/Horus Heresy/Black Library datasheets
+-- (Source.is_legends) -- these are unsupported/unbalanced and
+-- make for frustrating, often-unguessable answers in a stats
+-- comparison game.
 -- ============================================================
 create or replace view public.units as
 with base_cost as (
@@ -180,7 +196,9 @@ select
 from public."Datasheets" d
 join public."Datasheets_models" m on m.datasheet_id = d.id
 left join base_cost bc on bc.datasheet_id = d.id
-left join public."Factions" f on f.id = d.faction_id;
+left join public."Factions" f on f.id = d.faction_id
+left join public."Source" s on s.id = d.source_id
+where coalesce(s.is_legends, false) = false;
 
 -- Row-level security: enable but allow public read access,
 -- since this is reference game data, not user data.
