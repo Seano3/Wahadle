@@ -27,17 +27,14 @@ changing the `--dir` you download into (see below) -- the file
 *format* (pipe-delimited, same column names) is expected to carry
 over, since Wahapedia has used this same export format across at
 least 9th, 10th, and (per their own description of the process)
-presumably 11th edition too. The one thing worth re-checking when
-that day comes: the cost/squad-size file's name has changed before
-(`Datasheets_unit_composition.csv` vs `DS_Model Costs.csv` across
-different points in 10th edition's life) -- `refresh.ts` already
-tries a few known candidates and will tell you clearly if none
-match, rather than silently importing zero cost rows.
+presumably 11th edition too.
 
 ## Step 1: Download the export
 
-Wahapedia doesn't offer a single zip download -- each table is its
-own CSV file, fetched individually:
+Confirmed against Wahapedia's own Export Data Specs document
+(the xlsx linked from `wahapedia.ru/$EDITION/the-rules/data-export/`)
+-- there's no single zip download, each table is its own CSV file,
+fetched individually:
 
 ```bash
 mkdir -p wahapedia-export
@@ -46,15 +43,18 @@ cd wahapedia-export
 EDITION=wh40k10ed  # change to wh40k11ed once it exists
 
 for file in Factions Source Datasheets Datasheets_models \
-            Datasheets_keywords Datasheets_unit_composition; do
+            Datasheets_keywords Datasheets_models_cost; do
   curl -L "https://wahapedia.ru/$EDITION/$file.csv" -o "$file.csv"
 done
 ```
 
-If `Datasheets_unit_composition.csv` comes back empty or 404s, try
-`DS_Model%20Costs.csv` instead (URL-encode the space), or check
-`https://wahapedia.ru/$EDITION/the-rules/data-export/` for the
-current file list and the linked Export Data Specs document.
+Note: `Datasheets_unit_composition.csv` is a *different* table
+(just a unit-composition description, no cost field) -- don't
+confuse it with `Datasheets_models_cost.csv`, which is the one this
+app actually needs (datasheet_id/line/description/cost). If a
+future Wahapedia export revision renames it again, `refresh.ts`
+tries a couple of known alternate names and will tell you clearly
+if none match, rather than silently importing zero cost rows.
 
 Sanity-check before importing: open `Datasheets.csv` and confirm it
 has a real header row (`id|name|faction_id|...`) and a few thousand
