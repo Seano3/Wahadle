@@ -12,7 +12,6 @@
 -- ============================================================
 
 drop view if exists public.units;
-drop table if exists public."Datasheets_keywords";
 drop table if exists public."Datasheets_models_cost";
 drop table if exists public."Datasheets_models";
 drop table if exists public."Datasheets";
@@ -126,25 +125,16 @@ create table public."Datasheets_models_cost" (
 create index idx_datasheets_models_cost_datasheet_id on public."Datasheets_models_cost"(datasheet_id);
 
 -- ----------------------------
--- Datasheets_keywords
--- Old PK was (datasheet_id) alone, which is wrong since a
--- datasheet has many keywords. `model` is NULL for unit-wide
--- (rather than per-model) keywords, so it can't be part of a
--- primary key as-is; we add a generated column that collapses
--- NULL to '' and key off that instead.
+-- Datasheets_keywords intentionally NOT created.
+--
+-- An earlier version of this schema included it, but nothing in
+-- the app ever reads from it, and Wahapedia's keywords export has
+-- turned out to contain heavy literal row duplication that caused
+-- repeated import failures for data providing no actual value.
+-- See supabase/07_drop_keywords_table.sql for the migration that
+-- removes it from a database that already has it, and that file's
+-- comment for the full reasoning.
 -- ----------------------------
-create table public."Datasheets_keywords" (
-  datasheet_id        text not null,
-  keyword             text not null,
-  model               text,
-  is_faction_keyword  boolean,
-  trash               text,
-  model_key           text generated always as (coalesce(model, '')) stored,
-  constraint "Datasheets_keywords_pkey" primary key (datasheet_id, keyword, model_key),
-  constraint "Datasheets_keywords_datasheet_id_fkey" foreign key (datasheet_id) references public."Datasheets"(id)
-);
-
-create index idx_datasheets_keywords_datasheet_id on public."Datasheets_keywords"(datasheet_id);
 
 -- ============================================================
 -- units view
@@ -207,13 +197,11 @@ where coalesce(s.is_legends, false) = false;
 alter table public."Datasheets" enable row level security;
 alter table public."Datasheets_models" enable row level security;
 alter table public."Datasheets_models_cost" enable row level security;
-alter table public."Datasheets_keywords" enable row level security;
 alter table public."Factions" enable row level security;
 alter table public."Source" enable row level security;
 
 create policy "Public read access" on public."Datasheets" for select using (true);
 create policy "Public read access" on public."Datasheets_models" for select using (true);
 create policy "Public read access" on public."Datasheets_models_cost" for select using (true);
-create policy "Public read access" on public."Datasheets_keywords" for select using (true);
 create policy "Public read access" on public."Factions" for select using (true);
 create policy "Public read access" on public."Source" for select using (true);

@@ -46,11 +46,10 @@ export type WahapediaExportFiles = {
   datasheetsCsv: string;
   modelsCsv: string;
   costCsv: string;
-  keywordsCsv: string;
 };
 
 /**
- * Fetches the six export files this app needs directly from
+ * Fetches the five export files this app needs directly from
  * Wahapedia. Used by both the CLI script (which reads local files
  * after a manual curl) and the admin "Check for updates" button
  * (which fetches over the network at request time) -- this
@@ -60,6 +59,16 @@ export type WahapediaExportFiles = {
  * Filenames confirmed against Wahapedia's own Export Data Specs
  * document (Datasheets_models_cost.csv, NOT
  * Datasheets_unit_composition.csv, which is a different table).
+ *
+ * Datasheets_keywords.csv is deliberately NOT fetched: nothing in
+ * the app reads from the Datasheets_keywords table (the only
+ * reference was a cosmetic row count in the admin preview panel),
+ * and Wahapedia's keywords export contains heavy literal row
+ * duplication (842 duplicate keys / 4,711 affected rows observed
+ * in a real pull) that caused repeated, hard-to-fully-resolve
+ * upsert failures for data the game never actually uses. Simpler
+ * and more robust to not import it at all than to keep patching
+ * around its data-quality issues.
  */
 export async function fetchExportFiles(
   edition: string
@@ -84,14 +93,12 @@ export async function fetchExportFiles(
     return text;
   }
 
-  const [factionsCsv, sourceCsv, datasheetsCsv, modelsCsv, keywordsCsv] =
-    await Promise.all([
-      fetchCsv("Factions.csv"),
-      fetchCsv("Source.csv"),
-      fetchCsv("Datasheets.csv"),
-      fetchCsv("Datasheets_models.csv"),
-      fetchCsv("Datasheets_keywords.csv"),
-    ]);
+  const [factionsCsv, sourceCsv, datasheetsCsv, modelsCsv] = await Promise.all([
+    fetchCsv("Factions.csv"),
+    fetchCsv("Source.csv"),
+    fetchCsv("Datasheets.csv"),
+    fetchCsv("Datasheets_models.csv"),
+  ]);
 
   // Cost file: try the confirmed name first, then fall back.
   let costCsv: string;
@@ -101,7 +108,7 @@ export async function fetchExportFiles(
     costCsv = await fetchCsv("Datasheets_unit_composition.csv");
   }
 
-  return { factionsCsv, sourceCsv, datasheetsCsv, modelsCsv, costCsv, keywordsCsv };
+  return { factionsCsv, sourceCsv, datasheetsCsv, modelsCsv, costCsv };
 }
 
 function parseCsvText(text: string): Record<string, string>[] {
@@ -175,12 +182,6 @@ export type ParsedExport = {
     line: number;
     description: string | null;
     cost: number | null;
-  }[];
-  keywords: {
-    datasheet_id: string;
-    keyword: string;
-    model: string | null;
-    is_faction_keyword: boolean;
   }[];
 };
 
@@ -256,16 +257,7 @@ export function parseExport(files: WahapediaExportFiles): ParsedExport {
       cost: parseIntOrNull(r.cost),
     }));
 
-  const keywords = parseCsvText(files.keywordsCsv)
-    .filter((r) => datasheetIds.has(r.datasheet_id.trim()))
-    .map((r) => ({
-      datasheet_id: r.datasheet_id.trim(),
-      keyword: r.keyword,
-      model: emptyToNull(r.model),
-      is_faction_keyword: parseBool(r.is_faction_keyword),
-    }));
-
-  return { factions, sources, datasheets, models, costs, keywords };
+  return { factions, sources, datasheets, models, costs };
 }
 
 export type DatasheetDiffEntry = {
@@ -281,7 +273,6 @@ export type ImportDiff = {
     datasheets: number;
     models: number;
     costs: number;
-    keywords: number;
   };
   newDatasheets: DatasheetDiffEntry[];
   changedDatasheets: DatasheetDiffEntry[];
@@ -385,7 +376,6 @@ export async function computeDiff(
       datasheets: parsed.datasheets.length,
       models: parsed.models.length,
       costs: parsed.costs.length,
-      keywords: parsed.keywords.length,
     },
     newDatasheets,
     changedDatasheets,
@@ -412,11 +402,6 @@ export function preflightDuplicateScan(parsed: ParsedExport): string {
     { table: "Datasheets", rows: parsed.datasheets, keyFields: ["id"] },
     { table: "Datasheets_models", rows: parsed.models, keyFields: ["datasheet_id", "line"] },
     { table: "Datasheets_models_cost", rows: parsed.costs, keyFields: ["datasheet_id", "line"] },
-    {
-      table: "Datasheets_keywords",
-      rows: parsed.keywords,
-      keyFields: ["datasheet_id", "keyword", "model"],
-    },
   ];
 
   const lines: string[] = [];
@@ -425,7 +410,7 @@ export function preflightDuplicateScan(parsed: ParsedExport): string {
     const seen = new Map<string, number>();
     const dupes = new Map<string, number>();
     for (const row of rows) {
-      const key = keyFields.map((f) => String(row[f])).join("::");
+      const key = keyFields.map((f) => String((row as any)[f])).join("::");
       seen.set(key, (seen.get(key) ?? 0) + 1);
     }
     for (const [key, count] of seen) {
@@ -462,13 +447,14 @@ const BATCH_SIZE = 200;
  */
 function dedupeByKey<T extends Record<string, any>>(
   rows: T[],
-  keyFields: string[]
+  keyFields: string[],
+  keyExtractor: (row: T, field: string) => string = (row, field) => String(row[field])
 ): { deduped: T[]; droppedCount: number; droppedKeys: string[] } {
   const seen = new Map<string, T>();
   const droppedKeys: string[] = [];
 
   for (const row of rows) {
-    const key = keyFields.map((f) => String(row[f])).join("::");
+    const key = keyFields.map((f) => keyExtractor(row, f)).join("::");
     if (seen.has(key)) {
       droppedKeys.push(key);
     }
@@ -491,23 +477,7 @@ async function upsertInBatches(
   rows: any[],
   onConflict?: string
 ) {
-  // Datasheets_keywords has no `id` column at all -- its real
-  // primary key is (datasheet_id, keyword, model_key), where
-  // model_key is a generated column (see 01_schema.sql) that
-  // can't be targeted by an upsert's onConflict directly. Using
-  // the wrong default key here previously meant every keyword row
-  // deduped against the same (nonexistent) `id` field and silently
-  // collapsed down to a single row -- a worse bug than the
-  // duplicate-row error this function exists to catch. Dedup on
-  // the table's actual natural key instead; onConflict is still
-  // omitted from the upsert call itself, matching the table's
-  // real primary key.
-  const keyFields =
-    onConflict?.split(",") ??
-    (table === "Datasheets_keywords"
-      ? ["datasheet_id", "keyword", "model"]
-      : ["id"]);
-
+  const keyFields = onConflict?.split(",") ?? ["id"];
   const { deduped, droppedCount, droppedKeys } = dedupeByKey(rows, keyFields);
 
   if (droppedCount > 0) {
@@ -612,7 +582,8 @@ export async function applyImport(
   await upsertInBatches(supabase, "Datasheets", parsed.datasheets);
   await upsertInBatches(supabase, "Datasheets_models", parsed.models, "datasheet_id,line");
   await upsertInBatches(supabase, "Datasheets_models_cost", parsed.costs, "datasheet_id,line");
-  await upsertInBatches(supabase, "Datasheets_keywords", parsed.keywords);
+  // Datasheets_keywords is deliberately not imported -- see the
+  // comment on fetchExportFiles for why.
 
   const exportIds = new Set(parsed.datasheets.map((d) => d.id));
   const existingIdRows = await fetchAllRows<{ id: string }>(

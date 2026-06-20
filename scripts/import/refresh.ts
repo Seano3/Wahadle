@@ -82,7 +82,6 @@ function readLocalExportFiles(dir: string): WahapediaExportFiles {
     datasheetsCsv: read("Datasheets.csv"),
     modelsCsv: read("Datasheets_models.csv"),
     costCsv: read(costFilename),
-    keywordsCsv: read("Datasheets_keywords.csv"),
   };
 }
 
@@ -101,7 +100,6 @@ async function main() {
   console.log(`Datasheets: ${parsed.datasheets.length} in export`);
   console.log(`Datasheets_models: ${parsed.models.length} in export`);
   console.log(`Datasheets_models_cost: ${parsed.costs.length} in export`);
-  console.log(`Datasheets_keywords: ${parsed.keywords.length} in export`);
 
   const diff = await computeDiff(supabase, parsed);
   console.log(`New datasheets: ${diff.newDatasheets.length}`);

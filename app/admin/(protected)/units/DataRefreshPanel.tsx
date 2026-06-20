@@ -11,7 +11,6 @@ type ImportDiff = {
     datasheets: number;
     models: number;
     costs: number;
-    keywords: number;
   };
   newDatasheets: DiffEntry[];
   changedDatasheets: DiffEntry[];
