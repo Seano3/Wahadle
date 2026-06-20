@@ -55,6 +55,7 @@ export type DatasheetSummary = {
   name: string;
   faction: string | null;
   modelLineCount: number;
+  removed: boolean;
 };
 
 /**
@@ -63,14 +64,28 @@ export type DatasheetSummary = {
  * datasheet's model-lines and cost options together, so the list
  * should show one row per datasheet, unlike the player-facing
  * `units` view which intentionally has one row per variant.
+ *
+ * Excludes soft-deleted (removed = true) datasheets by default --
+ * these are datasheets a data refresh dropped but which are kept
+ * around only because they're referenced by a historical
+ * daily_targets/rounds row (see 05_import_safe_deletes.sql).
+ * There's normally nothing to edit on them. Pass includeRemoved
+ * to see them anyway, e.g. for a "removed datasheets" admin view.
  */
-export async function listDatasheets(query?: string): Promise<DatasheetSummary[]> {
+export async function listDatasheets(
+  query?: string,
+  includeRemoved = false
+): Promise<DatasheetSummary[]> {
   const supabase = await createClient();
   let builder = supabase
     .from("Datasheets")
-    .select(`id, name, faction_id, Factions(name), Datasheets_models(line)`)
+    .select(`id, name, faction_id, removed, Factions(name), Datasheets_models(line)`)
     .order("name", { ascending: true })
     .limit(100);
+
+  if (!includeRemoved) {
+    builder = builder.eq("removed", false);
+  }
 
   if (query?.trim()) {
     builder = builder.ilike("name", `%${query.trim()}%`);
@@ -86,6 +101,7 @@ export async function listDatasheets(query?: string): Promise<DatasheetSummary[]
     modelLineCount: Array.isArray(row.Datasheets_models)
       ? row.Datasheets_models.length
       : 0,
+    removed: row.removed ?? false,
   }));
 }
 
