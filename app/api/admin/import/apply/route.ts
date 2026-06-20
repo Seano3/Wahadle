@@ -39,7 +39,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("POST /api/admin/import/apply failed:", err);
-    const message = err instanceof Error ? err.message : "Failed to apply the update.";
+    // Supabase/PostgREST errors are plain objects with code/message/
+    // details/hint, NOT real Error instances, so `err instanceof
+    // Error` is false for them and a naive fallback would discard
+    // the actually-useful Postgres message. Surface it directly --
+    // see upsertInBatches in core.ts for the additional diagnostic
+    // logging (which table, which row) this triggers server-side
+    // for code 21000 specifically.
+    const message =
+      err instanceof Error
+        ? err.message
+        : typeof err === "object" && err !== null && "message" in err
+          ? String((err as { message: unknown }).message)
+          : "Failed to apply the update.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

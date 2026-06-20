@@ -40,7 +40,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ edition, diff });
   } catch (err) {
     console.error("POST /api/admin/import/preview failed:", err);
-    const message = err instanceof Error ? err.message : "Failed to check for updates.";
+    const message =
+      err instanceof Error
+        ? err.message
+        : typeof err === "object" && err !== null && "message" in err
+          ? String((err as { message: unknown }).message)
+          : "Failed to check for updates.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

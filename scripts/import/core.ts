@@ -440,7 +440,23 @@ async function upsertInBatches(
   rows: any[],
   onConflict?: string
 ) {
-  const keyFields = onConflict ? onConflict.split(",") : ["id"];
+  // Datasheets_keywords has no `id` column at all -- its real
+  // primary key is (datasheet_id, keyword, model_key), where
+  // model_key is a generated column (see 01_schema.sql) that
+  // can't be targeted by an upsert's onConflict directly. Using
+  // the wrong default key here previously meant every keyword row
+  // deduped against the same (nonexistent) `id` field and silently
+  // collapsed down to a single row -- a worse bug than the
+  // duplicate-row error this function exists to catch. Dedup on
+  // the table's actual natural key instead; onConflict is still
+  // omitted from the upsert call itself, matching the table's
+  // real primary key.
+  const keyFields =
+    onConflict?.split(",") ??
+    (table === "Datasheets_keywords"
+      ? ["datasheet_id", "keyword", "model"]
+      : ["id"]);
+
   const { deduped, droppedCount, droppedKeys } = dedupeByKey(rows, keyFields);
 
   if (droppedCount > 0) {
@@ -456,7 +472,41 @@ async function upsertInBatches(
     const { error } = onConflict
       ? await supabase.from(table).upsert(batch, { onConflict })
       : await supabase.from(table).upsert(batch);
-    if (error) throw error;
+
+    if (error) {
+      // Dedup should have made this impossible -- if it still
+      // happens, something about this table's real key differs
+      // from what we assumed. Identify the actual colliding
+      // row(s) within this specific batch so the error is
+      // actionable instead of a generic Postgres message.
+      if (error.code === "21000") {
+        const seenInBatch = new Map<string, number>();
+        const collisions: { key: string; rows: any[] }[] = [];
+        batch.forEach((row, idx) => {
+          const key = keyFields.map((f) => String(row[f])).join("::");
+          if (seenInBatch.has(key)) {
+            collisions.push({
+              key,
+              rows: [batch[seenInBatch.get(key)!], row],
+            });
+          }
+          seenInBatch.set(key, idx);
+        });
+        console.error(
+          `${table}: upsert batch ${i}-${i + batch.length} rejected by Postgres ` +
+            `(ON CONFLICT DO UPDATE cannot affect row a second time). ` +
+            `Dedup key assumed: ${keyFields.join(",")}. ` +
+            `Collisions found within this batch using that key: ${collisions.length}.` +
+            (collisions.length > 0
+              ? ` First colliding pair: ${JSON.stringify(collisions[0], null, 2)}`
+              : ` No collisions found under that key -- the table's real conflict ` +
+                `target is probably different from what this script assumes for ` +
+                `"${table}". Check the table's actual primary key in 01_schema.sql ` +
+                `and compare against the onConflict passed from applyImport().`)
+        );
+      }
+      throw error;
+    }
   }
 }
 
