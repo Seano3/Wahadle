@@ -50,6 +50,7 @@ export default async function Page() {
       </p>
 
       <GameBoard
+        key={user?.id ?? "anon"}
         title="Wahadle"
         guessEndpoint="/api/guess/daily"
         user={user ? { displayName: user.user_metadata?.display_name ?? user.email ?? "" } : null}
