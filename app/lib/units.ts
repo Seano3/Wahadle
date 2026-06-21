@@ -152,6 +152,8 @@ export type UnitSuggestion = {
   name: string;
   faction: string;
   modelLine: number;
+  /** Name of the specific stat-line within the datasheet (e.g. "MAKARI" on the Ghazghkull Thraka sheet). Null when the unit has only one stat-line. */
+  modelName: string | null;
   modelCount: number | null;
   modelCountLabel: string;
   points: number | null;
@@ -184,6 +186,7 @@ export async function searchUnits(query: string): Promise<UnitSuggestion[]> {
     name: row.unit_name ?? "",
     faction: row.faction ?? "",
     modelLine: row.model_line,
+    modelName: row.model_name ?? null,
     modelCount: parseModelCount(row.model_count),
     modelCountLabel: row.model_count ?? "",
     points: row.points,

@@ -103,7 +103,12 @@ export default function GameBoard({
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm">{s.name}</div>
-                    <div className="text-xs text-neutral-400">{s.faction}</div>
+                    <div className="text-xs text-neutral-400">
+                      {s.faction}
+                      {s.modelName && s.modelName.toLowerCase() !== s.name.toLowerCase() && (
+                        <span className="text-neutral-500"> · {s.modelName}</span>
+                      )}
+                    </div>
                   </div>
                   <div className="text-sm text-neutral-300 ml-4">
                     {s.modelCountLabel || "-"}
