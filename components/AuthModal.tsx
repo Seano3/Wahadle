@@ -11,6 +11,7 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
   const [tab, setTab] = useState<Tab>("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -36,7 +37,10 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
       const { error: signUpError } = await supabase.auth.signUp({
         email,
         password,
-        options: { emailRedirectTo: window.location.origin },
+        options: {
+          emailRedirectTo: window.location.origin,
+          data: { display_name: displayName },
+        },
       });
       setLoading(false);
       if (signUpError) {
@@ -89,6 +93,21 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-3">
+          {tab === "signup" && (
+            <div>
+              <label className="block text-sm text-neutral-400 mb-1" htmlFor="auth-display-name">
+                Display name
+              </label>
+              <input
+                id="auth-display-name"
+                type="text"
+                required
+                value={displayName}
+                onChange={(e) => setDisplayName(e.target.value)}
+                className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none ring-1 ring-neutral-700 focus:ring-emerald-600"
+              />
+            </div>
+          )}
           <div>
             <label className="block text-sm text-neutral-400 mb-1" htmlFor="auth-email">
               Email
