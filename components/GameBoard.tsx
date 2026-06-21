@@ -59,8 +59,8 @@ export default function GameBoard({
         : status === "related" ||
           status === "close-higher" ||
           status === "close-lower"
-        ? "🟧"
-        : "🟥";
+          ? "🟧"
+          : "🟥";
 
     const result =
       `${title} - ${rows.length} guesses\n` +
@@ -189,15 +189,17 @@ export default function GameBoard({
         )}
       </div>
 
-      <div className="rounded-2xl border border-neutral-800 p-3">
-        {header}
-        <div className="space-y-1">
-          {rows.map((r, i) => (
-            <GuessRow key={i} label={r.label} feedback={r.feedback} />
-          ))}
-          {rows.length === 0 && (
-            <div className="text-sm text-neutral-400">No guesses yet.</div>
-          )}
+      <div className="overflow-x-auto">
+        <div className="rounded-2xl border border-neutral-800 p-3 min-w-[800px]">
+          {header}
+          <div className="space-y-1">
+            {rows.map((r, i) => (
+              <GuessRow key={i} label={r.label} feedback={r.feedback} />
+            ))}
+            {rows.length === 0 && (
+              <div className="text-sm text-neutral-400">No guesses yet.</div>
+            )}
+          </div>
         </div>
       </div>
 
