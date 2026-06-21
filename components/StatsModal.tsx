@@ -52,12 +52,9 @@ export default function StatsModal({ onClose }: { onClose: () => void }) {
 
         {stats && (
           <>
-            <div className="grid grid-cols-4 text-center gap-2">
+            <div className="text-center gap-2">
               {[
                 { label: "Played", value: stats.gamesPlayed },
-                { label: "Win %", value: winPct },
-                { label: "Streak", value: stats.currentStreak },
-                { label: "Best", value: stats.bestStreak },
               ].map(({ label, value }) => (
                 <div key={label} className="space-y-1">
                   <div className="text-2xl font-bold">{value}</div>

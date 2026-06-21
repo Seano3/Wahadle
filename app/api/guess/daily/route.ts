@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getDailyUnit, todayUtc } from "@/app/lib/daily";
+import { getDailyUnit, todayEst } from "@/app/lib/daily";
 import { resolveAndJudge, type GuessRequestBody } from "@/app/lib/guessHandler";
 import { recordGuess } from "@/app/lib/gameSession";
 import { createClient } from "@/app/lib/supabase/server";
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       if (user) {
         await recordGuess(
           user.id,
-          todayUtc(),
+          todayEst(),
           { id: guess["Unit ID"], modelLine: guess["Model Line"], name: guess["Unit Name"] },
           feedback,
           solved

@@ -15,7 +15,7 @@ type GameBoardProps = {
   guessEndpoint: string;
   extraGuessFields?: Record<string, string>;
   onNewRound?: () => void;
-  user?: { email: string } | null;
+  user?: { displayName: string } | null;
   initialRows?: GuessRowType[];
   initialSolved?: boolean;
 };
@@ -100,7 +100,7 @@ export default function GameBoard({
       <div className="flex items-center justify-between text-sm">
         {user ? (
           <>
-            <span className="text-neutral-400">{user.email}</span>
+            <span className="text-neutral-400">{user.displayName}</span>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setShowStats(true)}

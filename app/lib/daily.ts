@@ -3,12 +3,11 @@ import { getAllUnits, getUnitByVariant } from "@/app/lib/units";
 import type { UnitRow } from "@/app/types";
 
 /**
- * Returns "today" as a UTC calendar date string (YYYY-MM-DD), so
- * the daily unit changes at the same instant for every player
- * regardless of their local timezone.
+ * Returns "today" as a YYYY-MM-DD string in Eastern Time (America/New_York),
+ * so the daily puzzle resets at midnight EST/EDT for players.
  */
-export function todayUtc(date = new Date()): string {
-  return date.toISOString().slice(0, 10);
+export function todayEst(date = new Date()): string {
+  return date.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
 }
 
 function hashDate(ymd: string): number {
@@ -35,7 +34,7 @@ function hashDate(ymd: string): number {
  * later catalog changes.
  */
 export async function getDailyUnit(date = new Date()): Promise<UnitRow> {
-  const ymd = todayUtc(date);
+  const ymd = todayEst(date);
   const supabase = await createClient();
 
   const { data: existing, error: readError } = await supabase
