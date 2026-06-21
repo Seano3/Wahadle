@@ -1,17 +1,23 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import GuessRow from "@/components/GuessRow";
+import AuthModal from "@/components/AuthModal";
+import StatsModal from "@/components/StatsModal";
 import { FIELDS } from "@/app/lib/judge";
-import { useGameBoard } from "@/app/lib/useGameBoard";
+import { useGameBoard, type GuessRow as GuessRowType } from "@/app/lib/useGameBoard";
+import { createClient } from "@/app/lib/supabase/client";
 import type { UnitSuggestion } from "@/app/lib/units";
 
 type GameBoardProps = {
   title: string;
   guessEndpoint: string;
   extraGuessFields?: Record<string, string>;
-  /** Called after a round is solved and the player starts a new one (endless mode only). */
   onNewRound?: () => void;
+  user?: { email: string } | null;
+  initialRows?: GuessRowType[];
+  initialSolved?: boolean;
 };
 
 export default function GameBoard({
@@ -19,14 +25,25 @@ export default function GameBoard({
   guessEndpoint,
   extraGuessFields,
   onNewRound,
+  user,
+  initialRows,
+  initialSolved,
 }: GameBoardProps) {
+  const router = useRouter();
   const { query, setQuery, suggestions, rows, solved, error, guess, reset } =
-    useGameBoard({ guessEndpoint, extraGuessFields });
-  const [showModal, setShowModal] = useState(false);
+    useGameBoard({ guessEndpoint, extraGuessFields, initialRows, initialSolved });
 
-  // Re-open the "solved" modal whenever a fresh solve happens.
-  useMemo(() => {
-    if (solved) setShowModal(true);
+  const [showSolvedModal, setShowSolvedModal] = useState(false);
+  const [showAuth, setShowAuth] = useState(false);
+  const [showStats, setShowStats] = useState(false);
+
+  // Only pop the "solved" modal when the user solves it in this visit,
+  // not when the board hydrates with an already-solved session.
+  const wasInitiallySolved = useRef(initialSolved ?? false);
+  useEffect(() => {
+    if (solved && !wasInitiallySolved.current) {
+      setShowSolvedModal(true);
+    }
   }, [solved]);
 
   const shareResults = useCallback(() => {
@@ -49,9 +66,16 @@ export default function GameBoard({
 
   const handleNewRound = useCallback(() => {
     reset();
-    setShowModal(false);
+    setShowSolvedModal(false);
+    wasInitiallySolved.current = false;
     onNewRound?.();
   }, [reset, onNewRound]);
+
+  const handleSignOut = useCallback(async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.refresh();
+  }, [router]);
 
   const header = useMemo(
     () => (
@@ -72,6 +96,36 @@ export default function GameBoard({
 
   return (
     <div className="space-y-4">
+      {/* Auth bar */}
+      <div className="flex items-center justify-between text-sm">
+        {user ? (
+          <>
+            <span className="text-neutral-400">{user.email}</span>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowStats(true)}
+                className="text-emerald-400 underline"
+              >
+                Stats
+              </button>
+              <button
+                onClick={handleSignOut}
+                className="text-neutral-400 underline hover:text-neutral-200"
+              >
+                Sign out
+              </button>
+            </div>
+          </>
+        ) : (
+          <button
+            onClick={() => setShowAuth(true)}
+            className="text-neutral-500 hover:text-neutral-300 underline"
+          >
+            Sign in to save your progress
+          </button>
+        )}
+      </div>
+
       {error && (
         <div className="rounded-lg bg-red-950 border border-red-800 px-4 py-2 text-sm text-red-200">
           {error}
@@ -85,8 +139,9 @@ export default function GameBoard({
           onKeyDown={(e) => {
             if (e.key === "Enter" && suggestions[0]) guess(suggestions[0]);
           }}
-          placeholder="Type a unit name..."
-          className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none ring-1 ring-neutral-700 focus:ring-emerald-600"
+          disabled={solved}
+          placeholder={solved ? "You solved it!" : "Type a unit name..."}
+          className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none ring-1 ring-neutral-700 focus:ring-emerald-600 disabled:opacity-50"
         />
         {suggestions.length > 0 && (
           <div className="absolute z-50 mt-1 w-full rounded-xl bg-neutral-900 ring-1 ring-neutral-700 max-h-64 overflow-auto">
@@ -135,10 +190,20 @@ export default function GameBoard({
       <div className="text-sm text-neutral-300 flex items-center gap-2">
         <span>Guesses:</span>
         <span className="font-semibold">{rows.length}</span>
-        {solved && <span className="text-emerald-400">You solved it!</span>}
+        {solved && (
+          <>
+            <span className="text-emerald-400">You solved it!</span>
+            <button
+              onClick={() => setShowSolvedModal(true)}
+              className="text-neutral-400 underline hover:text-neutral-200"
+            >
+              Results
+            </button>
+          </>
+        )}
       </div>
 
-      {showModal && (
+      {showSolvedModal && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
           <div className="bg-neutral-900 p-6 rounded-xl text-center space-y-4 max-w-sm w-full">
             <h2 className="text-xl font-semibold text-emerald-400">Congratulations!</h2>
@@ -152,6 +217,14 @@ export default function GameBoard({
               >
                 Share Results
               </button>
+              {user && (
+                <button
+                  onClick={() => { setShowSolvedModal(false); setShowStats(true); }}
+                  className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-600"
+                >
+                  View Stats
+                </button>
+              )}
               {onNewRound ? (
                 <button
                   onClick={handleNewRound}
@@ -161,7 +234,7 @@ export default function GameBoard({
                 </button>
               ) : (
                 <button
-                  onClick={() => setShowModal(false)}
+                  onClick={() => setShowSolvedModal(false)}
                   className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800"
                 >
                   Close
@@ -171,6 +244,9 @@ export default function GameBoard({
           </div>
         </div>
       )}
+
+      {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
+      {showStats && <StatsModal onClose={() => setShowStats(false)} />}
     </div>
   );
 }

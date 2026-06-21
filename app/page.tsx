@@ -1,6 +1,29 @@
+import { createClient } from "@/app/lib/supabase/server";
+import { getDailySession } from "@/app/lib/gameSession";
+import { todayUtc } from "@/app/lib/daily";
 import GameBoard from "@/components/GameBoard";
+import type { GuessRow } from "@/app/lib/useGameBoard";
 
-export default function Page() {
+export default async function Page() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let initialRows: GuessRow[] = [];
+  let initialSolved = false;
+
+  if (user) {
+    const session = await getDailySession(user.id, todayUtc());
+    if (session) {
+      initialRows = session.guesses.map((g) => ({
+        label: g.unit_name,
+        feedback: g.feedback,
+      }));
+      initialSolved = session.solved;
+    }
+  }
+
   return (
     <main className="space-y-4">
       <div className="flex items-baseline gap-4">
@@ -16,7 +39,13 @@ export default function Page() {
         Datasheets are assumed to be the cheapest option with no upgrades.
       </p>
 
-      <GameBoard title="Wahadle" guessEndpoint="/api/guess/daily" />
+      <GameBoard
+        title="Wahadle"
+        guessEndpoint="/api/guess/daily"
+        user={user ? { email: user.email ?? "" } : null}
+        initialRows={initialRows}
+        initialSolved={initialSolved}
+      />
 
       <p className="text-sm text-neutral-300">
         Developed by Sean Thornton. Dataset provided by Wahapedia.ru

@@ -11,21 +11,22 @@ type UseGameBoardOptions = {
   guessEndpoint: string;
   /** Extra fields to send with every guess request (e.g. roundId). */
   extraGuessFields?: Record<string, string>;
+  /** Pre-populate the board with prior guesses (e.g. from a saved session). */
+  initialRows?: GuessRow[];
+  /** Whether the puzzle was already solved before this page load. */
+  initialSolved?: boolean;
 };
 
-/**
- * Shared state machine for "type a unit name, see suggestions,
- * pick one, see judged feedback." Both the daily page and the
- * endless page render around this -- previously each page
- * reimplemented this whole flow with small, easy-to-drift
- * differences (e.g. only one of them guarded against guessing
- * after already solving).
- */
-export function useGameBoard({ guessEndpoint, extraGuessFields }: UseGameBoardOptions) {
+export function useGameBoard({
+  guessEndpoint,
+  extraGuessFields,
+  initialRows = [],
+  initialSolved = false,
+}: UseGameBoardOptions) {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<UnitSuggestion[]>([]);
-  const [rows, setRows] = useState<GuessRow[]>([]);
-  const [solved, setSolved] = useState(false);
+  const [rows, setRows] = useState<GuessRow[]>(initialRows);
+  const [solved, setSolved] = useState(initialSolved);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {

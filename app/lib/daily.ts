@@ -7,7 +7,7 @@ import type { UnitRow } from "@/app/types";
  * the daily unit changes at the same instant for every player
  * regardless of their local timezone.
  */
-function todayUtc(date = new Date()): string {
+export function todayUtc(date = new Date()): string {
   return date.toISOString().slice(0, 10);
 }
 
