@@ -18,6 +18,7 @@ type GameBoardProps = {
   user?: { email: string } | null;
   initialRows?: GuessRowType[];
   initialSolved?: boolean;
+  hideAuth?: boolean;
 };
 
 export default function GameBoard({
@@ -28,6 +29,7 @@ export default function GameBoard({
   user,
   initialRows,
   initialSolved,
+  hideAuth,
 }: GameBoardProps) {
   const router = useRouter();
   const { query, setQuery, suggestions, rows, solved, error, guess, reset } =
@@ -117,12 +119,14 @@ export default function GameBoard({
             </div>
           </>
         ) : (
-          <button
-            onClick={() => setShowAuth(true)}
-            className="text-neutral-500 hover:text-neutral-300 underline"
-          >
-            Sign in to save your progress
-          </button>
+          !hideAuth && (
+            <button
+              onClick={() => setShowAuth(true)}
+              className="text-neutral-500 hover:text-neutral-300 underline"
+            >
+              Sign in to save your progress
+            </button>
+          )
         )}
       </div>
 

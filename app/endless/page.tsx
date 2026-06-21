@@ -43,6 +43,7 @@ export default function EndlessPage() {
           guessEndpoint="/api/guess/endless"
           extraGuessFields={{ roundId }}
           onNewRound={startRound}
+          hideAuth
         />
       )}
     </main>
