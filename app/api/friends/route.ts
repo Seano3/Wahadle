@@ -71,11 +71,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Display name is required." }, { status: 400 });
     }
 
-    // Find the target profile by display_name (case-insensitive).
+    // Escape ILIKE wildcards so partial patterns can't enumerate accounts.
+    const safeName = displayName.trim().replace(/%/g, "\\%").replace(/_/g, "\\_");
+
+    // Find the target profile by display_name (case-insensitive exact match).
     const { data: target, error: lookupError } = await supabase
       .from("profiles")
       .select("id, display_name")
-      .ilike("display_name", displayName.trim())
+      .ilike("display_name", safeName)
       .single();
 
     if (lookupError || !target) {
@@ -102,6 +105,9 @@ export async function POST(req: Request) {
       }
       if (existing.status === "pending" && existing.from_user === target.id) {
         return NextResponse.json({ error: "That person already sent you a request — check your incoming requests." }, { status: 409 });
+      }
+      if (existing.status === "rejected") {
+        return NextResponse.json({ error: "That user declined a previous request." }, { status: 409 });
       }
     }
 
