@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import GuessRow from "@/components/GuessRow";
 import AuthModal from "@/components/AuthModal";
 import StatsModal from "@/components/StatsModal";
+import FriendsModal from "@/components/FriendsModal";
+import FriendResultsModal from "@/components/FriendResultsModal";
 import { FIELDS } from "@/app/lib/judge";
 import { useGameBoard, type GuessRow as GuessRowType } from "@/app/lib/useGameBoard";
 import { createClient } from "@/app/lib/supabase/client";
@@ -38,6 +40,8 @@ export default function GameBoard({
   const [showSolvedModal, setShowSolvedModal] = useState(false);
   const [showAuth, setShowAuth] = useState(false);
   const [showStats, setShowStats] = useState(false);
+  const [showFriends, setShowFriends] = useState(false);
+  const [showFriendResults, setShowFriendResults] = useState(false);
 
   // Only pop the "solved" modal when the user solves it in this visit,
   // not when the board hydrates with an already-solved session.
@@ -109,6 +113,12 @@ export default function GameBoard({
                 className="text-emerald-400 underline"
               >
                 Stats
+              </button>
+              <button
+                onClick={() => setShowFriends(true)}
+                className="text-emerald-400 underline"
+              >
+                Friends
               </button>
               <button
                 onClick={handleSignOut}
@@ -229,6 +239,14 @@ export default function GameBoard({
                   View Stats
                 </button>
               )}
+              {user && (
+                <button
+                  onClick={() => { setShowSolvedModal(false); setShowFriendResults(true); }}
+                  className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-600"
+                >
+                  See Friends&apos; Results
+                </button>
+              )}
               {onNewRound ? (
                 <button
                   onClick={handleNewRound}
@@ -251,6 +269,8 @@ export default function GameBoard({
 
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
       {showStats && <StatsModal onClose={() => setShowStats(false)} />}
+      {showFriends && <FriendsModal onClose={() => setShowFriends(false)} />}
+      {showFriendResults && <FriendResultsModal onClose={() => setShowFriendResults(false)} />}
     </div>
   );
 }
