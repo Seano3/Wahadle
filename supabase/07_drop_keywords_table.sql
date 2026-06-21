@@ -1,0 +1,21 @@
+-- ============================================================
+-- Wahadle: drop Datasheets_keywords
+-- Run this on the same Supabase project, after 01-06.
+-- ============================================================
+-- Nothing in the app ever reads from this table -- the only
+-- reference anywhere in the codebase was a cosmetic row count on
+-- the admin data-refresh preview panel. Meanwhile, Wahapedia's
+-- Datasheets_keywords.csv export contains heavy literal row
+-- duplication (842 duplicate keys / 4,711 affected rows observed
+-- in a real pull on 2026-06-20), which caused repeated import
+-- failures for data that provided no actual value to the game.
+--
+-- Simpler and more robust to drop the table than to keep patching
+-- around its source data's quality issues. If a real use for
+-- keyword data shows up later (e.g. filtering the daily/endless
+-- pool by keyword), re-add it then with whatever shape that
+-- feature actually needs, informed by having seen this data's
+-- real-world quirks firsthand.
+-- ============================================================
+
+drop table if exists public."Datasheets_keywords";

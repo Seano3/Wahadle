@@ -12,7 +12,6 @@
 -- ============================================================
 
 drop view if exists public.units;
-drop table if exists public."Datasheets_keywords";
 drop table if exists public."Datasheets_models_cost";
 drop table if exists public."Datasheets_models";
 drop table if exists public."Datasheets";
@@ -42,6 +41,17 @@ create table public."Source" (
   errata_date  text,
   errata_link  text,
   trash        text,
+  -- True for Legends / Horus Heresy Legends / Black Library promo
+  -- sources -- these are unsupported, often unbalanced datasheets
+  -- Wahapedia itself flags as not-recommended-by-default (see the
+  -- "Show Legends and not recommended rules/datasheets" toggle on
+  -- wahapedia.ru). Excluded from the player-facing `units` view
+  -- below so the game never picks one as an answer. Computed once
+  -- here from the source name at import time rather than filtered
+  -- ad hoc in application code, so it stays correct automatically
+  -- as new sources are added in future data refreshes (as long as
+  -- the importer keeps setting it -- see the name pattern below).
+  is_legends   boolean not null default false,
   constraint "Source_pkey" primary key (id)
 );
 
@@ -115,25 +125,16 @@ create table public."Datasheets_models_cost" (
 create index idx_datasheets_models_cost_datasheet_id on public."Datasheets_models_cost"(datasheet_id);
 
 -- ----------------------------
--- Datasheets_keywords
--- Old PK was (datasheet_id) alone, which is wrong since a
--- datasheet has many keywords. `model` is NULL for unit-wide
--- (rather than per-model) keywords, so it can't be part of a
--- primary key as-is; we add a generated column that collapses
--- NULL to '' and key off that instead.
+-- Datasheets_keywords intentionally NOT created.
+--
+-- An earlier version of this schema included it, but nothing in
+-- the app ever reads from it, and Wahapedia's keywords export has
+-- turned out to contain heavy literal row duplication that caused
+-- repeated import failures for data providing no actual value.
+-- See supabase/07_drop_keywords_table.sql for the migration that
+-- removes it from a database that already has it, and that file's
+-- comment for the full reasoning.
 -- ----------------------------
-create table public."Datasheets_keywords" (
-  datasheet_id        text not null,
-  keyword             text not null,
-  model               text,
-  is_faction_keyword  boolean,
-  trash               text,
-  model_key           text generated always as (coalesce(model, '')) stored,
-  constraint "Datasheets_keywords_pkey" primary key (datasheet_id, keyword, model_key),
-  constraint "Datasheets_keywords_datasheet_id_fkey" foreign key (datasheet_id) references public."Datasheets"(id)
-);
-
-create index idx_datasheets_keywords_datasheet_id on public."Datasheets_keywords"(datasheet_id);
 
 -- ============================================================
 -- units view
@@ -151,6 +152,11 @@ create index idx_datasheets_keywords_datasheet_id on public."Datasheets_keywords
 -- the cost table don't reliably ascend by price, e.g. squads
 -- with attached wargear options priced lower than their base
 -- squad size).
+--
+-- Also excludes Legends/Horus Heresy/Black Library datasheets
+-- (Source.is_legends) -- these are unsupported/unbalanced and
+-- make for frustrating, often-unguessable answers in a stats
+-- comparison game.
 -- ============================================================
 create or replace view public.units as
 with base_cost as (
@@ -180,7 +186,9 @@ select
 from public."Datasheets" d
 join public."Datasheets_models" m on m.datasheet_id = d.id
 left join base_cost bc on bc.datasheet_id = d.id
-left join public."Factions" f on f.id = d.faction_id;
+left join public."Factions" f on f.id = d.faction_id
+left join public."Source" s on s.id = d.source_id
+where coalesce(s.is_legends, false) = false;
 
 -- Row-level security: enable but allow public read access,
 -- since this is reference game data, not user data.
@@ -189,13 +197,11 @@ left join public."Factions" f on f.id = d.faction_id;
 alter table public."Datasheets" enable row level security;
 alter table public."Datasheets_models" enable row level security;
 alter table public."Datasheets_models_cost" enable row level security;
-alter table public."Datasheets_keywords" enable row level security;
 alter table public."Factions" enable row level security;
 alter table public."Source" enable row level security;
 
 create policy "Public read access" on public."Datasheets" for select using (true);
 create policy "Public read access" on public."Datasheets_models" for select using (true);
 create policy "Public read access" on public."Datasheets_models_cost" for select using (true);
-create policy "Public read access" on public."Datasheets_keywords" for select using (true);
 create policy "Public read access" on public."Factions" for select using (true);
 create policy "Public read access" on public."Source" for select using (true);

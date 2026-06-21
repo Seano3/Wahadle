@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { listDatasheets } from "@/app/lib/adminUnits";
+import DataRefreshPanel from "./DataRefreshPanel";
 
 export default async function AdminUnitsPage({
   searchParams,
@@ -11,6 +12,8 @@ export default async function AdminUnitsPage({
 
   return (
     <div className="space-y-4">
+      <DataRefreshPanel />
+
       <form className="flex gap-2">
         <input
           type="text"
