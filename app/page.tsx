@@ -46,7 +46,7 @@ export default async function Page() {
         Guess the daily unit by comparing its stats. ✓ = match, ⬆ = your guess
         is lower than the target, ⬇ = higher, ✗ = mismatch, 〰 means same grand
         order for factions (Imperium, Chaos, Space Marines, and Xenos).
-        Datasheets are assumed to be the cheapest option with no upgrades.
+        Datasheets are assumed to be the cheapest option with no upgrades. Resets daily at 12:00am EST.
       </p>
 
       <GameBoard
