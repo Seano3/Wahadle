@@ -1,8 +1,9 @@
 import { createClient } from "@/app/lib/supabase/server";
 import { getDailySession } from "@/app/lib/gameSession";
-import { todayUtc } from "@/app/lib/daily";
+import { todayEst } from "@/app/lib/daily";
 import GameBoard from "@/components/GameBoard";
 import type { GuessRow } from "@/app/lib/useGameBoard";
+import { checkAdmin } from "@/app/lib/admin";
 
 export default async function Page() {
   const supabase = await createClient();
@@ -12,9 +13,10 @@ export default async function Page() {
 
   let initialRows: GuessRow[] = [];
   let initialSolved = false;
+  let admin = false;
 
   if (user) {
-    const session = await getDailySession(user.id, todayUtc());
+    const session = await getDailySession(user.id, todayEst());
     if (session) {
       initialRows = session.guesses.map((g) => ({
         label: g.unit_name,
@@ -22,6 +24,9 @@ export default async function Page() {
       }));
       initialSolved = session.solved;
     }
+    const result = await checkAdmin();
+    admin = result.authorized;
+
   }
 
   return (
@@ -31,6 +36,11 @@ export default async function Page() {
         <a href="/endless" className="text-sm text-emerald-400 underline">
           Endless mode
         </a>
+        {admin && (
+          <a href="/admin" className="text-sm text-neutral-400 underline">
+            Admin
+          </a>
+        )}
       </div>
       <p className="text-sm text-neutral-300">
         Guess the daily unit by comparing its stats. ✓ = match, ⬆ = your guess
@@ -42,7 +52,7 @@ export default async function Page() {
       <GameBoard
         title="Wahadle"
         guessEndpoint="/api/guess/daily"
-        user={user ? { email: user.email ?? "" } : null}
+        user={user ? { displayName: user.user_metadata?.display_name ?? user.email ?? "" } : null}
         initialRows={initialRows}
         initialSolved={initialSolved}
       />
