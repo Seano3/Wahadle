@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type FriendEntry = { id: string; displayName: string; userId: string };
 
@@ -10,19 +11,34 @@ type FriendsData = {
   outgoing: FriendEntry[];
 };
 
+type DuelEntry = {
+  id: string;
+  status: "pending" | "active";
+  opponentName: string;
+  amChallenger: boolean;
+  expiresAt: string;
+};
+
 export default function FriendsModal({ onClose }: { onClose: () => void }) {
+  const router = useRouter();
   const [data, setData] = useState<FriendsData | null>(null);
+  const [duels, setDuels] = useState<DuelEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchName, setSearchName] = useState("");
   const [sendError, setSendError] = useState<string | null>(null);
   const [sendSuccess, setSendSuccess] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
+  const [duelStatus, setDuelStatus] = useState<Record<string, string>>({});
 
   const load = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/friends");
-      if (res.ok) setData(await res.json());
+      const [friendsRes, duelsRes] = await Promise.all([
+        fetch("/api/friends"),
+        fetch("/api/duel"),
+      ]);
+      if (friendsRes.ok) setData(await friendsRes.json());
+      if (duelsRes.ok) setDuels(await duelsRes.json());
     } finally {
       setLoading(false);
     }
@@ -66,9 +82,37 @@ export default function FriendsModal({ onClose }: { onClose: () => void }) {
     load();
   };
 
+  const sendDuel = async (friend: FriendEntry) => {
+    setDuelStatus((prev) => ({ ...prev, [friend.userId]: "sending" }));
+    const res = await fetch("/api/duel", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ challengedId: friend.userId }),
+    });
+    const json = await res.json();
+    if (!res.ok) {
+      setDuelStatus((prev) => ({ ...prev, [friend.userId]: json.error ?? "Error" }));
+    } else {
+      setDuelStatus((prev) => ({ ...prev, [friend.userId]: "sent" }));
+      load();
+    }
+  };
+
+  const cancelDuel = async (duelId: string) => {
+    await fetch(`/api/duel/${duelId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "cancel" }),
+    });
+    load();
+  };
+
+  const activeDuels = duels.filter((d) => d.status === "active");
+  const pendingOutgoing = duels.filter((d) => d.status === "pending" && d.amChallenger);
+
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-      <div className="bg-neutral-900 p-6 rounded-xl space-y-5 max-w-sm w-full max-h-[80vh] flex flex-col">
+      <div className="bg-neutral-900 p-6 rounded-xl space-y-5 max-w-sm w-full max-h-[85vh] flex flex-col">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold">Friends</h2>
           <button
@@ -97,12 +141,8 @@ export default function FriendsModal({ onClose }: { onClose: () => void }) {
               {sending ? "..." : "Send"}
             </button>
           </div>
-          {sendError && (
-            <p className="text-xs text-red-400">{sendError}</p>
-          )}
-          {sendSuccess && (
-            <p className="text-xs text-emerald-400">{sendSuccess}</p>
-          )}
+          {sendError && <p className="text-xs text-red-400">{sendError}</p>}
+          {sendSuccess && <p className="text-xs text-emerald-400">{sendSuccess}</p>}
         </form>
 
         <div className="overflow-y-auto space-y-5 flex-1">
@@ -110,7 +150,47 @@ export default function FriendsModal({ onClose }: { onClose: () => void }) {
             <p className="text-sm text-neutral-400">Loading...</p>
           ) : (
             <>
-              {/* Incoming requests */}
+              {/* Active duels */}
+              {activeDuels.length > 0 && (
+                <section className="space-y-2">
+                  <h3 className="text-xs uppercase text-neutral-500 tracking-wide">
+                    Active duels ({activeDuels.length})
+                  </h3>
+                  {activeDuels.map((d) => (
+                    <div key={d.id} className="flex items-center justify-between gap-2">
+                      <span className="text-sm truncate">vs {d.opponentName}</span>
+                      <button
+                        onClick={() => { onClose(); router.push(`/duel/${d.id}`); }}
+                        className="px-2 py-1 bg-emerald-600 text-white text-xs rounded-lg hover:bg-emerald-700 shrink-0"
+                      >
+                        Continue
+                      </button>
+                    </div>
+                  ))}
+                </section>
+              )}
+
+              {/* Pending outgoing duel invites */}
+              {pendingOutgoing.length > 0 && (
+                <section className="space-y-2">
+                  <h3 className="text-xs uppercase text-neutral-500 tracking-wide">
+                    Duel invites sent ({pendingOutgoing.length})
+                  </h3>
+                  {pendingOutgoing.map((d) => (
+                    <div key={d.id} className="flex items-center justify-between gap-2">
+                      <span className="text-sm text-neutral-400 truncate">to {d.opponentName}</span>
+                      <button
+                        onClick={() => cancelDuel(d.id)}
+                        className="text-xs text-neutral-500 hover:text-red-400 shrink-0"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  ))}
+                </section>
+              )}
+
+              {/* Incoming friend requests */}
               {(data?.incoming.length ?? 0) > 0 && (
                 <section className="space-y-2">
                   <h3 className="text-xs uppercase text-neutral-500 tracking-wide">
@@ -138,7 +218,7 @@ export default function FriendsModal({ onClose }: { onClose: () => void }) {
                 </section>
               )}
 
-              {/* Friends */}
+              {/* Friends list with Duel buttons */}
               <section className="space-y-2">
                 <h3 className="text-xs uppercase text-neutral-500 tracking-wide">
                   Friends ({data?.friends.length ?? 0})
@@ -146,21 +226,58 @@ export default function FriendsModal({ onClose }: { onClose: () => void }) {
                 {(data?.friends.length ?? 0) === 0 ? (
                   <p className="text-sm text-neutral-500">No friends yet.</p>
                 ) : (
-                  data!.friends.map((f) => (
-                    <div key={f.id} className="flex items-center justify-between gap-2">
-                      <span className="text-sm truncate">{f.displayName}</span>
-                      <button
-                        onClick={() => remove(f.id)}
-                        className="text-xs text-neutral-500 hover:text-red-400 shrink-0"
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  ))
+                  data!.friends.map((f) => {
+                    const ds = duelStatus[f.userId];
+                    const hasPendingDuel = pendingOutgoing.some(
+                      (d) => d.opponentName === f.displayName
+                    );
+                    const hasActiveDuel = activeDuels.some(
+                      (d) => d.opponentName === f.displayName
+                    );
+                    return (
+                      <div key={f.id} className="flex items-center justify-between gap-2">
+                        <span className="text-sm truncate">{f.displayName}</span>
+                        <div className="flex items-center gap-1 shrink-0">
+                          {hasActiveDuel ? (
+                            <button
+                              onClick={() => {
+                                const d = activeDuels.find((d) => d.opponentName === f.displayName);
+                                if (d) { onClose(); router.push(`/duel/${d.id}`); }
+                              }}
+                              className="px-2 py-1 bg-emerald-600 text-white text-xs rounded-lg hover:bg-emerald-700"
+                            >
+                              Duel ▶
+                            </button>
+                          ) : hasPendingDuel ? (
+                            <span className="text-xs text-neutral-500">Invite sent</span>
+                          ) : ds === "sending" ? (
+                            <span className="text-xs text-neutral-500">Sending...</span>
+                          ) : ds === "sent" ? (
+                            <span className="text-xs text-emerald-400">Invite sent!</span>
+                          ) : typeof ds === "string" && ds !== "sending" && ds !== "sent" ? (
+                            <span className="text-xs text-red-400 max-w-[100px] truncate" title={ds}>{ds}</span>
+                          ) : (
+                            <button
+                              onClick={() => sendDuel(f)}
+                              className="px-2 py-1 bg-amber-600 text-white text-xs rounded-lg hover:bg-amber-700"
+                            >
+                              Duel
+                            </button>
+                          )}
+                          <button
+                            onClick={() => remove(f.id)}
+                            className="text-xs text-neutral-500 hover:text-red-400"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })
                 )}
               </section>
 
-              {/* Outgoing requests */}
+              {/* Outgoing friend requests */}
               {(data?.outgoing.length ?? 0) > 0 && (
                 <section className="space-y-2">
                   <h3 className="text-xs uppercase text-neutral-500 tracking-wide">
