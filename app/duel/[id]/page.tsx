@@ -33,7 +33,7 @@ type DuelState = {
   opponentName: string;
   currentRound: number | null;
   myCurrentRound: {
-    guesses: { position: number; unitName: string; feedback: Feedback[] }[];
+    guesses: { position: number; unitName: string; variantKey: string; feedback: Feedback[] }[];
     completed: boolean;
     solved: boolean;
     score: number | null;
@@ -356,6 +356,7 @@ export default function DuelPage() {
 
   const initialRows: GuessRowType[] = (myCurrentRound?.guesses ?? []).map((g) => ({
     label: g.unitName,
+    variantKey: g.variantKey,
     feedback: g.feedback,
   }));
 

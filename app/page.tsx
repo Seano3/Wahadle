@@ -20,6 +20,7 @@ export default async function Page() {
     if (session) {
       initialRows = session.guesses.map((g) => ({
         label: g.unit_name,
+        variantKey: g.variantKey,
         feedback: g.feedback,
       }));
       initialSolved = session.solved;

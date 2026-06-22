@@ -79,7 +79,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
       const [myGuessesRes, oppGuessesRes] = await Promise.all([
         srv
           .from("duel_guesses")
-          .select("position, unit_name, feedback")
+          .select("position, unit_id, model_line, unit_name, feedback")
           .eq("duel_id", id)
           .eq("round_number", currentRound)
           .eq("user_id", myId)
@@ -100,6 +100,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
         guesses: (myGuessesRes.data ?? []).map((g) => ({
           position: g.position,
           unitName: g.unit_name,
+          variantKey: `${g.unit_id}::${g.model_line}`,
           feedback: g.feedback as Feedback[],
         })),
         completed: !!myRow?.completed_at,

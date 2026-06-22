@@ -148,7 +148,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         updates.completed_at = now;
         updates.solved = true;
         updates.time_seconds = timeSeconds;
-        updates.score = Math.max(0, 1000 - wrongGuesses * 100 - timeSeconds);
+        updates.score = Math.max(0, 5000 - wrongGuesses * 100 - timeSeconds);
       }
 
       await srv.from("duel_player_rounds").update(updates).eq("id", myCurrentRow.id);
@@ -165,7 +165,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         row.completed_at = now;
         row.solved = true;
         row.time_seconds = 0;
-        row.score = 1000; // first-guess solve with instant response = full points
+        row.score = 5000; // first-guess solve with instant response = full points
       }
 
       await srv.from("duel_player_rounds").insert(row);

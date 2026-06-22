@@ -4,6 +4,7 @@ import type { Feedback } from "@/app/types";
 export type SessionGuess = {
   position: number;
   unit_name: string;
+  variantKey: string;
   feedback: Feedback[];
 };
 
@@ -31,7 +32,7 @@ export async function getDailySession(
 
   const { data: guesses } = await supabase
     .from("game_guesses")
-    .select("position, unit_name, feedback")
+    .select("position, unit_id, model_line, unit_name, feedback")
     .eq("session_id", session.id)
     .order("position", { ascending: true });
 
@@ -42,6 +43,7 @@ export async function getDailySession(
     guesses: (guesses ?? []).map((g) => ({
       position: g.position,
       unit_name: g.unit_name,
+      variantKey: `${g.unit_id}::${g.model_line}`,
       feedback: g.feedback as Feedback[],
     })),
   };
