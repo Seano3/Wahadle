@@ -204,7 +204,7 @@ export async function fetchAllMfmCosts(
 export type MfmImportResult = {
   totalMfmUnits: number;
   matched: number;
-  unmatched: string[];
+  unmatched: { name: string; cost: number }[];
 };
 
 /**
@@ -249,21 +249,21 @@ export async function applyMfmImport(
 
   // Match MFM unit names to datasheet ids
   const toUpdate: { datasheetId: string; cost: number }[] = [];
-  const unmatched: string[] = [];
+  const unmatched: { name: string; cost: number }[] = [];
 
   for (const [mfmName, cost] of mfmCosts) {
     const id = nameToId.get(mfmName);
     if (id) {
       toUpdate.push({ datasheetId: id, cost });
     } else {
-      unmatched.push(mfmName);
+      unmatched.push({ name: mfmName, cost });
     }
   }
 
   log(`Matched: ${toUpdate.length} / Unmatched: ${unmatched.length}`);
   if (unmatched.length > 0) {
     log(`Unmatched units (logged for reference):`);
-    for (const name of unmatched) log(`  - ${name}`);
+    for (const { name } of unmatched) log(`  - ${name}`);
   }
 
   // Apply in batches: delete existing cost rows, insert one MFM row

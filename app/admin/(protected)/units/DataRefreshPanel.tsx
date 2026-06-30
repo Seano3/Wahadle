@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+type UnmatchedUnit = { name: string; cost: number };
 
 type MfmResult = {
   totalMfmUnits: number;
   matched: number;
-  unmatched: string[];
+  unmatched: UnmatchedUnit[];
 };
 
 type MfmPhase = "idle" | "applying" | "applied" | "error";
@@ -76,18 +79,27 @@ export function MfmRefreshPanel() {
             <Stat label="Unmatched" value={result.unmatched.length} />
           </div>
           {result.unmatched.length > 0 && (
-            <div className="rounded-lg bg-amber-950 border border-amber-800 px-4 py-2 text-sm text-amber-200 space-y-1">
+            <div className="rounded-lg bg-amber-950 border border-amber-800 px-4 py-2 text-sm text-amber-200 space-y-2">
               <div className="font-medium">
                 {result.unmatched.length} MFM unit
                 {result.unmatched.length !== 1 ? "s" : ""} had no matching
-                Wahapedia datasheet:
+                Wahapedia datasheet — click &ldquo;Add unit&rdquo; to create a
+                stub you can fill in on the edit page:
               </div>
-              <ul className="list-disc list-inside text-xs space-y-0.5">
-                {result.unmatched.slice(0, 20).map((n) => (
-                  <li key={n}>{n}</li>
+              <ul className="space-y-1">
+                {result.unmatched.slice(0, 20).map((u) => (
+                  <li key={u.name} className="flex items-center justify-between gap-3">
+                    <span className="text-xs">
+                      {u.name}
+                      <span className="ml-2 text-amber-400/70">{u.cost} pts</span>
+                    </span>
+                    <AddUnitButton name={u.name} cost={u.cost} />
+                  </li>
                 ))}
                 {result.unmatched.length > 20 && (
-                  <li>and {result.unmatched.length - 20} more…</li>
+                  <li className="text-xs text-amber-200/60">
+                    and {result.unmatched.length - 20} more…
+                  </li>
                 )}
               </ul>
             </div>
@@ -95,6 +107,51 @@ export function MfmRefreshPanel() {
         </div>
       )}
     </section>
+  );
+}
+
+function AddUnitButton({ name, cost }: { name: string; cost: number }) {
+  const router = useRouter();
+  const [state, setState] = useState<"idle" | "saving" | "done" | "error">("idle");
+  const [errMsg, setErrMsg] = useState<string | null>(null);
+
+  const handleAdd = async () => {
+    setState("saving");
+    setErrMsg(null);
+    try {
+      const res = await fetch("/api/admin/units", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, cost }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setErrMsg(data.error ?? "Failed to create unit.");
+        setState("error");
+        return;
+      }
+      setState("done");
+      router.push(`/admin/units/${data.id}`);
+    } catch {
+      setErrMsg("Couldn't reach the server.");
+      setState("error");
+    }
+  };
+
+  if (state === "saving" || state === "done") {
+    return <span className="text-xs text-amber-200/60 shrink-0">Adding…</span>;
+  }
+
+  return (
+    <div className="flex items-center gap-2 shrink-0">
+      {errMsg && <span className="text-xs text-red-400">{errMsg}</span>}
+      <button
+        onClick={handleAdd}
+        className="px-2 py-0.5 text-xs bg-amber-700 hover:bg-amber-600 text-white rounded-lg"
+      >
+        Add unit
+      </button>
+    </div>
   );
 }
 
