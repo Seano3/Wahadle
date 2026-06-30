@@ -77,7 +77,9 @@ async function fetchFactionRsc(slug: string): Promise<string> {
  * of label → pts first, then scan each unit card to resolve refs
  * and take the minimum cost (= cheapest unit size, 1st-unit tier).
  */
-function parseFactionUnits(rscContent: string): Map<string, number> {
+type UnitCost = { cost: number; description: string | null };
+
+function parseFactionUnits(rscContent: string): Map<string, UnitCost> {
   const lines = rscContent.split("\n");
 
   // Pass 1: build label map (hexId → raw JSON value string)
@@ -120,10 +122,11 @@ function parseFactionUnits(rscContent: string): Map<string, number> {
   // The pattern matches the tail of the li element:
   //   "children":[false,"desc"]}],"$Lhex"
   //      ↑children array  ↑}closes span props  ↑]closes span element
+  // Capture group 1 = description text (e.g. "5 models"), group 2 = pts $L ref.
   const unitCostRefPat =
-    /"children":\[(?:false|"\$undefined"),"[^"]*"\]\}\],"\$L([0-9a-f]+)"/g;
+    /"children":\[(?:false|"\$undefined"),"([^"]*)"\]\}\],"\$L([0-9a-f]+)"/g;
 
-  const units = new Map<string, number>(); // unit name → min cost
+  const units = new Map<string, UnitCost>(); // unit name → { cost, description }
 
   for (const line of lines) {
     // Collect all unit header matches in this line
@@ -147,18 +150,21 @@ function parseFactionUnits(rscContent: string): Map<string, number> {
       // Resolve all unit-cost $L refs and find the minimum.
       unitCostRefPat.lastIndex = 0;
       let minCost: number | null = null;
+      let minDesc: string | null = null;
       let ref: RegExpExecArray | null;
       while ((ref = unitCostRefPat.exec(chunk)) !== null) {
-        const pts = ptsMap.get(ref[1]);
+        const desc = ref[1] || null;
+        const pts = ptsMap.get(ref[2]);
         if (pts !== undefined && (minCost === null || pts < minCost)) {
           minCost = pts;
+          minDesc = desc;
         }
       }
 
       // First occurrence wins — the same unit can appear in both the
       // UNITS section and the LEADERS section of the same page.
       if (minCost !== null && !units.has(name)) {
-        units.set(name, minCost);
+        units.set(name, { cost: minCost, description: minDesc });
       }
     }
   }
@@ -176,17 +182,17 @@ function parseFactionUnits(rscContent: string): Map<string, number> {
  */
 export async function fetchAllMfmCosts(
   log: (msg: string) => void = console.log
-): Promise<Map<string, number>> {
-  const combined = new Map<string, number>();
+): Promise<Map<string, UnitCost>> {
+  const combined = new Map<string, UnitCost>();
 
   for (const slug of FACTION_SLUGS) {
     try {
       const rsc = await fetchFactionRsc(slug);
       const units = parseFactionUnits(rsc);
       let added = 0;
-      for (const [name, cost] of units) {
+      for (const [name, entry] of units) {
         if (!combined.has(name)) {
-          combined.set(name, cost);
+          combined.set(name, entry);
           added++;
         }
       }
@@ -248,13 +254,13 @@ export async function applyMfmImport(
   }
 
   // Match MFM unit names to datasheet ids
-  const toUpdate: { datasheetId: string; cost: number }[] = [];
+  const toUpdate: { datasheetId: string; cost: number; description: string | null }[] = [];
   const unmatched: { name: string; cost: number }[] = [];
 
-  for (const [mfmName, cost] of mfmCosts) {
+  for (const [mfmName, { cost, description }] of mfmCosts) {
     const id = nameToId.get(mfmName);
     if (id) {
-      toUpdate.push({ datasheetId: id, cost });
+      toUpdate.push({ datasheetId: id, cost, description });
     } else {
       unmatched.push({ name: mfmName, cost });
     }
@@ -272,6 +278,22 @@ export async function applyMfmImport(
     const batch = toUpdate.slice(i, i + BATCH);
     const ids = batch.map((r) => r.datasheetId);
 
+    // Preserve the description (e.g. "5 models") from the cheapest
+    // existing row per datasheet before we delete them.
+    const { data: existingRows, error: fetchErr } = await supabase
+      .from("Datasheets_models_cost")
+      .select("datasheet_id, description, cost")
+      .in("datasheet_id", ids)
+      .order("cost", { ascending: true, nullsFirst: false });
+    if (fetchErr) throw fetchErr;
+
+    const descMap = new Map<string, string | null>();
+    for (const row of existingRows ?? []) {
+      if (!descMap.has(row.datasheet_id)) {
+        descMap.set(row.datasheet_id, row.description);
+      }
+    }
+
     const { error: delErr } = await supabase
       .from("Datasheets_models_cost")
       .delete()
@@ -281,7 +303,7 @@ export async function applyMfmImport(
     const rows = batch.map((r) => ({
       datasheet_id: r.datasheetId,
       line: 0,
-      description: null as string | null,
+      description: r.description ?? descMap.get(r.datasheetId) ?? null,
       cost: r.cost,
     }));
     const { error: insErr } = await supabase
