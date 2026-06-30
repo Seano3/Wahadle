@@ -7,11 +7,13 @@ import type {
   DatasheetDetail,
   FactionOption,
   ModelLine,
+  SourceOption,
 } from "@/app/lib/adminUnits";
 
 type Props = {
   initial: DatasheetDetail;
   factions: FactionOption[];
+  sources: SourceOption[];
 };
 
 const emptyModelLine = (line: number): ModelLine => ({
@@ -35,11 +37,12 @@ const emptyCostLine = (line: number): CostLine => ({
   cost: null,
 });
 
-export default function UnitEditForm({ initial, factions }: Props) {
+export default function UnitEditForm({ initial, factions, sources }: Props) {
   const router = useRouter();
 
   const [name, setName] = useState(initial.name ?? "");
   const [factionId, setFactionId] = useState(initial.factionId ?? "");
+  const [sourceId, setSourceId] = useState(initial.sourceId ?? "");
   const [role, setRole] = useState(initial.role ?? "");
   const [legend, setLegend] = useState(initial.legend ?? "");
   const [loadout, setLoadout] = useState(initial.loadout ?? "");
@@ -95,6 +98,7 @@ export default function UnitEditForm({ initial, factions }: Props) {
         body: JSON.stringify({
           name,
           factionId: factionId || null,
+          sourceId: sourceId || null,
           role: role || null,
           legend: legend || null,
           loadout: loadout || null,
@@ -167,6 +171,20 @@ export default function UnitEditForm({ initial, factions }: Props) {
               {factions.map((f) => (
                 <option key={f.id} value={f.id}>
                   {f.name}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Source">
+            <select
+              value={sourceId}
+              onChange={(e) => setSourceId(e.target.value)}
+              className="w-full rounded-lg bg-neutral-800 px-3 py-2 text-sm outline-none ring-1 ring-neutral-700 focus:ring-emerald-600"
+            >
+              <option value="">&mdash;</option>
+              {sources.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.name}
                 </option>
               ))}
             </select>

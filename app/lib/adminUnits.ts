@@ -50,6 +50,20 @@ export async function listFactions(): Promise<FactionOption[]> {
   return data ?? [];
 }
 
+export type SourceOption = { id: string; name: string };
+
+/** Fetches every source for the edit form's source picker. */
+export async function listSources(): Promise<SourceOption[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("Source")
+    .select("id, name")
+    .order("name", { ascending: true });
+
+  if (error) throw error;
+  return data ?? [];
+}
+
 export type DatasheetSummary = {
   id: string;
   name: string;
@@ -165,6 +179,7 @@ export async function getDatasheetDetail(
 export type DatasheetUpdate = {
   name: string;
   factionId: string | null;
+  sourceId: string | null;
   role: string | null;
   legend: string | null;
   loadout: string | null;
@@ -198,6 +213,7 @@ export async function saveDatasheet(
     .update({
       name: update.name,
       faction_id: update.factionId,
+      source_id: update.sourceId,
       role: update.role,
       legend: update.legend,
       loadout: update.loadout,
@@ -245,6 +261,34 @@ export async function saveDatasheet(
       );
     if (costsError) throw costsError;
   }
+}
+
+/**
+ * Creates a new stub datasheet with just a name and MFM points cost,
+ * ready for the admin to fill in stats on the edit page.
+ * Returns the new datasheet's ID.
+ */
+export async function createDatasheet(
+  name: string,
+  cost: number
+): Promise<string> {
+  const supabase = await createClient();
+  const id = crypto.randomUUID();
+
+  const { error: sheetError } = await supabase.from("Datasheets").insert({
+    id,
+    name,
+    removed: false,
+    virtual: false,
+  });
+  if (sheetError) throw sheetError;
+
+  const { error: costError } = await supabase
+    .from("Datasheets_models_cost")
+    .insert({ datasheet_id: id, line: 0, description: null, cost });
+  if (costError) throw costError;
+
+  return id;
 }
 
 export async function deleteModelLine(id: string, line: number): Promise<void> {

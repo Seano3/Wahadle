@@ -49,6 +49,9 @@ export default async function Page() {
         order for factions (Imperium, Chaos, Space Marines, and Xenos).
         Datasheets are assumed to be the cheapest option with no upgrades. Resets daily at 12:00am EST.
       </p>
+      <p className="text-sm text-neutral-300">
+        Now Updated to 11th edition!
+      </p>
 
       <GameBoard
         key={user?.id ?? "anon"}

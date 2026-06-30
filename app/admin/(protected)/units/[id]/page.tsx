@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getDatasheetDetail, listFactions } from "@/app/lib/adminUnits";
+import { getDatasheetDetail, listFactions, listSources } from "@/app/lib/adminUnits";
 import UnitEditForm from "./UnitEditForm";
 
 export default async function AdminUnitEditPage({
@@ -7,12 +7,13 @@ export default async function AdminUnitEditPage({
 }: {
   params: { id: string };
 }) {
-  const [detail, factions] = await Promise.all([
+  const [detail, factions, sources] = await Promise.all([
     getDatasheetDetail(params.id),
     listFactions(),
+    listSources(),
   ]);
 
   if (!detail) notFound();
 
-  return <UnitEditForm initial={detail} factions={factions} />;
+  return <UnitEditForm initial={detail} factions={factions} sources={sources} />;
 }

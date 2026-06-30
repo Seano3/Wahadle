@@ -1,6 +1,159 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+type UnmatchedUnit = { name: string; cost: number };
+
+type MfmResult = {
+  totalMfmUnits: number;
+  matched: number;
+  unmatched: UnmatchedUnit[];
+};
+
+type MfmPhase = "idle" | "applying" | "applied" | "error";
+
+export function MfmRefreshPanel() {
+  const [phase, setPhase] = useState<MfmPhase>("idle");
+  const [result, setResult] = useState<MfmResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const apply = async () => {
+    setPhase("applying");
+    setError(null);
+    setResult(null);
+    try {
+      const res = await fetch("/api/admin/mfm", { method: "POST" });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error ?? "MFM import failed.");
+        setPhase("error");
+        return;
+      }
+      setResult(data.result);
+      setPhase("applied");
+    } catch {
+      setError("Couldn't reach the server.");
+      setPhase("error");
+    }
+  };
+
+  return (
+    <section className="rounded-2xl border border-neutral-800 p-4 space-y-3">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-sm font-semibold text-neutral-300">
+            MFM points refresh
+          </h2>
+          <p className="text-xs text-neutral-500 mt-0.5">
+            Pulls the latest official points from mfm.warhammer-community.com.
+            Run this after a Wahapedia refresh.
+          </p>
+        </div>
+        {(phase === "idle" || phase === "error" || phase === "applied") && (
+          <button
+            onClick={apply}
+            className="px-4 py-2 bg-sky-600 text-white rounded-xl hover:bg-sky-700 text-sm shrink-0"
+          >
+            Refresh MFM points
+          </button>
+        )}
+        {phase === "applying" && (
+          <span className="text-sm text-neutral-400 shrink-0">
+            Fetching all 30 factions…
+          </span>
+        )}
+      </div>
+
+      {error && (
+        <div className="rounded-lg bg-red-950 border border-red-800 px-4 py-2 text-sm text-red-200">
+          {error}
+        </div>
+      )}
+
+      {phase === "applied" && result && (
+        <div className="space-y-3">
+          <div className="grid grid-cols-3 gap-3 text-sm">
+            <Stat label="MFM units found" value={result.totalMfmUnits} />
+            <Stat label="Matched + updated" value={result.matched} />
+            <Stat label="Unmatched" value={result.unmatched.length} />
+          </div>
+          {result.unmatched.length > 0 && (
+            <div className="rounded-lg bg-amber-950 border border-amber-800 px-4 py-2 text-sm text-amber-200 space-y-2">
+              <div className="font-medium">
+                {result.unmatched.length} MFM unit
+                {result.unmatched.length !== 1 ? "s" : ""} had no matching
+                Wahapedia datasheet — click &ldquo;Add unit&rdquo; to create a
+                stub you can fill in on the edit page:
+              </div>
+              <ul className="space-y-1">
+                {result.unmatched.slice(0, 20).map((u) => (
+                  <li key={u.name} className="flex items-center justify-between gap-3">
+                    <span className="text-xs">
+                      {u.name}
+                      <span className="ml-2 text-amber-400/70">{u.cost} pts</span>
+                    </span>
+                    <AddUnitButton name={u.name} cost={u.cost} />
+                  </li>
+                ))}
+                {result.unmatched.length > 20 && (
+                  <li className="text-xs text-amber-200/60">
+                    and {result.unmatched.length - 20} more…
+                  </li>
+                )}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function AddUnitButton({ name, cost }: { name: string; cost: number }) {
+  const router = useRouter();
+  const [state, setState] = useState<"idle" | "saving" | "done" | "error">("idle");
+  const [errMsg, setErrMsg] = useState<string | null>(null);
+
+  const handleAdd = async () => {
+    setState("saving");
+    setErrMsg(null);
+    try {
+      const res = await fetch("/api/admin/units", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, cost }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setErrMsg(data.error ?? "Failed to create unit.");
+        setState("error");
+        return;
+      }
+      setState("done");
+      router.push(`/admin/units/${data.id}`);
+    } catch {
+      setErrMsg("Couldn't reach the server.");
+      setState("error");
+    }
+  };
+
+  if (state === "saving" || state === "done") {
+    return <span className="text-xs text-amber-200/60 shrink-0">Adding…</span>;
+  }
+
+  return (
+    <div className="flex items-center gap-2 shrink-0">
+      {errMsg && <span className="text-xs text-red-400">{errMsg}</span>}
+      <button
+        onClick={handleAdd}
+        className="px-2 py-0.5 text-xs bg-amber-700 hover:bg-amber-600 text-white rounded-lg"
+      >
+        Add unit
+      </button>
+    </div>
+  );
+}
 
 type DiffEntry = { id: string; name: string | null; faction_id: string | null };
 
