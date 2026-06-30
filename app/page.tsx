@@ -48,6 +48,7 @@ export default async function Page() {
         is lower than the target, ⬇ = higher, ✗ = mismatch, 〰 means same grand
         order for factions (Imperium, Chaos, Space Marines, and Xenos).
         Datasheets are assumed to be the cheapest option with no upgrades. Resets daily at 12:00am EST.
+        Now Updated to 11th edition!
       </p>
 
       <GameBoard
