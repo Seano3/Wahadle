@@ -32,8 +32,11 @@ export default async function Page() {
 
   return (
     <main className="space-y-4">
-      <div className="flex items-baseline gap-4">
-        <h1 className="text-2xl font-semibold">Wahadle</h1>
+      <div className="flex items-center gap-4">
+        <a href="/" className="flex items-center gap-4">
+          <img src="/icon.png" alt="Wahadle logo" className="w-12 h-12" />
+          <h1 className="text-2xl font-semibold">Wahadle</h1>
+        </a>
         <a href="/endless" className="text-sm text-emerald-400 underline">
           Endless mode
         </a>

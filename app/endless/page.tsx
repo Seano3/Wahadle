@@ -24,11 +24,14 @@ export default function EndlessPage() {
 
   return (
     <main className="space-y-4">
-      <div className="flex items-baseline gap-4">
-        <h1 className="text-2xl font-semibold">Wahadle &mdash; Endless</h1>
-        <a href="/" className="text-sm text-emerald-400 underline">
-          Daily mode
+      <div className="flex items-center gap-4">
+        <a href="/" className="flex items-center gap-4">
+          <img src="/icon.png" alt="Wahadle logo" className="w-12 h-12" />
+          <h1 className="text-2xl font-semibold">Wahadle &mdash; Endless</h1>
         </a>
+        {/* <a href="/" className="text-sm text-emerald-400 underline">
+          Daily mode
+        </a> */}
       </div>
       <p className="text-sm text-neutral-300">
         Same rules as the daily game, but play as many rounds as you like.

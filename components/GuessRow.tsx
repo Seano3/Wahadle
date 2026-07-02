@@ -9,7 +9,7 @@ const color = (s: Feedback["status"]) =>
       : s === "lower" ? "bg-red-600"
         : s === "close-higher" ? "bg-amber-400"
           : s === "close-lower" ? "bg-amber-400"
-            : s === "related" ? "bg-amber-500"
+            : s === "related" ? "bg-amber-400"
               : "bg-neutral-700";
 
 const arrow = (s: Feedback["status"]) =>
