@@ -98,6 +98,8 @@ export async function recordGuess(
 }
 
 export type UserStats = {
+  totalWinners: number;
+  avgGuesses: number;
   gamesPlayed: number;
   gamesWon: number;
   currentStreak: number;
@@ -130,6 +132,17 @@ export async function getUserStats(userId: string, today: string): Promise<UserS
   const rows = sessions ?? [];
   const gamesPlayed = rows.length;
   const gamesWon = rows.filter((s) => s.solved).length;
+
+  const { data: totalWinnersData } = await supabase
+    .from("game_sessions")
+    .select("play_date, solved, guess_count")
+    .eq("play_date", today)
+    .eq("solved", true);
+
+  const winnersData = totalWinnersData ?? [];
+
+  const totalWinners = winnersData.length + 1;
+  const avgGuesses = winnersData.reduce((sum, s) => sum + s.guess_count, 0) / totalWinners;
 
   const guessDistribution: Record<string, number> = {};
   for (const s of rows) {
@@ -165,5 +178,5 @@ export async function getUserStats(userId: string, today: string): Promise<UserS
     prevDate = date;
   }
 
-  return { gamesPlayed, gamesWon, currentStreak, bestStreak, guessDistribution };
+  return { gamesPlayed, gamesWon, currentStreak, bestStreak, guessDistribution, totalWinners, avgGuesses: Math.round(avgGuesses * 100) / 100 };
 }

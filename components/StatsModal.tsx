@@ -52,9 +52,11 @@ export default function StatsModal({ onClose }: { onClose: () => void }) {
 
         {stats && (
           <>
-            <div className="text-center gap-2">
+            <h3 className="text-sm font-medium text-neutral-300 mb-2">User Stats</h3>
+            <div className="flex justify-center text-center gap-4">
               {[
-                { label: "Played", value: stats.gamesPlayed },
+                { label: "Games Played", value: stats.gamesPlayed },
+                { label: "Current Streak", value: stats.currentStreak },
               ].map(({ label, value }) => (
                 <div key={label} className="space-y-1">
                   <div className="text-2xl font-bold">{value}</div>
@@ -62,7 +64,18 @@ export default function StatsModal({ onClose }: { onClose: () => void }) {
                 </div>
               ))}
             </div>
-
+            <h3 className="text-sm font-medium text-neutral-300 mb-2 mt-4">Today's Puzzle Stats</h3>
+            <div className="flex justify-center text-center gap-4">
+              {[
+                { label: "Total Winners", value: stats.totalWinners },
+                { label: "Avg Guesses", value: stats.avgGuesses },
+              ].map(({ label, value }) => (
+                <div key={label} className="space-y-1">
+                  <div className="text-2xl font-bold">{value}</div>
+                  <div className="text-xs text-neutral-400">{label}</div>
+                </div>
+              ))}
+            </div>
             <div>
               <h3 className="text-sm font-medium text-neutral-300 mb-2">Guess Distribution</h3>
               <div className="space-y-1">
