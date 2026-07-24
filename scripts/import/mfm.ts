@@ -32,7 +32,7 @@ async function main() {
     console.log("Dry run — fetching MFM data only, no DB writes.");
     const costs = await fetchAllMfmCosts();
     console.log(`\nTotal units parsed: ${costs.size}`);
-    for (const [name, cost] of costs) {
+    for (const [name, { cost }] of costs) {
       console.log(`  ${name}: ${cost} pts`);
     }
     return;

@@ -72,10 +72,21 @@ async function fetchFactionRsc(slug: string): Promise<string> {
  * The RSC stream is a line-oriented format where each line is:
  *   hexId:jsonValue
  *
- * Points spans are pre-defined as labeled entries ("$L{id}" refs)
- * and then referenced inline inside unit card JSON. We build a map
- * of label → pts first, then scan each unit card to resolve refs
- * and take the minimum cost (= cheapest unit size, 1st-unit tier).
+ * Unit names and costs are split across two kinds of lines:
+ *
+ *   Header lines hold just the unit name div, e.g.:
+ *     140:["$","div",null,{"className":"px-1 py-0.5 bg-slate-500 ...","children":"INTERCESSOR SQUAD"}]
+ *
+ *   Assembly lines hold the card structure, referencing the header via
+ *   a "$L{hexId}" label ref and listing cost rows in-line:
+ *     87:[...,"$L140",[...{"children":[false,"5 models"]}],"$L141"...]
+ *
+ * So the strategy is:
+ *   Pass 1 — build labelMap (hexId → value string)
+ *   Pass 2 — build ptsMap (hexId → pts integer) from "N pts" spans
+ *   Pass 3 — build headerMap (hexId → unit name) from unit header divs
+ *   Pass 4 — scan assembly lines for a $L ref in headerMap, then extract
+ *             minimum cost from $L pts refs on the same line.
  */
 type UnitCost = { cost: number; description: string | null };
 
@@ -98,10 +109,31 @@ function parseFactionUnits(rscContent: string): Map<string, UnitCost> {
     if (m) ptsMap.set(id, parseInt(m[1].replace(/,/g, ""), 10));
   }
 
-  // Unit header pattern: the specific Tailwind class string used for
-  // every unit name heading on the MFM.
-  const unitPat =
-    /"px-1 py-0\.5 bg-slate-500 dark:bg-slate-800 font-bold text-xl text-white","children":"([^"]+)"/g;
+  // Pass 3: build header map (hexId → unit name) from unit header divs.
+  // Two header formats exist:
+  //   Grey (bg-slate-500): simple string children — the unit name is
+  //     the "children" value directly.
+  //   Red (bg-red-500): the name is in a nested span with "text-xl keep-all"
+  //     class — used when a pricing-tier arrow is shown alongside the name.
+  const headerMap = new Map<string, string>();
+  const slateHeaderPat =
+    /"px-1 py-0\.5 bg-slate-500[^"]*","children":"([^"]+)"/;
+  const redHeaderPat =
+    /bg-red-500[^"]*"[^}]*"text-xl keep-all","children":"([^"]+)"/;
+
+  for (const [id, val] of labelMap) {
+    let unitName: string | null = null;
+    const slateM = val.match(slateHeaderPat);
+    if (slateM) {
+      unitName = slateM[1];
+    } else {
+      const redM = val.match(redHeaderPat);
+      if (redM) unitName = redM[1];
+    }
+    if (unitName && !SKIP_HEADERS.has(unitName)) {
+      headerMap.set(id, unitName);
+    }
+  }
 
   // Match only $L refs that are genuine unit-cost rows.
   //
@@ -113,59 +145,53 @@ function parseFactionUnits(rscContent: string): Map<string, UnitCost> {
   //
   // The key difference: unit costs use [false,"desc"] or
   // ["$undefined","desc"] as the span's children (an array), while
-  // wargear costs use a plain string. Matching [false,/\$undefined]
+  // wargear costs use a plain string. Matching [false|$undefined]
   // means we never accidentally pick up a weapon upgrade cost and
   // mistake it for the unit cost (which happened with e.g. Tyrannofex,
   // where a "per Acid spray": 10 pts upgrade made the unit appear as
   // 10 pts instead of its real 180 pts).
   //
-  // The pattern matches the tail of the li element:
-  //   "children":[false,"desc"]}],"$Lhex"
-  //      ↑children array  ↑}closes span props  ↑]closes span element
   // Capture group 1 = description text (e.g. "5 models"), group 2 = pts $L ref.
   const unitCostRefPat =
     /"children":\[(?:false|"\$undefined"),"([^"]*)"\]\}\],"\$L([0-9a-f]+)"/g;
 
+  // Pattern to find all $L label refs on an assembly line.
+  const lRefPat = /"\$L([0-9a-f]+)"/g;
+
   const units = new Map<string, UnitCost>(); // unit name → { cost, description }
 
+  // Pass 4: for each assembly line, find a $L ref that resolves to a
+  // unit header, then extract the minimum cost from pts $L refs on the
+  // same line. First occurrence wins — a unit can appear in both the
+  // UNITS section and the LEADERS section of the same page.
   for (const line of lines) {
-    // Collect all unit header matches in this line
-    const unitMatches: { index: number; name: string }[] = [];
-    unitPat.lastIndex = 0;
-    let um: RegExpExecArray | null;
-    while ((um = unitPat.exec(line)) !== null) {
-      unitMatches.push({ index: um.index, name: um[1] });
+    lRefPat.lastIndex = 0;
+    let unitName: string | null = null;
+    let lm: RegExpExecArray | null;
+    while ((lm = lRefPat.exec(line)) !== null) {
+      const candidate = headerMap.get(lm[1]);
+      if (candidate) {
+        unitName = candidate;
+        break;
+      }
+    }
+    if (!unitName || units.has(unitName)) continue;
+
+    unitCostRefPat.lastIndex = 0;
+    let minCost: number | null = null;
+    let minDesc: string | null = null;
+    let ref: RegExpExecArray | null;
+    while ((ref = unitCostRefPat.exec(line)) !== null) {
+      const desc = ref[1] || null;
+      const pts = ptsMap.get(ref[2]);
+      if (pts !== undefined && (minCost === null || pts < minCost)) {
+        minCost = pts;
+        minDesc = desc;
+      }
     }
 
-    for (let i = 0; i < unitMatches.length; i++) {
-      const { index: start, name } = unitMatches[i];
-      if (SKIP_HEADERS.has(name)) continue;
-
-      // Slice the chunk belonging to this unit card (up to the next
-      // unit header in the same line, or end of line)
-      const end =
-        i + 1 < unitMatches.length ? unitMatches[i + 1].index : line.length;
-      const chunk = line.slice(start, end);
-
-      // Resolve all unit-cost $L refs and find the minimum.
-      unitCostRefPat.lastIndex = 0;
-      let minCost: number | null = null;
-      let minDesc: string | null = null;
-      let ref: RegExpExecArray | null;
-      while ((ref = unitCostRefPat.exec(chunk)) !== null) {
-        const desc = ref[1] || null;
-        const pts = ptsMap.get(ref[2]);
-        if (pts !== undefined && (minCost === null || pts < minCost)) {
-          minCost = pts;
-          minDesc = desc;
-        }
-      }
-
-      // First occurrence wins — the same unit can appear in both the
-      // UNITS section and the LEADERS section of the same page.
-      if (minCost !== null && !units.has(name)) {
-        units.set(name, { cost: minCost, description: minDesc });
-      }
+    if (minCost !== null) {
+      units.set(unitName, { cost: minCost, description: minDesc });
     }
   }
 
