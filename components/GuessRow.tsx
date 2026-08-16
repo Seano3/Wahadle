@@ -41,7 +41,7 @@ export default function GuessRow({ label, feedback }: { label: string; feedback:
   }, [feedback]);
 
   return (
-    <div className="grid gap-1 items-center" style={{ gridTemplateColumns: "minmax(150px,25%) repeat(10, minmax(0,1fr))" }}>
+    <div className="grid gap-1 items-center" style={{ gridTemplateColumns: "minmax(150px,25%) repeat(11, minmax(0,1fr))" }}>
       <div className={`truncate text-sm text-neutral-300 pr-2 transition-all duration-200 ${visibleCount > 0 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"}`}>
         {label}
       </div>

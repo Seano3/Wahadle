@@ -11,6 +11,16 @@ export type UnitRow = {
   Wounds: number | null;
   Leadership: number | null;
   OC: number | null;
+  /**
+   * Base area in mm^2, derived from Wahapedia's free-text base-size
+   * field (round bases: area of a circle from the single diameter;
+   * oval bases like "120 x 92mm": area of an ellipse from the two
+   * diameters). Null when the text has no dimensions (e.g. "Use
+   * model", "No official base size").
+   */
+  "Base Size": number | null;
+  /** Original Wahapedia text this was parsed from, for display (e.g. "120 x 92mm flying base"). Empty string when there's no data. */
+  "Base Size Label": string;
   Points: number | null;
   /**
    * Number of models extracted from Wahapedia's free-text squad-size
@@ -31,6 +41,7 @@ export type StatKey = keyof Pick<
   | "Wounds"
   | "Leadership"
   | "OC"
+  | "Base Size"
   | "Points"
   | "Model Count"
   | "Faction"

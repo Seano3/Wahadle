@@ -12,22 +12,21 @@ export. Whenever Wahapedia updates their data (errata, new
 datasheets, points changes, edition migrations), this snapshot
 goes stale. `refresh.ts` re-syncs it.
 
-## Status as of writing (June 2026)
+## Status as of writing (August 2026)
 
-11th edition launched today. Wahapedia has **not yet** published an
-11th-edition export -- their site still serves 10th-edition data at
-`wahapedia.ru/wh40k10ed/...` as of this writing, and their own
-process is "I update files... it takes 15 minutes" but only *after*
-the site itself is updated, which takes longer than a day for a
-full edition migration historically. Check `wahapedia.ru` directly
-before assuming an `wh40k11ed` path exists.
+Wahapedia has published their 11th-edition export at
+`wahapedia.ru/wh40k11ed/...` (confirmed live -- `edition` column
+reads `11` for updated Source rows, faction links point at
+`/wh40k11ed/factions/...`, and datasheet/faction counts differ from
+the 10th-edition path). The admin "Check for updates" button and
+`applyImport` API routes (`app/api/admin/import/{preview,apply}/
+route.ts`) now default to `wh40k11ed`. The old `wh40k10ed` path is
+still live too (Wahapedia keeps prior editions' exports up, still
+receiving errata as of this writing) -- pass `{ "edition": "wh40k10ed" }`
+in the request body if you ever need to pull that one instead.
 
-When it does appear, this script should work against it by just
-changing the `--dir` you download into (see below) -- the file
-*format* (pipe-delimited, same column names) is expected to carry
-over, since Wahapedia has used this same export format across at
-least 9th, 10th, and (per their own description of the process)
-presumably 11th edition too.
+The file *format* (pipe-delimited, same column names) carried over
+from 10th to 11th edition, as expected.
 
 ## Step 1: Download the export
 
@@ -40,7 +39,7 @@ fetched individually:
 mkdir -p wahapedia-export
 cd wahapedia-export
 
-EDITION=wh40k10ed  # change to wh40k11ed once it exists
+EDITION=wh40k11ed  # wh40k10ed still works too, if you need the old edition's data
 
 for file in Factions Source Datasheets Datasheets_models \
             Datasheets_keywords Datasheets_models_cost; do

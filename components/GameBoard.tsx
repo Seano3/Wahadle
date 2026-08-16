@@ -87,7 +87,7 @@ export default function GameBoard({
     () => (
       <div
         className="grid gap-1 text-[10px] uppercase text-neutral-400 mb-2"
-        style={{ gridTemplateColumns: "minmax(150px,25%) repeat(10, minmax(0,1fr))" }}
+        style={{ gridTemplateColumns: "minmax(150px,25%) repeat(11, minmax(0,1fr))" }}
       >
         <div className="truncate py-2">Unit</div>
         {FIELDS.map((c) => (

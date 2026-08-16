@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: auth.reason }, { status: 403 });
   }
 
-  let edition = "wh40k10ed";
+  let edition = "wh40k11ed";
   try {
     const body = await req.json();
     if (typeof body?.edition === "string" && body.edition.trim()) {

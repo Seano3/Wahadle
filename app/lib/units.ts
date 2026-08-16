@@ -8,7 +8,7 @@ import type { UnitRow } from "@/app/types";
  * variant" work (see view comments in 01_schema.sql for why that
  * matters), so no client-side expansion/dedup is needed here.
  */
-function toUnitRow(row: {
+export function toUnitRow(row: {
   unit_id: string;
   unit_name: string | null;
   model_line: number;
@@ -19,6 +19,7 @@ function toUnitRow(row: {
   wounds: string | null;
   leadership: string | null;
   oc: string | null;
+  base_size: string | null;
   points: number | null;
   model_count: string | null;
   faction: string | null;
@@ -41,10 +42,29 @@ function toUnitRow(row: {
     Wounds: toNum(row.wounds),
     Leadership: toNum(row.leadership),
     OC: toNum(row.oc),
+    "Base Size": parseBaseArea(row.base_size),
+    "Base Size Label": row.base_size?.trim() ?? "",
     Points: row.points,
     "Model Count": parseModelCount(row.model_count),
     "Model Count Label": row.model_count ?? "",
   };
+}
+
+/**
+ * Wahapedia's base-size field is free text: round bases give one
+ * diameter ("40mm"), oval bases give two ("120 x 92mm"), and some
+ * datasheets have no fixed size at all ("Use model", "No official
+ * base size") -- those return null. Diameters are read as-is (not
+ * halved-then-doubled) so oval area uses each diameter's own radius:
+ * area = pi * (d1/2) * (d2/2), which is also correct for round bases
+ * (d1 === d2).
+ */
+function parseBaseArea(description: string | null): number | null {
+  if (!description) return null;
+  const diameters = description.match(/\d+(?:\.\d+)?/g);
+  if (!diameters || diameters.length === 0) return null;
+  const [d1, d2 = d1] = diameters;
+  return Math.round(Math.PI * (Number(d1) / 2) * (Number(d2) / 2));
 }
 
 /**

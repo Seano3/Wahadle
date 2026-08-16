@@ -8,6 +8,7 @@ export const FIELDS: StatKey[] = [
   "Wounds",
   "Leadership",
   "OC",
+  "Base Size",
   "Points",
   "Model Count",
   "Faction",
@@ -119,12 +120,21 @@ function judgePoints(guessPoints: number | null, targetPoints: number | null): F
   };
 }
 
+// Bases compare by area (so a wide oval reads as "bigger" than a
+// narrow one of the same length), but the tile still shows the
+// original Wahapedia text (e.g. "120 x 92mm"), not the area number.
+function judgeBaseSize(guess: UnitRow, target: UnitRow): Feedback {
+  const status = compareNumeric(guess["Base Size"], target["Base Size"]);
+  return { field: "Base Size", status, data: guess["Base Size Label"] || null };
+}
+
 const SUFFIXED_FIELDS = new Set<StatKey>(["Save", "Invunl Save", "Leadership"]);
 
 export function judge(guess: UnitRow, target: UnitRow): Feedback[] {
   return FIELDS.map((field) => {
     if (field === "Faction") return judgeFaction(guess.Faction, target.Faction);
     if (field === "Points") return judgePoints(guess.Points, target.Points);
+    if (field === "Base Size") return judgeBaseSize(guess, target);
 
     const guessValue = guess[field] as number | null;
     const targetValue = target[field] as number | null;

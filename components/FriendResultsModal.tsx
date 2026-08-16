@@ -31,7 +31,7 @@ function GuessGrid({ guesses }: { guesses: FriendDailyResult["guesses"] }) {
       {/* Column headers */}
       <div
         className="grid gap-1 text-[9px] uppercase text-neutral-500"
-        style={{ gridTemplateColumns: "minmax(100px,22%) repeat(10, minmax(0,1fr))" }}
+        style={{ gridTemplateColumns: "minmax(100px,22%) repeat(11, minmax(0,1fr))" }}
       >
         <div />
         {FIELDS.map((f) => (
@@ -42,7 +42,7 @@ function GuessGrid({ guesses }: { guesses: FriendDailyResult["guesses"] }) {
         <div
           key={i}
           className="grid gap-1 items-center"
-          style={{ gridTemplateColumns: "minmax(100px,22%) repeat(10, minmax(0,1fr))" }}
+          style={{ gridTemplateColumns: "minmax(100px,22%) repeat(11, minmax(0,1fr))" }}
         >
           <div className="truncate text-xs text-neutral-300 pr-1">{g.unitName}</div>
           {g.feedback.map((f) => (
