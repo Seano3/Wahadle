@@ -124,8 +124,25 @@ function judgePoints(guessPoints: number | null, targetPoints: number | null): F
 // narrow one of the same length), but the tile still shows the
 // original Wahapedia text (e.g. "120 x 92mm"), not the area number.
 function judgeBaseSize(guess: UnitRow, target: UnitRow): Feedback {
+  if (guess["Base Size"] == null || target["Base Size"] == null) {
   const status = compareNumeric(guess["Base Size"], target["Base Size"]);
   return { field: "Base Size", status, data: guess["Base Size Label"] || null };
+  }
+  const diff = Math.abs(guess["Base Size"] - target["Base Size"]);
+  if (diff === 0) return { field: "Base Size", status: "correct", data: guess["Base Size Label"] || null };
+  if (diff <= 1000) {
+    return {
+      field: "Base Size",
+      status: guess["Base Size"] > target["Base Size"] ? "close-higher" : "close-lower",
+      data: guess["Base Size Label"] || null,
+    };
+  }
+  return {
+    field: "Base Size",
+    status: guess["Base Size"] > target["Base Size"] ? "higher" : "lower",
+    data: guess["Base Size Label"] || null,
+  };
+
 }
 
 const SUFFIXED_FIELDS = new Set<StatKey>(["Save", "Invunl Save", "Leadership"]);

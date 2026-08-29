@@ -301,10 +301,20 @@ export async function applyMfmImport(
     from += PAGE_SIZE;
   }
 
-  // Build a normalized name → datasheet id lookup
-  const nameToId = new Map<string, string>();
+  // Build a normalized name → datasheet ids lookup. Many units (e.g.
+  // Forgefiend, Great Unclean One) are generic and appear as a separate
+  // datasheet row per faction that can take them, all sharing the same
+  // name — so this must map to *all* matching ids, not just one, or
+  // only a single faction's copy ever gets the cleaned MFM cost while
+  // the rest keep stale/unfiltered Wahapedia data (including wargear
+  // cost rows) forever.
+  const nameToIds = new Map<string, string[]>();
   for (const ds of allDatasheets) {
-    if (ds.name) nameToId.set(ds.name.toUpperCase(), ds.id);
+    if (!ds.name) continue;
+    const key = ds.name.toUpperCase();
+    const ids = nameToIds.get(key);
+    if (ids) ids.push(ds.id);
+    else nameToIds.set(key, [ds.id]);
   }
 
   // Match MFM unit names to datasheet ids
@@ -312,9 +322,9 @@ export async function applyMfmImport(
   const unmatched: { name: string; cost: number }[] = [];
 
   for (const [mfmName, { cost, description }] of mfmCosts) {
-    const id = nameToId.get(mfmName);
-    if (id) {
-      toUpdate.push({ datasheetId: id, cost, description });
+    const ids = nameToIds.get(mfmName);
+    if (ids) {
+      for (const id of ids) toUpdate.push({ datasheetId: id, cost, description });
     } else {
       unmatched.push({ name: mfmName, cost });
     }
