@@ -158,40 +158,68 @@ function parseFactionUnits(rscContent: string): Map<string, UnitCost> {
   // Pattern to find all $L label refs on an assembly line.
   const lRefPat = /"\$L([0-9a-f]+)"/g;
 
+  // Marks the start of each individual unit's card. Since the new
+  // edition, a single physical RSC line can bundle MANY units'
+  // cards end-to-end (e.g. Aggressor Squad, Ancient, Apothecary all
+  // concatenated onto one line) instead of one unit per line. Splitting
+  // on this marker scopes cost extraction to a single unit's own card —
+  // without it, the cheapest cost anywhere on the whole line (which may
+  // belong to a completely different, unrelated unit later in the same
+  // line) gets misattributed as this unit's minimum cost, making it
+  // look like it has a bogus cheap "size" option.
+  const cardMarkerPat =
+    /"className":"flex flex-col space-y-1 m-1 print:break-inside-avoid-page"/g;
+
+  function splitIntoCardChunks(line: string): string[] {
+    cardMarkerPat.lastIndex = 0;
+    const starts: number[] = [];
+    let mm: RegExpExecArray | null;
+    while ((mm = cardMarkerPat.exec(line)) !== null) starts.push(mm.index);
+    if (starts.length === 0) return [line];
+    const bounds = [...starts, line.length];
+    const chunks: string[] = [];
+    for (let i = 0; i < bounds.length - 1; i++) {
+      chunks.push(line.slice(bounds[i], bounds[i + 1]));
+    }
+    return chunks;
+  }
+
   const units = new Map<string, UnitCost>(); // unit name → { cost, description }
 
-  // Pass 4: for each assembly line, find a $L ref that resolves to a
-  // unit header, then extract the minimum cost from pts $L refs on the
-  // same line. First occurrence wins — a unit can appear in both the
-  // UNITS section and the LEADERS section of the same page.
+  // Pass 4: for each unit card chunk, find a $L ref that resolves to a
+  // unit header, then extract the minimum cost from pts $L refs within
+  // that same chunk. First occurrence wins — a unit can appear in both
+  // the UNITS section and the LEADERS section of the same page.
   for (const line of lines) {
-    lRefPat.lastIndex = 0;
-    let unitName: string | null = null;
-    let lm: RegExpExecArray | null;
-    while ((lm = lRefPat.exec(line)) !== null) {
-      const candidate = headerMap.get(lm[1]);
-      if (candidate) {
-        unitName = candidate;
-        break;
+    for (const chunk of splitIntoCardChunks(line)) {
+      lRefPat.lastIndex = 0;
+      let unitName: string | null = null;
+      let lm: RegExpExecArray | null;
+      while ((lm = lRefPat.exec(chunk)) !== null) {
+        const candidate = headerMap.get(lm[1]);
+        if (candidate) {
+          unitName = candidate;
+          break;
+        }
       }
-    }
-    if (!unitName || units.has(unitName)) continue;
+      if (!unitName || units.has(unitName)) continue;
 
-    unitCostRefPat.lastIndex = 0;
-    let minCost: number | null = null;
-    let minDesc: string | null = null;
-    let ref: RegExpExecArray | null;
-    while ((ref = unitCostRefPat.exec(line)) !== null) {
-      const desc = ref[1] || null;
-      const pts = ptsMap.get(ref[2]);
-      if (pts !== undefined && (minCost === null || pts < minCost)) {
-        minCost = pts;
-        minDesc = desc;
+      unitCostRefPat.lastIndex = 0;
+      let minCost: number | null = null;
+      let minDesc: string | null = null;
+      let ref: RegExpExecArray | null;
+      while ((ref = unitCostRefPat.exec(chunk)) !== null) {
+        const desc = ref[1] || null;
+        const pts = ptsMap.get(ref[2]);
+        if (pts !== undefined && (minCost === null || pts < minCost)) {
+          minCost = pts;
+          minDesc = desc;
+        }
       }
-    }
 
-    if (minCost !== null) {
-      units.set(unitName, { cost: minCost, description: minDesc });
+      if (minCost !== null) {
+        units.set(unitName, { cost: minCost, description: minDesc });
+      }
     }
   }
 
