@@ -91,9 +91,9 @@ function judgeFaction(guessFaction: string, targetFaction: string): Feedback {
   if (g === t) return { field: "Faction", status: "correct", data: guessFaction };
 
   const sameGroup = FACTION_GROUPS.some((group) => group.has(g) && group.has(t));
-  if (sameGroup) return { field: "Faction", status: "related", data: null };
+  if (sameGroup) return { field: "Faction", status: "related", data: guessFaction };
 
-  return { field: "Faction", status: "mismatch", data: null };
+  return { field: "Faction", status: "mismatch", data: guessFaction };
 }
 
 function judgePoints(guessPoints: number | null, targetPoints: number | null): Feedback {
