@@ -67,6 +67,7 @@ const FACTION_GROUPS: ReadonlySet<string>[] = [
       "Chaos Knights",
       "Thousand Sons",
       "World Eaters",
+      "Titanicus Traitoris",
     ].map((s) => s.toUpperCase())
   ),
   new Set(

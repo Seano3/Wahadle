@@ -1,57 +1,45 @@
 import { NextResponse } from "next/server";
 import { checkAdmin } from "@/app/lib/admin";
 import { createServiceRoleClient } from "@/app/lib/supabase/serviceRole";
-import { fetchExportFiles, parseExport, applyImport } from "@/scripts/import/core";
+import { fetchKdc, buildPlan, applyPlan } from "@/scripts/import/kdcCore";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 300;
 
+/**
+ * Applies a 40kdc-data import. Rebuilds the plan server-side rather
+ * than trusting a plan sent from the browser (a tampered body could
+ * otherwise write arbitrary rows); the only input taken is the 40kdc
+ * commit sha from the preview, so what's applied matches what the
+ * admin saw.
+ */
 export async function POST(req: Request) {
   const auth = await checkAdmin();
   if (!auth.authorized) {
     return NextResponse.json({ error: auth.reason }, { status: 403 });
   }
 
-  let edition = "wh40k11ed";
+  let sha: string | null = null;
   try {
     const body = await req.json();
-    if (typeof body?.edition === "string" && body.edition.trim()) {
-      edition = body.edition.trim();
-    }
+    if (typeof body?.sha === "string" && /^[0-9a-f]{40}$/.test(body.sha)) sha = body.sha;
   } catch {
-    // No body / invalid JSON -- fall back to the default edition.
+    // fall through to the error below
+  }
+  if (!sha) {
+    return NextResponse.json({ error: "Missing 40kdc commit -- run Check for updates first." }, { status: 400 });
   }
 
   try {
-    // Re-fetches and re-parses rather than trusting a diff payload
-    // from the browser, even though that means doing the network
-    // round-trip twice (once for the preview the admin already
-    // saw, once here) -- this is a write operation, and trusting
-    // client-supplied data for what rows to upsert/delete would
-    // mean a tampered request body could apply something other
-    // than what was actually previewed.
-    const files = await fetchExportFiles(edition);
-    const parsed = parseExport(files);
     const supabase = createServiceRoleClient();
-    await applyImport(supabase, parsed);
-
-    return NextResponse.json({ ok: true });
+    const plan = await buildPlan(supabase, await fetchKdc(sha));
+    const logs: string[] = [];
+    await applyPlan(supabase, plan, (m) => logs.push(m.trim()));
+    return NextResponse.json({ ok: true, logs });
   } catch (err) {
     console.error("POST /api/admin/import/apply failed:", err);
-    // Supabase/PostgREST errors are plain objects with code/message/
-    // details/hint, NOT real Error instances, so `err instanceof
-    // Error` is false for them and a naive fallback would discard
-    // the actually-useful Postgres message. Surface it directly --
-    // see upsertInBatches in core.ts for the additional diagnostic
-    // logging (which table, which row) this triggers server-side
-    // for code 21000 specifically.
-    const message =
-      err instanceof Error
-        ? err.message
-        : typeof err === "object" && err !== null && "message" in err
-          ? String((err as { message: unknown }).message)
-          : "Failed to apply the update.";
+    const message = err instanceof Error ? err.message : "Failed to apply the update.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

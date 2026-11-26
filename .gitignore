@@ -141,3 +141,6 @@ vite.config.ts.timestamp-*
 Database.txt
 
 .claude
+# Output of scripts/import/compare40kdc.ts
+compare-40kdc-report/
+kdc-import/

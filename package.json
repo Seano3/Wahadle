@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "import:refresh": "tsx scripts/import/refresh.ts",
-    "import:mfm": "tsx scripts/import/mfm.ts"
+    "import:mfm": "tsx scripts/import/mfm.ts",
+    "import:compare40kdc": "tsx scripts/import/compare40kdc.ts",
+    "import:40kdc": "tsx scripts/import/kdc.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

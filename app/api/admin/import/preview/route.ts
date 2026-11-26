@@ -1,57 +1,50 @@
 import { NextResponse } from "next/server";
 import { checkAdmin } from "@/app/lib/admin";
 import { createServiceRoleClient } from "@/app/lib/supabase/serviceRole";
-import {
-  fetchExportFiles,
-  parseExport,
-  computeDiff,
-  preflightDuplicateScan,
-} from "@/scripts/import/core";
+import { fetchKdc, buildPlan } from "@/scripts/import/kdcCore";
 
 export const dynamic = "force-dynamic";
-// Server-only fetch to wahapedia.ru -- this needs the Node.js
-// runtime (not Edge), which doesn't have the network access this
-// route requires.
+// Fetches ~100 JSON files from GitHub, then diffs against the DB.
 export const runtime = "nodejs";
-// Diffing ~1,600+ datasheets against 6 export files, each fetched
-// over the network, is the slow part of this feature. Give it
-// more headroom than the default; if your hosting plan caps
-// function duration below this, the CLI script (scripts/import/
-// refresh.ts) is the fallback -- see its file header comment.
-export const maxDuration = 60;
+export const maxDuration = 120;
 
-export async function POST(req: Request) {
+/**
+ * Builds a 40kdc-data import plan without writing anything. The
+ * response includes the 40kdc commit sha the plan was built from;
+ * the apply route takes that sha so it imports exactly the data
+ * that was previewed, even if 40kdc pushes a new commit in between.
+ */
+export async function POST() {
   const auth = await checkAdmin();
   if (!auth.authorized) {
     return NextResponse.json({ error: auth.reason }, { status: 403 });
   }
 
-  let edition = "wh40k11ed";
   try {
-    const body = await req.json();
-    if (typeof body?.edition === "string" && body.edition.trim()) {
-      edition = body.edition.trim();
-    }
-  } catch {
-    // No body / invalid JSON -- fall back to the default edition.
-  }
-
-  try {
-    const files = await fetchExportFiles(edition);
-    const parsed = parseExport(files);
-    const supabase = createServiceRoleClient();
-    const diff = await computeDiff(supabase, parsed);
-    const duplicateWarning = preflightDuplicateScan(parsed);
-
-    return NextResponse.json({ edition, diff, duplicateWarning: duplicateWarning || null });
+    const kdc = await fetchKdc("main");
+    const plan = await buildPlan(createServiceRoleClient(), kdc);
+    return NextResponse.json({
+      sha: plan.kdc.sha,
+      date: plan.kdc.date,
+      summary: {
+        matched: plan.matched,
+        models: plan.models.length,
+        costs: plan.costs.length,
+        unchangedLegends: plan.unchangedLegends,
+        newFactions: plan.newFactions,
+        added: plan.added,
+        changed: plan.changed,
+        matchedLoosely: plan.matchedLoosely,
+        frozen: plan.frozen,
+        skippedDuplicates: plan.skippedDuplicates,
+        softDelete: plan.softDelete,
+        hardDelete: plan.hardDelete,
+        keptReferencedLines: plan.keptReferencedLines.length,
+      },
+    });
   } catch (err) {
     console.error("POST /api/admin/import/preview failed:", err);
-    const message =
-      err instanceof Error
-        ? err.message
-        : typeof err === "object" && err !== null && "message" in err
-          ? String((err as { message: unknown }).message)
-          : "Failed to check for updates.";
+    const message = err instanceof Error ? err.message : "Failed to check for updates.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

@@ -1,11 +1,29 @@
 # Wahadle data refresh
 
+> **As of 26 Nov 2026 the data source is [40kdc-data](https://github.com/wn-mitch/40kdc-data)
+> (CC BY 4.0 -- credit it on the site), not Wahapedia + MFM.**
+>
+> - Admin page: **Check for updates** previews a 40kdc import, **Apply** runs it.
+> - CLI: `npm run import:40kdc -- --dry-run`, then without `--dry-run`
+>   (writes `kdc-import/backup.json` before changing anything).
+> - Matching rules (existing ids kept, same-faction only, ally copies
+>   dropped, today's daily answer frozen) are documented in `kdcCore.ts`.
+> - `npm run import:compare40kdc` is a read-only report of how the DB
+>   differs from 40kdc.
+>
+> **Don't run `refresh.ts` (Wahapedia) or `mfm.ts` any more** -- they'd
+> overwrite 40kdc data, and MFM's name-only matching gives every
+> faction's copy of a shared unit (Helbrute, Land Raider...) the same
+> price. The rest of this file is kept for reference only.
+
 Scripts for pulling Wahapedia's CSV export into the Wahadle database.
 Run these from your own machine -- they need network access to
 wahapedia.ru, and the app's own server environment shouldn't have
 (or need) that.
 
-## Why this exists
+## (Legacy) Wahapedia import
+
+### Why this exists
 
 The Wahadle database is a point-in-time snapshot of Wahapedia's
 export. Whenever Wahapedia updates their data (errata, new
