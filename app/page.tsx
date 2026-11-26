@@ -66,7 +66,7 @@ export default async function Page() {
       />
 
       <p className="text-sm text-neutral-300">
-        Developed by Sean Thornton. Dataset provided by Wahapedia.ru
+        Developed by Sean Thornton. Dataset provided by 40kdc-data.
       </p>
       <p className="text-sm text-neutral-300">
         Please report bugs or suggest ideas in the Issues section of the{" "}
